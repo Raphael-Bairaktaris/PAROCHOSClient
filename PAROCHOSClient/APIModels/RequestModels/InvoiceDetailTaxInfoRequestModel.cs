@@ -1,0 +1,52 @@
+﻿using Newtonsoft.Json;
+
+namespace PAROCHOSClient
+{
+    /// <summary>
+    /// Requests used for creating or updating an invoice detail tax info
+    /// </summary>
+    public class InvoiceDetailTaxInfoRequestModel
+    {
+        #region Public Properties
+
+        /// <summary>
+        /// Charge/allowance category according to Tax Authorities' documentation 
+        /// </summary>
+        [JsonProperty("taxCategory")]
+        [JsonConverter(typeof(TaxTypeToIntMapper))]
+        public TaxType TaxCategory { get; set; }
+
+        /// <summary>
+        /// Charge/allowance category according to UBL 2.1 documentation
+        /// TODO
+        /// </summary>
+        [JsonProperty("taxCategoryUbl")]
+        public string TaxCategoryUbl { get; set; }
+
+        /// <summary>
+        /// Total amount subject to a specific charge/allowance category
+        /// </summary>
+        [JsonProperty("underlyingValue")]
+        public decimal UnderlyingValue { get; set; }
+
+        /// <summary>
+        /// Charge/allowance percent applied
+        /// </summary>
+        [JsonProperty("taxPercent")]
+        public decimal TaxPercent { get; set; }
+
+        #endregion
+
+        #region Constructors
+
+        /// <summary>
+        /// Default constructor
+        /// </summary>
+        public InvoiceDetailTaxInfoRequestModel() : base()
+        {
+
+        }
+
+        #endregion
+    }
+}
