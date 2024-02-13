@@ -1,22 +1,19 @@
 ﻿using Newtonsoft.Json;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PAROCHOSClient
 {
     /// <summary>
     /// A <see cref="JsonConverter{T}"/> that converts a <see cref="TaxType"/> to <see cref="string"/>
     /// </summary>
-    public class TaxTypeToIntMapper : BaseEnumToIntJsonConverter<TaxType>
+    public class TaxTypeToIntJsonConverter : BaseEnumToIntJsonConverter<TaxType>
     {
         #region Constructors
 
         /// <summary>
         /// Default constructor
         /// </summary>
-        public TaxTypeToIntMapper() : base()
+        public TaxTypeToIntJsonConverter() : base()
         {
 
         }

@@ -5,7 +5,7 @@ namespace PAROCHOSClient
     /// <summary>
     /// Requests used for creating or updating an invoice counterpart
     /// </summary>
-    public class InvoiceCounterpartRequestModel :BaseAddressRequestModel
+    public class InvoiceCounterpartRequestModel : BaseAddressRequestModel
     {
         #region Public Properties
 
@@ -32,7 +32,7 @@ namespace PAROCHOSClient
         /// Counterpart's company contact email
         /// </summary>
         [JsonProperty("email")]
-        public string? Email { get; set; } 
+        public string? Email { get; set; }
 
         #endregion
 

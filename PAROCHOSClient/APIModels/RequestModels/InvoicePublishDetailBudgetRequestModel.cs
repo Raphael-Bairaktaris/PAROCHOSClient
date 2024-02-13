@@ -13,7 +13,7 @@ namespace PAROCHOSClient
         /// Type of the budget
         /// </summary>
         [JsonProperty("budgetType")]
-        [JsonConverter(typeof(BudgetTypeToIntMapper))]
+        [JsonConverter(typeof(BudgetTypeToIntJsonConverter))]
         public BudgetType BudgetType { get; set; }
 
         /// <summary>

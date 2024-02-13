@@ -1,7 +1,6 @@
-﻿using System.Collections.Immutable;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
+using System.Collections.Generic;
+using System.Collections.Immutable;
 
 namespace PAROCHOSClient
 {
@@ -273,7 +272,27 @@ namespace PAROCHOSClient
         /// <summary>
         /// Maps the <see cref="CurrencyCode"/>s to their related <see cref="string"/>s
         /// </summary>
-        public static IReadOnlyDictionary<CurrencyCode, string> CurrencyCodeToStringMapper { get; } = Enum.GetValues<CurrencyCode>().ToImmutableDictionary(x => x, x => x.ToString().ToUpper());
+        public static IReadOnlyDictionary<CurrencyCode, string> CurrencyCodeToStringMapper { get; } = Enum.GetValues<CurrencyCode>().ToImmutableDictionary(x => x, x => x.ToString());
+
+        /// <summary>
+        /// Maps the <see cref="IncomeClassificationType"/>s to their related <see cref="string"/>s
+        /// </summary>
+        public static IReadOnlyDictionary<IncomeClassificationType, string> IncomeClassificationTypeToStringMapper { get; } = Enum.GetValues<IncomeClassificationType>().ToImmutableDictionary(x => x, x => x.ToString());
+
+        /// <summary>
+        /// Maps the <see cref="IncomeClassificationCategory"/>s to their related <see cref="string"/>s
+        /// </summary>
+        public static IReadOnlyDictionary<IncomeClassificationCategory, string> IncomeClassificationCategoryToStringMapper { get; } = Enum.GetValues<IncomeClassificationCategory>().ToImmutableDictionary(x => x, x => x.ToString().ToLower());
+
+        /// <summary>
+        /// Maps the <see cref="IncomeClassificationType"/>s to their related <see cref="string"/>s
+        /// </summary>
+        public static IReadOnlyDictionary<ExpenseClassificationType, string> ExpenseClassificationTypeToStringMapper { get; } = Enum.GetValues<ExpenseClassificationType>().ToImmutableDictionary(x => x, x => x.ToString());
+
+        /// <summary>
+        /// Maps the <see cref="IncomeClassificationType"/>s to their related <see cref="string"/>s
+        /// </summary>
+        public static IReadOnlyDictionary<ExpenseClassificationCategory, string> ExpenseClassificationCategoryToStringMapper { get; } = Enum.GetValues<ExpenseClassificationCategory>().ToImmutableDictionary(x => x, x => x.ToString().ToLower());
 
         /// <summary>
         /// Maps the <see cref="FuelCodeCategoryType"/>s to their related <see cref="int"/>s

@@ -13,19 +13,19 @@ namespace PAROCHOSClient
         /// Public Authority Identifier (Required only for B2G) 
         /// </summary>
         [JsonProperty("contractingAuthorityID")]
-        public string ContractingAuthorityId { get; set; }
+        public string? ContractingAuthorityId { get; set; }
 
         /// <summary>
         /// The Identifier of the contract with the public Institution(Required only for B2G)
         /// </summary>
         [JsonProperty("contractIdentifier")]
-        public string ContractIdentifier { get; set; }
+        public string? ContractIdentifier { get; set; }
 
         /// <summary>
         /// The budget
         /// </summary>
         [JsonProperty("budget")]
-        public InvoicePublishDetailBudgetRequestModel Budget { get; set; }
+        public InvoicePublishDetailBudgetRequestModel? Budget { get; set; }
 
         #endregion
 

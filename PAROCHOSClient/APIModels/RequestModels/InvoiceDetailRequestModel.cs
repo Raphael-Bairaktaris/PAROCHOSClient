@@ -44,11 +44,10 @@ namespace PAROCHOSClient
 
         /// <summary>
         /// Invoice Detail Type when necessary according Tax Authorities' documentation
-        /// TODO
         /// </summary>
         [JsonProperty("invoiceDetailType")]
-        [JsonConverter(typeof(InvoiceTypeToStringJsonConverter))]
-        public InvoiceType? InvoiceDetailType { get; set; }
+        [JsonConverter(typeof(InvoiceDetailTypeToIntJsonConverter))]
+        public InvoiceDetailType? InvoiceDetailType { get; set; }
 
         /// <summary>
         /// Fuel Code according to Tax Authorities' documentation
@@ -75,7 +74,7 @@ namespace PAROCHOSClient
         /// </summary>
         [JsonRequired]
         [JsonProperty("`vatCategory")]
-        [JsonConverter(typeof(VATCategoryToIntMapper))]
+        [JsonConverter(typeof(VATCategoryToIntJsonConverter))]
         public VATCategory? VATCategory { get; set; }
 
         /// <summary>
@@ -90,7 +89,7 @@ namespace PAROCHOSClient
         /// VAT (Value Added Tax) exemption category according to Tax Authorities' documentation 
         /// </summary>
         [JsonProperty("vatExemption")]
-        [JsonConverter(typeof(VATExemptionCategoryToIntMapper))]
+        [JsonConverter(typeof(VATExemptionCategoryToIntJsonConverter))]
         public VATExemptionCategory? VATExemption { get; set; }
 
         /// <summary>
@@ -118,7 +117,7 @@ namespace PAROCHOSClient
         /// </summary>
         [JsonRequired]
         [JsonProperty("measurementUnit")]
-        [JsonConverter(typeof(MeasurementUnitToIntMapper))]
+        [JsonConverter(typeof(MeasurementUnitToIntJsonConverter))]
         public MeasurementUnit? MeasurementUnit { get; set; }
 
         /// <summary>
@@ -138,28 +137,26 @@ namespace PAROCHOSClient
         /// <summary>
         /// Classification category according to Tax Authorities' documentation (The system 
         /// automatically resolves whether it represents income or expense classification) 
-        /// TODO: Classification category from bratnet are presented as a list, PAROCHOS requires them as a string
-        /// Proper documentation is missing
         /// </summary>
         [JsonProperty("classificationCategory")]
-        public ExpenseClassificationCategory? ClassificationCategory { get; set; }
+        [JsonConverter(typeof(IncomeClassificationCategoryToStringJsonConverter))]
+        public IncomeClassificationCategory? ClassificationCategory { get; set; }
 
         /// <summary>
         /// Classification type according to Tax Authorities' documentation (The system 
         /// automatically resolves whether it represents income or expense classification) 
-        /// TODO: Classification category from bratnet are presented as a list, PAROCHOS requires them as a string
-        /// Proper documentation is missing
         /// </summary>
         [JsonProperty("classificationType")]
-        public ExpenseClassificationType? ClassificationType { get; set; }
+        [JsonConverter(typeof(IncomeClassificationTypeToStringJsonConverter))]
+        public IncomeClassificationType? ClassificationType { get; set; }
 
-        /// <summary>
-        /// VAT classification type of in case of expense classification 
-        /// according to Tax Authorities' documentation
-        /// TODO: Classification vat type might be an enum
-        /// </summary>
-        [JsonProperty("classificationVatType")]
-        public string? ClassificationVATType { get; set; }
+        ///// <summary>
+        ///// VAT classification type of in case of expense classification 
+        ///// according to Tax Authorities' documentation
+        ///// TODO: Classification vat type might be an enum
+        ///// </summary>
+        //[JsonProperty("classificationVatType")]
+        //public string? ClassificationVATType { get; set; }
 
         /// <summary>
         /// Classification code for public procurement. 

@@ -1,23 +1,19 @@
 ﻿using Newtonsoft.Json;
 using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PAROCHOSClient
 {
     /// <summary>
     /// A <see cref="JsonConverter{T}"/> that converts a <see cref="PublishType"/> to <see cref="int"/>
     /// </summary>
-    public class PublishTypeToIntMapper : BaseEnumToIntJsonConverter<PublishType>
+    public class PublishTypeToIntJsonConverter : BaseEnumToIntJsonConverter<PublishType>
     {
         #region Constructors
 
         /// <summary>
         /// Default constructor
         /// </summary>
-        public PublishTypeToIntMapper() : base()
+        public PublishTypeToIntJsonConverter() : base()
         {
 
         }

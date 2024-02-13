@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using System.Collections.Generic;
 
 namespace PAROCHOSClient
 {
@@ -14,42 +15,42 @@ namespace PAROCHOSClient
         /// </summary>
         [JsonRequired]
         [JsonProperty("issuer")]
-        public InvoiceIssuerRequestModel Issuer { get; set; }
+        public InvoiceIssuerRequestModel? Issuer { get; set; }
 
         /// <summary>
         /// Counterpart's information
         /// </summary>
         [JsonRequired]
         [JsonProperty("counterpart")]
-        public InvoiceCounterpartRequestModel Counterpart { get; set; }
+        public InvoiceCounterpartRequestModel? Counterpart { get; set; }
 
         /// <summary>
         /// Tax Representative’s details if exists 
         /// </summary>
         [JsonRequired]
         [JsonProperty("representative")]
-        public InvoiceRepresentativeRequestModel Representative { get; set; }
+        public InvoiceRepresentativeRequestModel? Representative { get; set; }
 
         /// <summary>
         /// Shipping address details
         /// </summary>
         [JsonRequired]
         [JsonProperty("deliveryAddress")]
-        public InvoceDeliveryAddressRequestModel DeliveryAddress { get; set; }
+        public InvoceDeliveryAddressRequestModel? DeliveryAddress { get; set; }
 
         /// <summary>
         /// Header of the invoice
         /// </summary>
         [JsonRequired]
         [JsonProperty("invoiceHeader")]
-        public InvoiceHeaderRequestModel InvoiceHeader { get; set; }
+        public InvoiceHeaderRequestModel? InvoiceHeader { get; set; }
 
         /// <summary>
         /// Lines of the invoice
         /// </summary>
         [JsonRequired]
         [JsonProperty("invoiceDetails")]
-        public IEnumerable<InvoiceDetailRequestModel> InvoiceDetails { get; set; }
+        public IEnumerable<InvoiceDetailRequestModel>? InvoiceDetails { get; set; }
 
 
         /// <summary>
@@ -83,7 +84,7 @@ namespace PAROCHOSClient
         /// Type of Electronic Invoice Transmission
         /// </summary>
         [JsonProperty("publishType")]
-        [JsonConverter(typeof(PublishTypeToIntMapper))]
+        [JsonConverter(typeof(PublishTypeToIntJsonConverter))]
         public PublishType? PublishType { get; set; }
 
         /// <summary>
@@ -93,7 +94,7 @@ namespace PAROCHOSClient
         public InvoicePublishDetailRequestModel? PublishDetails { get; set; }
 
         /// <summary>
-        /// Recipients information & type of message template
+        /// Recipients information and type of message template
         /// </summary>
         [JsonProperty("messages")]
         public IEnumerable<InvoiceDetailMessageRequestModel>? Messages { get; set; }

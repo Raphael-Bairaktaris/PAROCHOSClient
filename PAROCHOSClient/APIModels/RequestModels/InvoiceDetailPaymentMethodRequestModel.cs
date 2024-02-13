@@ -1,5 +1,4 @@
-﻿using BratnetProvider;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace PAROCHOSClient
 {
@@ -15,7 +14,7 @@ namespace PAROCHOSClient
         /// </summary>
         [JsonRequired]
         [JsonProperty("type")]
-        [JsonConverter(typeof(PaymentMethodToIntMapper))]
+        [JsonConverter(typeof(PaymentMethodToIntJsonConverter))]
         public PaymentMethod Type { get; set; }
 
         /// <summary>

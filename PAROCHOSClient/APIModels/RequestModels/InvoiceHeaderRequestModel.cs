@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using System;
 
 namespace PAROCHOSClient
 {
@@ -14,14 +15,14 @@ namespace PAROCHOSClient
         /// </summary>
         [JsonRequired]
         [JsonProperty("series")]
-        public string Series { get; set; }
+        public string? Series { get; set; }
 
         /// <summary>
         /// Invoice number (increasing number)
         /// </summary>
         [JsonRequired]
         [JsonProperty("aa")]
-        public double AA { get; set; }
+        public double? AA { get; set; }
 
         /// <summary>
         /// Invoice date
@@ -29,14 +30,14 @@ namespace PAROCHOSClient
         /// <remarks>https://en.wikipedia.org/wiki/ISO_8601</remarks>
         [JsonRequired]
         [JsonProperty("issueDate")]
-        public DateTime IssueDate { get; set; }
+        public DateTime? IssueDate { get; set; }
 
         /// <summary>
         /// Payment Due Date ISO 8601. In case the Amount due for payment is positive, 
         /// either the Payment due date(BT-9) or Payment terms(BT-20) shall be present.
         /// </summary>
         [JsonProperty("dueDate")]
-        public DateOnly DueDate { get; set; }
+        public DateOnly? DueDate { get; set; }
 
         /// <summary>
         /// A textual description of the payment terms that apply to the amount due for 
@@ -45,20 +46,20 @@ namespace PAROCHOSClient
         /// terms(BT-20) shall be present.
         /// </summary>
         [JsonProperty("paymentTerms")]
-        public string PaymentTerms { get; set; }
+        public string? PaymentTerms { get; set; }
 
         /// <summary>
         /// Dispatch date
         /// </summary>
         /// <remarks>https://en.wikipedia.org/wiki/ISO_8601</remarks>
         [JsonProperty("dispatchDate")]
-        public DateOnly DispatchDate { get; set; }
+        public DateOnly? DispatchDate { get; set; }
 
         /// <summary>
         /// Invoice code
         /// </summary>
         [JsonProperty("invoiceCode")]
-        public string InvoiceCode { get; set; }
+        public string? InvoiceCode { get; set; }
 
         /// <summary>
         /// Invoice Type according to Tax Authorities' documentation
@@ -66,14 +67,14 @@ namespace PAROCHOSClient
         [JsonRequired]
         [JsonProperty("invoiceType")]
         [JsonConverter(typeof(InvoiceTypeToStringJsonConverter))]
-        public InvoiceType InvoiceType { get; set; }
+        public InvoiceType? InvoiceType { get; set; }
 
         /// <summary>
         /// Invoice Type according to UBL 2.1 documentation
         /// TODO
         /// </summary>
         [JsonProperty("invoiceTypeUbl")]
-        public string InvoiceTypeUbl { get; set; }
+        public string? InvoiceTypeUbl { get; set; }
 
         /// <summary>
         /// Currency of invoice
@@ -82,26 +83,26 @@ namespace PAROCHOSClient
         [JsonRequired]
         [JsonProperty("currency")]
         [JsonConverter(typeof(CurrencyCodeToStringJsonConverter))]
-        public CurrencyCode Currency { get; set; }
+        public CurrencyCode? Currency { get; set; }
 
         /// <summary>
         /// Indicates whether the invoice is self pricing. Default is fault
         /// </summary>
         [JsonProperty("selfPricing")]
-        public bool IsSelfPricing { get; set; }
+        public bool? IsSelfPricing { get; set; }
 
         /// <summary>
         /// Move purpose according to tax authorities documentation
         /// </summary>
         [JsonProperty("movePurpose")]
         [JsonConverter(typeof(MovePurposeToIntJsonConverter))]
-        public MovePurpose MovePurpose { get; set; }
+        public MovePurpose? MovePurpose { get; set; }
 
         /// <summary>
         /// Indicates whether the invoice is related to fuel … Default is false 
         /// </summary>
         [JsonProperty("fuleInvoice")]
-        public bool FuelInvoice { get; set; }
+        public bool? FuelInvoice { get; set; }
 
         #endregion
 

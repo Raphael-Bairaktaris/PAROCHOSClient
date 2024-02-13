@@ -13,13 +13,13 @@ namespace PAROCHOSClient
         /// Original Invoice id as defined in your ERP System
         /// </summary>
         [JsonProperty("extSystemId")]
-        public string ExitSystemId { get; set; }
+        public string? ExitSystemId { get; set; }
 
         /// <summary>
         /// Original Invoice transmission M.AR.K
         /// </summary>
         [JsonProperty("mark")]
-        public long Mark { get; set; }
+        public long? Mark { get; set; }
 
         #endregion
 

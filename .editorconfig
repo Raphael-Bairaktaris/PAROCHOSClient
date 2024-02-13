@@ -2,3 +2,7 @@
 
 # VSSpell001: Spell Check
 dotnet_diagnostic.VSSpell001.severity = none
+
+dotnet_diagnostic.CS1584.severity = none
+
+dotnet_diagnostic.CS1658.severity = none

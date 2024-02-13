@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics.Tracing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace PAROCHOSClient
+﻿namespace PAROCHOSClient
 {
     /// <summary>
     /// Provides enumeration over the publish types
@@ -25,6 +18,6 @@ namespace PAROCHOSClient
         /// <summary>
         /// b2g
         /// </summary>
-        B2G 
+        B2G
     }
 }

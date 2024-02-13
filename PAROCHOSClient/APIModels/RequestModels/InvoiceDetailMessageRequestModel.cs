@@ -1,6 +1,5 @@
 ﻿using Newtonsoft.Json;
-using System.Net.Mail;
-using System.Text;
+using System.Collections.Generic;
 
 namespace PAROCHOSClient
 {
@@ -16,28 +15,28 @@ namespace PAROCHOSClient
         /// </summary>
         [JsonRequired]
         [JsonProperty("messageType")]
-        [JsonConverter(typeof(MessageTypeToIntMapper))]
-        public MessageType MessageType { get; set; }
+        [JsonConverter(typeof(MessageTypeToIntJsonConverter))]
+        public MessageType? MessageType { get; set; }
 
         /// <summary>
         /// Email or mobile number of the recipients separated by “;”
-        /// TODO
         /// </summary>
         [JsonProperty("recipients")]
-        public StringBuilder Recipients { get; set; }
+        [JsonConverter(typeof(StringEnumerableToSemiColonSeparatedString))]
+        public IEnumerable<string>? Recipients { get; set; }
 
         /// <summary>
         /// Cc emails separated by “;”
-        /// TODO
         /// </summary>
         [JsonProperty("cc")]
-        public StringBuilder CC { get; set; }
+        [JsonConverter(typeof(StringEnumerableToSemiColonSeparatedString))]
+        public IEnumerable<string>? CC { get; set; }
 
         /// <summary>
         /// Identifier of message template, when not included the default message template is applied.
         /// </summary>
         [JsonProperty("templateIdentifier")]
-        public string TemplateIdentifier { get; set; }
+        public string? TemplateIdentifier { get; set; }
 
         #endregion
 

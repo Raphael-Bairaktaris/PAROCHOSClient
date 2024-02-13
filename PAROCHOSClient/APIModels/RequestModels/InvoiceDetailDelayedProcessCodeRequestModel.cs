@@ -2,7 +2,9 @@
 
 namespace PAROCHOSClient
 {
-    //Requests used for creating or updating a delayed process code
+    /// <summary>
+    /// Request model used for creating a delayed process code
+    /// </summary>
     public class InvoiceDetailDelayedProcessCodeRequestModel
     {
         #region Public Properties
@@ -12,7 +14,7 @@ namespace PAROCHOSClient
         /// as it was provided at issue to mobile application
         /// </summary>
         [JsonProperty("delayedProcessCode")]
-        public string DelayedProcessCode { get; set; }
+        public string? DelayedProcessCode { get; set; }
 
         #endregion
 
