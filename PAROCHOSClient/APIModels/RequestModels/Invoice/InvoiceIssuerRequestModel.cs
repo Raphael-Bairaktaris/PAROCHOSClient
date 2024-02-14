@@ -14,7 +14,7 @@ namespace PAROCHOSClient
         /// </summary>
         [JsonRequired]
         [JsonProperty("vatNumber")]
-        public double? VatNumber { get; set; }
+        public string? VatNumber { get; set; }
 
         /// <summary>
         /// Issuer’s Company Branch N/A as registered in Tax Authorities' platform

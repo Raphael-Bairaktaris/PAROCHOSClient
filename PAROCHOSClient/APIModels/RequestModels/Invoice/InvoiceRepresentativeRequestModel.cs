@@ -13,7 +13,7 @@ namespace PAROCHOSClient
         /// Representative's TIN (Tax Identifier Number)
         /// </summary>
         [JsonProperty("vatNumber")]
-        public double? VATNumber { get; set; }
+        public string? VATNumber { get; set; }
 
         /// <summary>
         /// Representative's title

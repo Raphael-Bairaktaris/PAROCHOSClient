@@ -8,14 +8,27 @@ namespace PAROCHOSClient
     /// </summary>
     public class PublishLogDetailResponseModel
     {
+        #region Private Members
+
+        /// <summary>
+        /// The member of the <see cref="Message"/> property
+        /// </summary>
+        private string? mMessage;
+
+        #endregion
+
         #region Public Properties
 
         /// <summary>
-        /// Publish log entry detailed message. 
+        /// Publish log entry detailed message. Possible error messages described in
         /// </summary>
-        /// <remarks> Possible error messages described in https://parochos.gr/files/API_Documentation_Provider.pdf#page=34&zoom=100,69,589</remarks>
+        /// <remarks>https://parochos.gr/files/API_Documentation_Provider.pdf#page=34&zoom=100,69,589</remarks>
         [JsonProperty("message")]
-        public string Message { get; set; }
+        public string Message 
+        { 
+            get => mMessage ?? string.Empty;
+            set => mMessage = value;
+        }
 
         /// <summary>
         /// Publish log entry status.

@@ -31,7 +31,8 @@ namespace PAROCHOSClient
         /// <remarks>https://en.wikipedia.org/wiki/ISO_8601</remarks>
         [JsonRequired]
         [JsonProperty("issueDate")]
-        public DateTime? IssueDate { get; set; }
+        [JsonConverter(typeof(DateOnlyToStringJsonConverter))]
+        public DateOnly? IssueDate { get; set; }
 
         /// <summary>
         /// Payment Due Date ISO 8601. In case the Amount due for payment is positive, 
@@ -54,6 +55,7 @@ namespace PAROCHOSClient
         /// </summary>
         /// <remarks>https://en.wikipedia.org/wiki/ISO_8601</remarks>
         [JsonProperty("dispatchDate")]
+        [JsonConverter(typeof(DateOnlyToStringJsonConverter))]
         public DateOnly? DispatchDate { get; set; }
 
         /// <summary>

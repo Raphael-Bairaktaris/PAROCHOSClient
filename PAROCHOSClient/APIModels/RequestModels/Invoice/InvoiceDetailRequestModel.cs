@@ -96,7 +96,8 @@ namespace PAROCHOSClient
         /// VAT (Value Added Tax) Exemption category according to UBL 2.1 documentation
         /// </summary>
         [JsonProperty("vatExemptionUbl")]
-        public string? VATExemptionUbl { get; set; }
+        [JsonConverter(typeof(VATExemptionCategoryUBLToStringJsonConverter))]
+        public VATExemptionCategoryUBL? VATExemptionUbl { get; set; }
 
         /// <summary>
         /// VAT amount

@@ -5,7 +5,7 @@ namespace PAROCHOSClient
     /// <summary>
     /// Requests used for creating or updating a payment method
     /// </summary>
-    public class InvoiceDetailPaymentMethodRequestModel
+    public class InvoicePaymentMethodRequestModel
     {
         #region Public Properties
 
@@ -15,13 +15,13 @@ namespace PAROCHOSClient
         [JsonRequired]
         [JsonProperty("type")]
         [JsonConverter(typeof(PaymentMethodToIntJsonConverter))]
-        public PaymentMethod Type { get; set; }
+        public PaymentMethod? Type { get; set; }
 
         /// <summary>
         /// Portion of net amount
         /// </summary>
         [JsonProperty("amount")]
-        public decimal Amount { get; set; }
+        public decimal? Amount { get; set; }
 
         #endregion
 
@@ -30,7 +30,7 @@ namespace PAROCHOSClient
         /// <summary>
         /// Default constructor
         /// </summary>
-        public InvoiceDetailPaymentMethodRequestModel() : base()
+        public InvoicePaymentMethodRequestModel() : base()
         {
 
         }

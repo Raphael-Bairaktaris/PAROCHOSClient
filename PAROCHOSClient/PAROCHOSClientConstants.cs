@@ -406,7 +406,7 @@ namespace PAROCHOSClient
         }.ToImmutableDictionary();
 
         /// <summary>
-        /// Maps the <see cref="InvoiceType"/>s to their related <see cref="int"/>s
+        /// Maps the <see cref="InvoiceType"/>s to their related <see cref="string"/>s
         /// </summary>
         public static IReadOnlyDictionary<InvoiceType, string> InvoiceTypeToStringMapper { get; } = new Dictionary<InvoiceType, string>()
         {

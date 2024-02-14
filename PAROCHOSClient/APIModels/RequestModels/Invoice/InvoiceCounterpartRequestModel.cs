@@ -13,7 +13,7 @@ namespace PAROCHOSClient
         /// Counterpart's VAT (Value Added Tax) number 
         /// </summary>
         [JsonProperty("vatNumber")]
-        public double VATNumber { get; set; }
+        public string VATNumber { get; set; }
 
         /// <summary>
         /// Counterpart's branch

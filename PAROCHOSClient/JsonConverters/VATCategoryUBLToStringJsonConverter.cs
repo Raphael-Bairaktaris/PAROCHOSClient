@@ -13,7 +13,7 @@ namespace PAROCHOSClient
         /// <summary>
         /// Default constructor
         /// </summary>
-        public VATCategoryUBLJsonConverter() : base()
+        public VATCategoryUBLToStringJsonConverter() : base()
         {
 
         }

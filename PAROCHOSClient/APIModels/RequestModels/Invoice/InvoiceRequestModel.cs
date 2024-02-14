@@ -57,7 +57,7 @@ namespace PAROCHOSClient
         /// List of payment Methods applied with different type and portion of net value
         /// </summary>
         [JsonProperty("paymentMethods")]
-        public IEnumerable<InvoiceDetailPaymentMethodRequestModel>? PaymentMethods { get; set; }
+        public IEnumerable<InvoicePaymentMethodRequestModel>? PaymentMethods { get; set; }
 
         /// <summary>
         /// Fees and additional charges or allowances details, when charges are included
