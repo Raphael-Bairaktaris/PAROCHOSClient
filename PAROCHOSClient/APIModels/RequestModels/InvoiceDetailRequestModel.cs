@@ -79,11 +79,11 @@ namespace PAROCHOSClient
 
         /// <summary>
         /// VAT (Value Added Tax) Category according to UBL 2.1 documentation
-        /// TODO
         /// </summary>
         [JsonRequired]
         [JsonProperty("vatCategoryUbl")]
-        public string? VatCategoryUbl { get; set; }
+        [JsonConverter(typeof(VATCategoryUBLToStringJsonConverter))]
+        public VATCategoryUBL? VatCategoryUbl { get; set; }
 
         /// <summary>
         /// VAT (Value Added Tax) exemption category according to Tax Authorities' documentation 
@@ -122,11 +122,11 @@ namespace PAROCHOSClient
 
         /// <summary>
         /// Measurement Unit according to UBL 2.1 documentation
-        /// TODO
         /// </summary>
         [JsonRequired]
         [JsonProperty("measurementUnitUbl")]
-        public string? MeasurementUnitUbl { get; set; }
+        [JsonConverter(typeof(UBLMeasurementUnitToStringJsonConverter))]
+        public UBLMeasurementUnit? MeasurementUnitUbl { get; set; }
 
         /// <summary>
         /// Comments of line 

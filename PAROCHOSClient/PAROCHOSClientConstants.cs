@@ -491,7 +491,7 @@ namespace PAROCHOSClient
         /// <summary>
         /// Maps the <see cref="UBLMeasurementUnit"/>s to their related <see cref="string"/>s
         /// </summary>
-        public static IReadOnlyDictionary<UBLMeasurementUnit, string> MeasurementUnitUBLToStringMapper { get; } = new Dictionary<UBLMeasurementUnit, string>()
+        public static IReadOnlyDictionary<UBLMeasurementUnit, string> UBLMeasurementUnitToStringMapper { get; } = new Dictionary<UBLMeasurementUnit, string>()
         {
             { UBLMeasurementUnit.Group, "10" },
             { UBLMeasurementUnit.Outfit, "11" },

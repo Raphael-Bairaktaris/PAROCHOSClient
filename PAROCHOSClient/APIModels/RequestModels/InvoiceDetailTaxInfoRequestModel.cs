@@ -18,10 +18,10 @@ namespace PAROCHOSClient
 
         /// <summary>
         /// Charge/allowance category according to UBL 2.1 documentation
-        /// TODO
         /// </summary>
         [JsonProperty("taxCategoryUbl")]
-        public string? TaxCategoryUbl { get; set; }
+        [JsonConverter(typeof(Tax))]
+        public TaxCategoryUBL? TaxCategoryUbl { get; set; }
 
         /// <summary>
         /// Total amount subject to a specific charge/allowance category
