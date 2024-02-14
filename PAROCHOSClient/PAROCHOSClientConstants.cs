@@ -275,6 +275,41 @@ namespace PAROCHOSClient
         public static IReadOnlyDictionary<CurrencyCode, string> CurrencyCodeToStringMapper { get; } = Enum.GetValues<CurrencyCode>().ToImmutableDictionary(x => x, x => x.ToString());
 
         /// <summary>
+        /// Maps the <see cref="EntryStatusType"/>s to their related <see cref="string"/>s
+        /// </summary>
+        public static IReadOnlyDictionary<EntryStatusType, int> EntryStatusTypeTointMapper { get; } = new Dictionary<EntryStatusType, int>()
+        {
+            { EntryStatusType.Pending, 0 },
+            { EntryStatusType.EInvoiceReceived, 1 },
+            { EntryStatusType.Accepted, 2 },
+            { EntryStatusType.Rejected, 3 },
+            { EntryStatusType.InProcess, 4 },
+            { EntryStatusType.UnderQuery, 5 },
+            { EntryStatusType.ConditionallyAccepted, 6 },
+            { EntryStatusType.Paid, 7 },
+        }.ToImmutableDictionary();
+
+        /// <summary>
+        /// Maps the <see cref="ErrorCategory"/> to their related <see cref="string"/>s
+        /// </summary>
+        public static IReadOnlyDictionary<ErrorCategory, string> ErrorCategoryToStringMapper { get; } = new Dictionary<ErrorCategory, string>()
+        {
+            { ErrorCategory.ProviderTechnicalError, "TED" },
+            { ErrorCategory.ProviderBusinessError, "BED" },
+            { ErrorCategory.TechnicalErrorByTaxAuthorities, "TTA" },
+            { ErrorCategory.BusinessErrorByTaxAuthorities, "BTA" }
+        }.ToImmutableDictionary();
+
+        /// <summary>
+        /// Maps the <see cref="ErrorSeverity"/> to their related <see cref="string"/>s
+        /// </summary>
+        public static IReadOnlyDictionary<ErrorSeverity, int> ErrorSeverityToIntMapper { get; } = new Dictionary<ErrorSeverity, int>()
+        {
+            { ErrorSeverity.Warning, 1 },
+            { ErrorSeverity.Error, 2 }
+        }.ToImmutableDictionary();
+
+        /// <summary>
         /// Maps the <see cref="IncomeClassificationType"/>s to their related <see cref="string"/>s
         /// </summary>
         public static IReadOnlyDictionary<IncomeClassificationType, string> IncomeClassificationTypeToStringMapper { get; } = Enum.GetValues<IncomeClassificationType>().ToImmutableDictionary(x => x, x => x.ToString());
@@ -293,6 +328,16 @@ namespace PAROCHOSClient
         /// Maps the <see cref="IncomeClassificationType"/>s to their related <see cref="string"/>s
         /// </summary>
         public static IReadOnlyDictionary<ExpenseClassificationCategory, string> ExpenseClassificationCategoryToStringMapper { get; } = Enum.GetValues<ExpenseClassificationCategory>().ToImmutableDictionary(x => x, x => x.ToString().ToLower());
+
+        /// <summary>
+        /// Maps the <see cref="FileIdentifierType"/>s to their related <see cref="string"/>s
+        /// </summary>
+        public static IReadOnlyDictionary<FileIdentifierType, string> FileIdentifierToStringJsonConverter { get; } = new Dictionary<FileIdentifierType, string>()
+        {
+            { FileIdentifierType.PDF, "pdf" },
+            { FileIdentifierType.MyDataXML, "mydataxml" },
+            { FileIdentifierType.EInvoiceXML, "einvoicexml" }
+        }.ToImmutableDictionary();
 
         /// <summary>
         /// Maps the <see cref="FuelCodeCategoryType"/>s to their related <see cref="int"/>s
@@ -2706,6 +2751,16 @@ namespace PAROCHOSClient
         }.ToImmutableDictionary();
 
         /// <summary>
+        /// Maps the <see cref="StatusType"/>s to their related <see cref="string"/>s
+        /// </summary>
+        public static IReadOnlyDictionary<StatusType, int> StatusTypeToIntMapper { get; } = new Dictionary<StatusType, int>()
+        {
+            { StatusType.InProgress, 0 },
+            { StatusType.Completed, 1 },
+            { StatusType.Failed, 2 }
+        }.ToImmutableDictionary();
+
+        /// <summary>
         /// Maps the <see cref="TaxCategoryUBL"/>s to their related <see cref="string"/>s
         /// </summary>
         public static IReadOnlyDictionary<TaxCategoryUBL, string> TaxCategoryUBLToStringMapper { get; } = new Dictionary<TaxCategoryUBL, string>()
@@ -2887,7 +2942,6 @@ namespace PAROCHOSClient
             { VATExemptionCategoryUBL.VATEX_EU_O, "VATEX-EU-O" },
             { VATExemptionCategoryUBL.VATEX_EU_J, "VATEX-EU-J" },
         }.ToImmutableDictionary();
-
 
         /// <summary>
         /// Maps the <see cref="VATExemptionTypeUBL"/>s to their related <see cref="string"/>s

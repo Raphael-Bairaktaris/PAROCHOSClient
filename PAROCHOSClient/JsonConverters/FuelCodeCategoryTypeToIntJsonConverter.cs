@@ -6,14 +6,14 @@ namespace PAROCHOSClient
     /// <summary>
     /// A <see cref="JsonConverter{T}"/> that converts a <see cref="FuelCodeCategoryType"/> to <see cref="int"/>
     /// </summary>
-    public class FuelCodeCategoryTypeToIntMapper : BaseEnumToIntJsonConverter<FuelCodeCategoryType>
+    public class FuelCodeCategoryTypeToIntJsonConverter : BaseEnumToIntJsonConverter<FuelCodeCategoryType>
     {
         #region Constructors
 
         /// <summary>
         /// Default constructor
         /// </summary>
-        public FuelCodeCategoryTypeToIntMapper() : base()
+        public FuelCodeCategoryTypeToIntJsonConverter() : base()
         {
 
         }

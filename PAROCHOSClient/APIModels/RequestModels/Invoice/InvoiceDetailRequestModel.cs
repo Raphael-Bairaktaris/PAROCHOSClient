@@ -19,7 +19,7 @@ namespace PAROCHOSClient
         /// Line type according to Tax Authorities' documentation
         /// </summary>
         [JsonProperty("recType")]
-        [JsonConverter(typeof(LineItemToIntMapper))]
+        [JsonConverter(typeof(LineItemToIntJsonConverter))]
         public LineItemType? RecType { get; set; }
 
         /// <summary>
@@ -53,7 +53,7 @@ namespace PAROCHOSClient
         /// Fuel Code according to Tax Authorities' documentation
         /// </summary>
         [JsonProperty("fuelCode")]
-        [JsonConverter(typeof(FuelCodeCategoryTypeToIntMapper))]
+        [JsonConverter(typeof(FuelCodeCategoryTypeToIntJsonConverter))]
         public FuelCodeCategoryType? FuelCode { get; set; }
 
         /// <summary>

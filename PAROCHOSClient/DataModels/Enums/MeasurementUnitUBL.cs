@@ -1,4 +1,4 @@
-﻿namespace PAROCHOSClient 
+﻿namespace PAROCHOSClient
 {
     /// <summary>
     /// Provides enumeration over the UBL measurement units
