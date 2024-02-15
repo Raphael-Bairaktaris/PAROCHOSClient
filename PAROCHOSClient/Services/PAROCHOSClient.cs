@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 namespace PAROCHOSClient
 {
     /// <summary>
-    /// 
+    /// An agent that's capable of making requests to the PAROCHOS API
     /// </summary>
     public class PAROCHOSClient
     {
