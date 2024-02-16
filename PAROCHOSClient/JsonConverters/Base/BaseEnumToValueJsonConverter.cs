@@ -5,11 +5,9 @@ using System.Collections.Generic;
 namespace PAROCHOSClient
 {
     /// <summary>
-    /// 
+    /// The base for all the enum to value json converters
     /// </summary>
-    /// <typeparam name="T"></typeparam>
-    /// <typeparam name="TValue"></typeparam>
-    public abstract class BaseEnumToValueJsonConverter<T, TValue> : JsonConverter<T>
+    public abstract class BaseEnumToValueJsonConverter<T, TJsonValue, TValue> : JsonConverter<T>
         where T : Enum
     {
         #region Constructors
@@ -27,9 +25,12 @@ namespace PAROCHOSClient
         #region Public Methods
 
         /// <inheritdoc/>
-        public override sealed T ReadJson(JsonReader reader, Type objectType, T? existingValue, bool hasExistingValue, JsonSerializer serializer)
+        public override sealed T? ReadJson(JsonReader reader, Type objectType, T? existingValue, bool hasExistingValue, JsonSerializer serializer)
         {
-            var readerValue = serializer.Deserialize<TValue>(reader)!;
+            var readerValue = serializer.Deserialize<TJsonValue?>(reader)!;
+
+            if (readerValue is null)
+                return existingValue;
 
             foreach (var pair in GetMapper())
             {

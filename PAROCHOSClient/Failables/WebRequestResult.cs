@@ -16,7 +16,7 @@ namespace PAROCHOSClient
         /// <summary>
         /// The default headers
         /// </summary>
-        public static HttpResponseHeaders DefaultHeaders = new HttpResponseMessage().Headers;
+        public static readonly HttpResponseHeaders DefaultHeaders = new HttpResponseMessage().Headers;
 
         /// <summary>
         /// The error message for the exception
@@ -129,6 +129,25 @@ namespace PAROCHOSClient
         /// <returns></returns>
         public override string ToString() => IFailableHelpers.GetStringRepresentation(this);
 
+        /// <summary>
+        /// Creates and returns a <see cref="WebRequestResult{T}"/> from the current object
+        /// </summary>
+        /// <typeparam name="T">The type of the failable</typeparam>
+        /// <param name="customErrorMessage">The custom error message</param>
+        /// <returns></returns>
+        public WebRequestResult<T> ToUnsuccessfulWebRequestResult<T>(string? customErrorMessage = null)
+            => new WebRequestResult<T>()
+            {
+                ErrorMessage = customErrorMessage ?? ErrorMessage,
+                ErrorType = ErrorType,
+                Exception = Exception,
+                ContentType = ContentType,
+                Headers = Headers,
+                RawServerResponse = RawServerResponse,
+                StatusCode = StatusCode,
+                StatusDescription = StatusDescription
+            };
+
         #endregion
 
         #region Operators
@@ -203,25 +222,6 @@ namespace PAROCHOSClient
         #endregion
 
         #region Public Methods
-
-        /// <summary>
-        /// Creates and returns a <see cref="WebRequestResult{T}"/> from the current object
-        /// </summary>
-        /// <typeparam name="T">The type of the failable</typeparam>
-        /// <param name="customErrorMessage">The custom error message</param>
-        /// <returns></returns>
-        public WebRequestResult<T> ToUnsuccessfulWebRequestResult<T>(string? customErrorMessage = null)
-            => new WebRequestResult<T>()
-            {
-                ErrorMessage = customErrorMessage ?? ErrorMessage,
-                ErrorType = ErrorType,
-                Exception = Exception,
-                ContentType = ContentType,
-                Headers = Headers,
-                RawServerResponse = RawServerResponse,
-                StatusCode = StatusCode,
-                StatusDescription = StatusDescription
-            };
 
         /// <summary>
         /// Creates and returns a <see cref="WebRequestResult{T}"/> from the current object

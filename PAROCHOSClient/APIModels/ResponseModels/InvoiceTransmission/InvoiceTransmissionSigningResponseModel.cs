@@ -43,7 +43,7 @@ namespace PAROCHOSClient
         /// Unique registration number of the invoice provided by AADE
         /// </summary>
         [JsonProperty("mark")]
-        public long Mark { get; set; }
+        public long? Mark { get; set; }
 
         /// <summary>
         /// Authentication code of the invoice provided by AADE.
@@ -76,7 +76,7 @@ namespace PAROCHOSClient
         /// Azure storage url with read rights to download the invoice pdf file.
         /// </summary>
         [JsonProperty("pdfFileUrl")]
-        public Uri PDFFileUrl { get; set; }
+        public Uri? PDFFileUrl { get; set; }
 
         #endregion
 

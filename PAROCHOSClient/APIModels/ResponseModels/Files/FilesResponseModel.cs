@@ -11,25 +11,25 @@ namespace PAROCHOSClient
     /// <summary>
     /// Represents a download file response
     /// </summary>
-    public class DownloadFileResponseModel : BaseParochosResponseModel
+    public class FilesResponseModel : BasePAROCHOSResponseModel
     {
         #region private Members
 
         /// <summary>
         /// The member of the <see cref="Files"/> property
         /// </summary>
-        private IEnumerable<DownloadFileDetailsResponseModel>? mFiles;
+        private IEnumerable<FileResponseModel>? mFiles;
 
         #endregion
 
         #region Public Properties
 
         /// <summary>
-        /// The file details
+        /// The files
         /// </summary>
-        public IEnumerable<DownloadFileDetailsResponseModel> Files 
+        public IEnumerable<FileResponseModel> Files 
         { 
-            get => mFiles ?? Enumerable.Empty<DownloadFileDetailsResponseModel>();
+            get => mFiles ?? Enumerable.Empty<FileResponseModel>();
             set => mFiles = value;
         }
 
@@ -40,7 +40,7 @@ namespace PAROCHOSClient
         /// <summary>
         /// Default constructor
         /// </summary>
-        public DownloadFileResponseModel() : base()
+        public FilesResponseModel() : base()
         {
 
         }

@@ -4,56 +4,6 @@
         <name>PAROCHOSClient</name>
     </assembly>
     <members>
-        <member name="T:PAROCHOSClient.AzureStorageRequestModel">
-            <summary>
-            Requests used for azure storage
-            </summary>
-        </member>
-        <member name="P:PAROCHOSClient.AzureStorageRequestModel.ProcessId">
-            <summary>
-            Unique processId as returned by api/send. 
-            </summary>
-        </member>
-        <member name="P:PAROCHOSClient.AzureStorageRequestModel.ExternalSystemId">
-            <summary>
-            The external identifier provided as input to api/send method
-            </summary>
-        </member>
-        <member name="P:PAROCHOSClient.AzureStorageRequestModel.FileName">
-            <summary>
-            The name of the pdf file.
-            </summary>
-        </member>
-        <member name="P:PAROCHOSClient.AzureStorageRequestModel.FileSize">
-            <summary>
-            The size in bytes of the pdf file.
-            </summary>
-        </member>
-        <member name="M:PAROCHOSClient.AzureStorageRequestModel.#ctor">
-            <summary>
-            Default constructor
-            </summary>
-        </member>
-        <member name="T:PAROCHOSClient.AzureVerifyUploadRequestModel">
-            <summary>
-            Requests used for upload verification
-            </summary>
-        </member>
-        <member name="P:PAROCHOSClient.AzureVerifyUploadRequestModel.ProcessId">
-            <summary>
-            Unique processId as returned by api/send
-            </summary>
-        </member>
-        <member name="P:PAROCHOSClient.AzureVerifyUploadRequestModel.ExternalSystemId">
-            <summary>
-            The external identifier provided as input to api/send method
-            </summary>
-        </member>
-        <member name="M:PAROCHOSClient.AzureVerifyUploadRequestModel.#ctor">
-            <summary>
-            Default constructor
-            </summary>
-        </member>
         <member name="T:PAROCHOSClient.BaseParochosRequestModel">
             <summary>
             The base for all the parochos request models
@@ -99,6 +49,26 @@
             Default constructor
             </summary>
         </member>
+        <member name="T:PAROCHOSClient.FinalizeRequestModel">
+            <summary>
+            Request model that is used for verifying an Azure file upload
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.FinalizeRequestModel.ProcessId">
+            <summary>
+            Unique processId as returned by api/send
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.FinalizeRequestModel.ExternalSystemId">
+            <summary>
+            The external identifier provided as input to api/send method
+            </summary>
+        </member>
+        <member name="M:PAROCHOSClient.FinalizeRequestModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
         <member name="T:PAROCHOSClient.InvoiceTransmissionAttachmentRequestModel">
             <summary>
             Requests used for creating an invoice transmission
@@ -114,40 +84,71 @@
             Default constructor
             </summary>
         </member>
-        <member name="T:PAROCHOSClient.InvoiceTransmissionRequestModel">
+        <member name="T:PAROCHOSClient.InvoiceTransmissionRequestModel`1">
             <summary>
             Requests used for invoice transmission
             </summary>
+            <typeparam name="T">The type of the source</typeparam>
         </member>
-        <member name="P:PAROCHOSClient.InvoiceTransmissionRequestModel.ExternalSystemId">
+        <member name="P:PAROCHOSClient.InvoiceTransmissionRequestModel`1.ExternalSystemId">
             <summary>
             An identifier of the invoice specified by the client. Each invoice is validated based its status and this external ID. For
             example a signed invoice with the same external ID is not allowed to resend.
             </summary>
         </member>
-        <member name="P:PAROCHOSClient.InvoiceTransmissionRequestModel.Source">
+        <member name="P:PAROCHOSClient.InvoiceTransmissionRequestModel`1.Source">
             <summary>
             Json serialized object that contains the data to be send. 
             </summary>
         </member>
-        <member name="P:PAROCHOSClient.InvoiceTransmissionRequestModel.Identifier">
+        <member name="P:PAROCHOSClient.InvoiceTransmissionRequestModel`1.Identifier">
             <summary>
             The identifier of the template used to map the incoming invoice data to the model required by AADE Provider.
             This value is specified through UI configuration.
             </summary>
         </member>
-        <member name="P:PAROCHOSClient.InvoiceTransmissionRequestModel.TransmissionType">
+        <member name="P:PAROCHOSClient.InvoiceTransmissionRequestModel`1.TransmissionType">
             <summary>
-            Resolves the required type of transmission. Default value 0
+            Resolves the required type of transmission.
             </summary>
         </member>
-        <member name="P:PAROCHOSClient.InvoiceTransmissionRequestModel.Attachments">
+        <member name="P:PAROCHOSClient.InvoiceTransmissionRequestModel`1.Attachments">
             <summary>
             Base64 encoded binary data. A draft .txt file of the invoice. 
             It is the base64 representation string of the byte array of the file.
             </summary>
         </member>
-        <member name="M:PAROCHOSClient.InvoiceTransmissionRequestModel.#ctor">
+        <member name="M:PAROCHOSClient.InvoiceTransmissionRequestModel`1.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:PAROCHOSClient.UploadFileRequestRequestModel">
+            <summary>
+            Request model that is used for creating an upload file request
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.UploadFileRequestRequestModel.ProcessId">
+            <summary>
+            Unique processId as returned by api/send. 
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.UploadFileRequestRequestModel.ExternalSystemId">
+            <summary>
+            The external identifier provided as input to api/send method
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.UploadFileRequestRequestModel.FileName">
+            <summary>
+            The name of the PDF file.
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.UploadFileRequestRequestModel.FileSize">
+            <summary>
+            The size in bytes of the PDF file.
+            </summary>
+        </member>
+        <member name="M:PAROCHOSClient.UploadFileRequestRequestModel.#ctor">
             <summary>
             Default constructor
             </summary>
@@ -184,6 +185,223 @@
             </summary>
         </member>
         <member name="M:PAROCHOSClient.BaseAddressRequestModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:PAROCHOSClient.IncomeInvoiceDetailRequestModel">
+            <summary>
+            Requests used for creating or updating the invoice details
+            </summary>
+        </member>
+        <member name="F:PAROCHOSClient.IncomeInvoiceDetailRequestModel.mQuantity">
+            <summary>
+            The member of the <see cref="P:PAROCHOSClient.IncomeInvoiceDetailRequestModel.Quantity"/> property
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.IncomeInvoiceDetailRequestModel.RecType">
+            <summary>
+            Line type according to Tax Authorities' documentation
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.IncomeInvoiceDetailRequestModel.Quantity">
+            <summary>
+            Line quantity
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.IncomeInvoiceDetailRequestModel.Quantity15">
+            <summary>
+            Used only for Fuel Invoices and represents fuel quantity in 15oC
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.IncomeInvoiceDetailRequestModel.EntityName">
+            <summary>
+            Item's description
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.IncomeInvoiceDetailRequestModel.InvoiceDetailType">
+            <summary>
+            Invoice Detail Type when necessary according Tax Authorities' documentation
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.IncomeInvoiceDetailRequestModel.FuelCode">
+            <summary>
+            Fuel Code according to Tax Authorities' documentation
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.IncomeInvoiceDetailRequestModel.Amount">
+            <summary>
+            Line total amount
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.IncomeInvoiceDetailRequestModel.VATCategory">
+            <summary>
+            VAT (Value Added Tax) Category according to Tax Authorities' documentation 
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.IncomeInvoiceDetailRequestModel.VatCategoryUBL">
+            <summary>
+            VAT (Value Added Tax) Category according to UBL 2.1 documentation
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.IncomeInvoiceDetailRequestModel.VATExemption">
+            <summary>
+            VAT (Value Added Tax) exemption category according to Tax Authorities' documentation 
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.IncomeInvoiceDetailRequestModel.VATExemptionUBL">
+            <summary>
+            VAT (Value Added Tax) Exemption category according to UBL 2.1 documentation
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.IncomeInvoiceDetailRequestModel.MeasurementUnit">
+            <summary>
+            Measurement Unit according to Tax Authorities' documentation 
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.IncomeInvoiceDetailRequestModel.MeasurementUnitUBL">
+            <summary>
+            Measurement Unit according to UBL 2.1 documentation
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.IncomeInvoiceDetailRequestModel.LineComments">
+            <summary>
+            Comments of line 
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.IncomeInvoiceDetailRequestModel.ClassificationCategory">
+            <summary>
+            Classification category according to Tax Authorities' documentation (The system 
+            automatically resolves whether it represents income or expense classification) 
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.IncomeInvoiceDetailRequestModel.ClassificationType">
+            <summary>
+            Classification type according to Tax Authorities' documentation (The system 
+            automatically resolves whether it represents income or expense classification) 
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.IncomeInvoiceDetailRequestModel.CPVCode">
+            <summary>
+            Classification code for public procurement. 
+            Required only for B2G Transmission. 
+            </summary>
+            <example>publishType = 2</example>
+        </member>
+        <member name="P:PAROCHOSClient.IncomeInvoiceDetailRequestModel.TaxInfo">
+            <summary>
+            Charge/allowance applied on line level or charge 
+            with VAT in correspondence with “recType”
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.IncomeInvoiceDetailRequestModel.LineNumber">
+            <summary>
+            Invoice Line N/A
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.IncomeInvoiceDetailRequestModel.TaxAmount">
+            <summary>
+            VAT amount
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.IncomeInvoiceDetailRequestModel.NetAmount">
+            <summary>
+            Line net amount
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.IncomeInvoiceDetailRequestModel.Rate">
+            <summary>
+            VAT Percent
+            </summary>
+        </member>
+        <member name="M:PAROCHOSClient.IncomeInvoiceDetailRequestModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:PAROCHOSClient.IncomeInvoiceRequestModel">
+            <summary>
+            Request model used for sending an income invoice
+            </summary>
+        </member>
+        <member name="F:PAROCHOSClient.IncomeInvoiceRequestModel.mInvoiceDetails">
+            <summary>
+            The member of the <see cref="P:PAROCHOSClient.IncomeInvoiceRequestModel.Details"/> property
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.IncomeInvoiceRequestModel.Issuer">
+            <summary>
+            Issuer’s information 
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.IncomeInvoiceRequestModel.Counterpart">
+            <summary>
+            Counterpart's information
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.IncomeInvoiceRequestModel.Representative">
+            <summary>
+            Tax Representative’s details if exists 
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.IncomeInvoiceRequestModel.DeliveryAddress">
+            <summary>
+            Shipping address details
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.IncomeInvoiceRequestModel.Header">
+            <summary>
+            Header of the invoice
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.IncomeInvoiceRequestModel.Details">
+            <summary>
+            Lines of the invoice
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.IncomeInvoiceRequestModel.PaymentMethods">
+            <summary>
+            List of payment Methods applied with different type and portion of net value
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.IncomeInvoiceRequestModel.Taxes">
+            <summary>
+            Fees and additional charges or allowances details, when charges are included
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.IncomeInvoiceRequestModel.CorrelatedInvoices">
+            <summary>
+            Specific Invoice Types needs correlation between the invoice issued
+            and a previously issued related invoice
+            </summary>
+            <example>e.g. sales invoice-credit invoice</example>
+        </member>
+        <member name="P:PAROCHOSClient.IncomeInvoiceRequestModel.PublishType">
+            <summary>
+            Type of Electronic Invoice Transmission
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.IncomeInvoiceRequestModel.PublishDetails">
+            <summary>
+            Additional Information for B2B and B2G publishing
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.IncomeInvoiceRequestModel.Messages">
+            <summary>
+            Recipients information and type of message template
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.IncomeInvoiceRequestModel.DelayedProcessCode">
+            <summary>
+            Delayed process code
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.IncomeInvoiceRequestModel.InvoiceSummary">
+            <summary>
+            Summary of total amounts of the invoice 
+            </summary>
+        </member>
+        <member name="M:PAROCHOSClient.IncomeInvoiceRequestModel.#ctor">
             <summary>
             Default constructor
             </summary>
@@ -300,167 +518,22 @@
             Default constructor
             </summary>
         </member>
-        <member name="T:PAROCHOSClient.InvoiceDetailPaymentMethodRequestModel">
-            <summary>
-            Requests used for creating or updating a payment method
-            </summary>
-        </member>
-        <member name="P:PAROCHOSClient.InvoiceDetailPaymentMethodRequestModel.Type">
-            <summary>
-            Payment method code according to Tax Authorities' documentation 
-            </summary>
-        </member>
-        <member name="P:PAROCHOSClient.InvoiceDetailPaymentMethodRequestModel.Amount">
-            <summary>
-            Portion of net amount
-            </summary>
-        </member>
-        <member name="M:PAROCHOSClient.InvoiceDetailPaymentMethodRequestModel.#ctor">
-            <summary>
-            Default constructor
-            </summary>
-        </member>
-        <member name="T:PAROCHOSClient.InvoiceDetailRequestModel">
-            <summary>
-            Requests used for creating or updating the invoice details
-            </summary>
-        </member>
-        <member name="P:PAROCHOSClient.InvoiceDetailRequestModel.LineNumber">
-            <summary>
-            Invoice Line N/A
-            </summary>
-        </member>
-        <member name="P:PAROCHOSClient.InvoiceDetailRequestModel.RecType">
-            <summary>
-            Line type according to Tax Authorities' documentation
-            </summary>
-        </member>
-        <member name="P:PAROCHOSClient.InvoiceDetailRequestModel.Quantity">
-            <summary>
-            Line quantity
-            </summary>
-        </member>
-        <member name="P:PAROCHOSClient.InvoiceDetailRequestModel.Quantity15">
-            <summary>
-            Used only for Fuel Invoices and represents fuel quantity in 15oC
-            </summary>
-        </member>
-        <member name="P:PAROCHOSClient.InvoiceDetailRequestModel.EntityName">
-            <summary>
-            Item's description
-            </summary>
-        </member>
-        <member name="P:PAROCHOSClient.InvoiceDetailRequestModel.InvoiceDetailType">
-            <summary>
-            Invoice Detail Type when necessary according Tax Authorities' documentation
-            </summary>
-        </member>
-        <member name="P:PAROCHOSClient.InvoiceDetailRequestModel.FuelCode">
-            <summary>
-            Fuel Code according to Tax Authorities' documentation
-            </summary>
-        </member>
-        <member name="P:PAROCHOSClient.InvoiceDetailRequestModel.NetValue">
-            <summary>
-            Line net amount
-            </summary>
-        </member>
-        <member name="P:PAROCHOSClient.InvoiceDetailRequestModel.TotalValue">
-            <summary>
-            Line total amount
-            </summary>
-        </member>
-        <member name="P:PAROCHOSClient.InvoiceDetailRequestModel.VATCategory">
-            <summary>
-            VAT (Value Added Tax) Category according to Tax Authorities' documentation 
-            </summary>
-        </member>
-        <member name="P:PAROCHOSClient.InvoiceDetailRequestModel.VatCategoryUbl">
-            <summary>
-            VAT (Value Added Tax) Category according to UBL 2.1 documentation
-            </summary>
-        </member>
-        <member name="P:PAROCHOSClient.InvoiceDetailRequestModel.VATExemption">
-            <summary>
-            VAT (Value Added Tax) exemption category according to Tax Authorities' documentation 
-            </summary>
-        </member>
-        <member name="P:PAROCHOSClient.InvoiceDetailRequestModel.VATExemptionUbl">
-            <summary>
-            VAT (Value Added Tax) Exemption category according to UBL 2.1 documentation
-            </summary>
-        </member>
-        <member name="P:PAROCHOSClient.InvoiceDetailRequestModel.VATAmount">
-            <summary>
-            VAT amount
-            </summary>
-        </member>
-        <member name="P:PAROCHOSClient.InvoiceDetailRequestModel.VATPercent">
-            <summary>
-            VAT Percent
-            </summary>
-        </member>
-        <member name="P:PAROCHOSClient.InvoiceDetailRequestModel.MeasurementUnit">
-            <summary>
-            Measurement Unit according to Tax Authorities' documentation 
-            </summary>
-        </member>
-        <member name="P:PAROCHOSClient.InvoiceDetailRequestModel.MeasurementUnitUbl">
-            <summary>
-            Measurement Unit according to UBL 2.1 documentation
-            </summary>
-        </member>
-        <member name="P:PAROCHOSClient.InvoiceDetailRequestModel.LineComments">
-            <summary>
-            Comments of line 
-            </summary>
-        </member>
-        <member name="P:PAROCHOSClient.InvoiceDetailRequestModel.ClassificationCategory">
-            <summary>
-            Classification category according to Tax Authorities' documentation (The system 
-            automatically resolves whether it represents income or expense classification) 
-            </summary>
-        </member>
-        <member name="P:PAROCHOSClient.InvoiceDetailRequestModel.ClassificationType">
-            <summary>
-            Classification type according to Tax Authorities' documentation (The system 
-            automatically resolves whether it represents income or expense classification) 
-            </summary>
-        </member>
-        <member name="P:PAROCHOSClient.InvoiceDetailRequestModel.CPVCode">
-            <summary>
-            Classification code for public procurement. 
-            Required only for B2G Transmission. 
-            </summary>
-            <example>publishType = 2</example>
-        </member>
-        <member name="P:PAROCHOSClient.InvoiceDetailRequestModel.TaxInfo">
-            <summary>
-            Charge/allowance applied on line level or charge 
-            with VAT in correspondence with “recType”
-            </summary>
-        </member>
-        <member name="M:PAROCHOSClient.InvoiceDetailRequestModel.#ctor">
-            <summary>
-            Default constructor
-            </summary>
-        </member>
         <member name="T:PAROCHOSClient.InvoiceDetailSummaryRequestModel">
             <summary>
             Requests used for creating or updating a detail summary 
             </summary>
         </member>
-        <member name="P:PAROCHOSClient.InvoiceDetailSummaryRequestModel.TotalNetValue">
+        <member name="P:PAROCHOSClient.InvoiceDetailSummaryRequestModel.NetAmount">
             <summary>
             Total net amount of the invoice
             </summary>
         </member>
-        <member name="P:PAROCHOSClient.InvoiceDetailSummaryRequestModel.TotalVATAmount">
+        <member name="P:PAROCHOSClient.InvoiceDetailSummaryRequestModel.TaxAmount">
             <summary>
             Total VAT amount of the invoice
             </summary>
         </member>
-        <member name="P:PAROCHOSClient.InvoiceDetailSummaryRequestModel.TotalValue">
+        <member name="P:PAROCHOSClient.InvoiceDetailSummaryRequestModel.Amount">
             <summary>
             Invoice's payable amount
             </summary>
@@ -480,7 +553,7 @@
             Charge/allowance category according to Tax Authorities' documentation 
             </summary>
         </member>
-        <member name="P:PAROCHOSClient.InvoiceDetailTaxInfoRequestModel.TaxCategoryUbl">
+        <member name="P:PAROCHOSClient.InvoiceDetailTaxInfoRequestModel.TaxCategoryUBL">
             <summary>
             Charge/allowance category according to UBL 2.1 documentation
             </summary>
@@ -515,7 +588,7 @@
             Charge/allowance category according to Tax Authorities' documentation 
             </summary>
         </member>
-        <member name="P:PAROCHOSClient.InvoiceDetailTaxTotalRequestModel.TaxCategoryUbl">
+        <member name="P:PAROCHOSClient.InvoiceDetailTaxTotalRequestModel.TaxCategoryUBL">
             <summary>
             Charge/allowance category according to UBL 2.1 documentation
             </summary>
@@ -530,7 +603,7 @@
             Charge/allowance amount
             </summary>
         </member>
-        <member name="P:PAROCHOSClient.InvoiceDetailTaxTotalRequestModel.TaxPercent">
+        <member name="P:PAROCHOSClient.InvoiceDetailTaxTotalRequestModel.Rate">
             <summary>
             Charge/allowance percent applied 
             </summary>
@@ -591,7 +664,7 @@
             Invoice Type according to Tax Authorities' documentation
             </summary>
         </member>
-        <member name="P:PAROCHOSClient.InvoiceHeaderRequestModel.InvoiceTypeUbl">
+        <member name="P:PAROCHOSClient.InvoiceHeaderRequestModel.InvoiceTypeUBL">
             <summary>
             Invoice Type according to UBL 2.1 documentation
             </summary>
@@ -627,7 +700,7 @@
             Requests used for creating or updating an invoice issuer
             </summary>
         </member>
-        <member name="P:PAROCHOSClient.InvoiceIssuerRequestModel.VatNumber">
+        <member name="P:PAROCHOSClient.InvoiceIssuerRequestModel.VATNumber">
             <summary>
             Issuer's TIN (Tax Identification Number)
             </summary>
@@ -638,6 +711,26 @@
             </summary>
         </member>
         <member name="M:PAROCHOSClient.InvoiceIssuerRequestModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:PAROCHOSClient.InvoicePaymentMethodRequestModel">
+            <summary>
+            Requests used for creating or updating a payment method
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.InvoicePaymentMethodRequestModel.Type">
+            <summary>
+            Payment method code according to Tax Authorities' documentation 
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.InvoicePaymentMethodRequestModel.Amount">
+            <summary>
+            Portion of net amount
+            </summary>
+        </member>
+        <member name="M:PAROCHOSClient.InvoicePaymentMethodRequestModel.#ctor">
             <summary>
             Default constructor
             </summary>
@@ -707,109 +800,43 @@
             Default constructor
             </summary>
         </member>
-        <member name="T:PAROCHOSClient.InvoiceRequestModel">
+        <member name="T:PAROCHOSClient.InvoiceWrapperRequestModel`1">
             <summary>
-            Represents an invoice response
+            Request model that is used as a wrapper for an invoice
+            </summary>
+            <typeparam name="T">The type of the invoice</typeparam>
+        </member>
+        <member name="P:PAROCHOSClient.InvoiceWrapperRequestModel`1.Invoice">
+            <summary>
+            The invoice
             </summary>
         </member>
-        <member name="P:PAROCHOSClient.InvoiceRequestModel.Issuer">
-            <summary>
-            Issuer’s information 
-            </summary>
-        </member>
-        <member name="P:PAROCHOSClient.InvoiceRequestModel.Counterpart">
-            <summary>
-            Counterpart's information
-            </summary>
-        </member>
-        <member name="P:PAROCHOSClient.InvoiceRequestModel.Representative">
-            <summary>
-            Tax Representative’s details if exists 
-            </summary>
-        </member>
-        <member name="P:PAROCHOSClient.InvoiceRequestModel.DeliveryAddress">
-            <summary>
-            Shipping address details
-            </summary>
-        </member>
-        <member name="P:PAROCHOSClient.InvoiceRequestModel.InvoiceHeader">
-            <summary>
-            Header of the invoice
-            </summary>
-        </member>
-        <member name="P:PAROCHOSClient.InvoiceRequestModel.InvoiceDetails">
-            <summary>
-            Lines of the invoice
-            </summary>
-        </member>
-        <member name="P:PAROCHOSClient.InvoiceRequestModel.PaymentMethods">
-            <summary>
-            List of payment Methods applied with different type and portion of net value
-            </summary>
-        </member>
-        <member name="P:PAROCHOSClient.InvoiceRequestModel.TaxesTotals">
-            <summary>
-            Fees and additional charges or allowances details, when charges are included
-            </summary>
-        </member>
-        <member name="P:PAROCHOSClient.InvoiceRequestModel.CorrelatedInvoices">
-            <summary>
-            Specific Invoice Types needs correlation between the invoice issued
-            and a previously issued related invoice
-            </summary>
-            <example>e.g. sales invoice-credit invoice</example>
-        </member>
-        <member name="P:PAROCHOSClient.InvoiceRequestModel.InvoiceSummary">
-            <summary>
-            Summary of total amounts of the invoice 
-            </summary>
-        </member>
-        <member name="P:PAROCHOSClient.InvoiceRequestModel.PublishType">
-            <summary>
-            Type of Electronic Invoice Transmission
-            </summary>
-        </member>
-        <member name="P:PAROCHOSClient.InvoiceRequestModel.PublishDetails">
-            <summary>
-            Additional Information for B2B and B2G publishing
-            </summary>
-        </member>
-        <member name="P:PAROCHOSClient.InvoiceRequestModel.Messages">
-            <summary>
-            Recipients information and type of message template
-            </summary>
-        </member>
-        <member name="P:PAROCHOSClient.InvoiceRequestModel.DelayedProcessCode">
-            <summary>
-            Delayed process code
-            </summary>
-        </member>
-        <member name="M:PAROCHOSClient.InvoiceRequestModel.#ctor">
+        <member name="M:PAROCHOSClient.InvoiceWrapperRequestModel`1.#ctor">
             <summary>
             Default constructor
             </summary>
         </member>
-        <member name="T:PAROCHOSClient.LoginRequestModel">
+        <member name="T:PAROCHOSClient.LogInRequestModel">
             <summary>
             Requests used for login
             </summary>
         </member>
-        <member name="P:PAROCHOSClient.LoginRequestModel.SubscriptionKey">
+        <member name="P:PAROCHOSClient.LogInRequestModel.SubscriptionKey">
             <summary>
             Secret key of the user subscription. 
             </summary>
         </member>
-        <member name="P:PAROCHOSClient.LoginRequestModel.Email">
+        <member name="P:PAROCHOSClient.LogInRequestModel.Email">
             <summary>
             User's email
             </summary>
         </member>
-        <member name="P:PAROCHOSClient.LoginRequestModel.Password">
+        <member name="P:PAROCHOSClient.LogInRequestModel.Password">
             <summary>
             User's password
             </summary>
         </member>
-        <member name="M:PAROCHOSClient.LoginRequestModel.#ctor">
+        <member name="M:PAROCHOSClient.LogInRequestModel.#ctor">
             <summary>
             Default constructor
             </summary>
@@ -844,130 +871,51 @@
             Default constructor
             </summary>
         </member>
-        <member name="T:PAROCHOSClient.AzureStorageResponseModel">
+        <member name="T:PAROCHOSClient.BasePAROCHOSResponseModel">
             <summary>
-            Represents an azure storage response
+            The for all the PAROCHOS response models
             </summary>
         </member>
-        <member name="F:PAROCHOSClient.AzureStorageResponseModel.mErrorCode">
+        <member name="F:PAROCHOSClient.BasePAROCHOSResponseModel.mErrorCode">
             <summary>
-            The member of the <see cref="P:PAROCHOSClient.AzureStorageResponseModel.ErrorCode"/> property
+            The member of the <see cref="P:PAROCHOSClient.BasePAROCHOSResponseModel.ErrorCode"/> property
             </summary>
         </member>
-        <member name="F:PAROCHOSClient.AzureStorageResponseModel.mErrorMessage">
+        <member name="F:PAROCHOSClient.BasePAROCHOSResponseModel.mErrorMessage">
             <summary>
-            The member of the <see cref="P:PAROCHOSClient.AzureStorageResponseModel.ErrorMessage"/> property
+            The member of the <see cref="P:PAROCHOSClient.BasePAROCHOSResponseModel.ErrorMessage"/> property
             </summary>
         </member>
-        <member name="P:PAROCHOSClient.AzureStorageResponseModel.UploadUrl">
-            <summary>
-            Azure storage url
-            </summary>
-        </member>
-        <member name="P:PAROCHOSClient.AzureStorageResponseModel.IsSuccessful">
-            <summary>
-            Status of the upload request.
-            </summary>
-        </member>
-        <member name="P:PAROCHOSClient.AzureStorageResponseModel.ErrorCode">
-            <summary>
-            In case upload request fails, errorCode indicates the type of the error.
-            </summary>
-        </member>
-        <member name="P:PAROCHOSClient.AzureStorageResponseModel.ErrorMessage">
-            <summary>
-            Detailed description of the error. 
-            </summary>
-        </member>
-        <member name="P:PAROCHOSClient.AzureStorageResponseModel.ErrorCategory">
-            <summary>
-            Indicates the category of the error
-            </summary>
-        </member>
-        <member name="M:PAROCHOSClient.AzureStorageResponseModel.#ctor">
-            <summary>
-            Default constructor
-            </summary>
-        </member>
-        <member name="T:PAROCHOSClient.AzureVerifyUploadResponseModel">
-            <summary>
-            Represents an azure verification upload response
-            </summary>
-        </member>
-        <member name="F:PAROCHOSClient.AzureVerifyUploadResponseModel.mErrorCode">
-            <summary>
-            The member of the <see cref="P:PAROCHOSClient.AzureVerifyUploadResponseModel.ErrorCode"/> property
-            </summary>
-        </member>
-        <member name="F:PAROCHOSClient.AzureVerifyUploadResponseModel.mErrorMessage">
-            <summary>
-            The member of the <see cref="P:PAROCHOSClient.AzureVerifyUploadResponseModel.ErrorMessage"/> property
-            </summary>
-        </member>
-        <member name="P:PAROCHOSClient.AzureVerifyUploadResponseModel.IsSuccessful">
-            <summary>
-            Status of the verify request. Success =1, Failed =2 
-            </summary>
-        </member>
-        <member name="P:PAROCHOSClient.AzureVerifyUploadResponseModel.ErrorCode">
-            <summary>
-            In case verify request fails, errorCode indicates the type of the error.
-            </summary>
-        </member>
-        <member name="P:PAROCHOSClient.AzureVerifyUploadResponseModel.ErrorMessage">
-            <summary>
-            Detailed description of the error.
-            </summary>
-        </member>
-        <member name="P:PAROCHOSClient.AzureVerifyUploadResponseModel.ErrorCategory">
-            <summary>
-            Indicates the category of the error. 
-            </summary>
-        </member>
-        <member name="M:PAROCHOSClient.AzureVerifyUploadResponseModel.#ctor">
-            <summary>
-            Default constructor
-            </summary>
-        </member>
-        <member name="T:PAROCHOSClient.BaseParochosResponseModel">
-            <summary>
-            The for all the parochos response model
-            </summary>
-        </member>
-        <member name="F:PAROCHOSClient.BaseParochosResponseModel.mErrorCode">
-            <summary>
-            The member of the <see cref="P:PAROCHOSClient.BaseParochosResponseModel.ErrorCode"/> property
-            </summary>
-        </member>
-        <member name="F:PAROCHOSClient.BaseParochosResponseModel.mErrorMessage">
-            <summary>
-            The member of the <see cref="P:PAROCHOSClient.BaseParochosResponseModel.ErrorMessage"/> property
-            </summary>
-        </member>
-        <member name="P:PAROCHOSClient.BaseParochosResponseModel.Status">
+        <member name="P:PAROCHOSClient.BasePAROCHOSResponseModel.Status">
             <summary>
             The progress status of the procedure.
             </summary>
         </member>
-        <member name="P:PAROCHOSClient.BaseParochosResponseModel.ErrorCode">
+        <member name="P:PAROCHOSClient.BasePAROCHOSResponseModel.ErrorCode">
             <summary>
             In case invoice upload fails, errorCode indicates the type of the error.
             </summary>
         </member>
-        <member name="P:PAROCHOSClient.BaseParochosResponseModel.ErrorMessage">
+        <member name="P:PAROCHOSClient.BasePAROCHOSResponseModel.ErrorMessage">
             <summary>
             Detailed description of the error.
             </summary>
         </member>
-        <member name="P:PAROCHOSClient.BaseParochosResponseModel.ErrorCategory">
+        <member name="P:PAROCHOSClient.BasePAROCHOSResponseModel.ErrorCategory">
             <summary>
             Indicates the category of the error
             </summary>
         </member>
-        <member name="M:PAROCHOSClient.BaseParochosResponseModel.#ctor">
+        <member name="M:PAROCHOSClient.BasePAROCHOSResponseModel.#ctor">
             <summary>
             Default constructor
             </summary>
+        </member>
+        <member name="M:PAROCHOSClient.BasePAROCHOSResponseModel.IsSuccessful">
+            <summary>
+            A flag indicating whether the response is successful
+            </summary>
+            <returns></returns>
         </member>
         <member name="T:PAROCHOSClient.DownloadFileDetailsResponseModel">
             <summary>
@@ -1060,6 +1008,46 @@
             Default constructor
             </summary>
         </member>
+        <member name="T:PAROCHOSClient.FinalizeResponseModel">
+            <summary>
+            Represents an azure verification upload response
+            </summary>
+        </member>
+        <member name="F:PAROCHOSClient.FinalizeResponseModel.mErrorCode">
+            <summary>
+            The member of the <see cref="P:PAROCHOSClient.FinalizeResponseModel.ErrorCode"/> property
+            </summary>
+        </member>
+        <member name="F:PAROCHOSClient.FinalizeResponseModel.mErrorMessage">
+            <summary>
+            The member of the <see cref="P:PAROCHOSClient.FinalizeResponseModel.ErrorMessage"/> property
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.FinalizeResponseModel.IsSuccessful">
+            <summary>
+            Status of the verify request. Success =1, Failed =2 
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.FinalizeResponseModel.ErrorCode">
+            <summary>
+            In case verify request fails, errorCode indicates the type of the error.
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.FinalizeResponseModel.ErrorMessage">
+            <summary>
+            Detailed description of the error.
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.FinalizeResponseModel.ErrorCategory">
+            <summary>
+            Indicates the category of the error. 
+            </summary>
+        </member>
+        <member name="M:PAROCHOSClient.FinalizeResponseModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
         <member name="T:PAROCHOSClient.InvoiceTransmissionResponseModel">
             <summary>
             Represents an invoice transmission response
@@ -1068,6 +1056,11 @@
         <member name="F:PAROCHOSClient.InvoiceTransmissionResponseModel.mExternalSystemId">
             <summary>
             The member of the <see cref="P:PAROCHOSClient.InvoiceTransmissionResponseModel.ExternalSystemId"/> property
+            </summary>
+        </member>
+        <member name="F:PAROCHOSClient.InvoiceTransmissionResponseModel.mProcessId">
+            <summary>
+            The member of the <see cref="P:PAROCHOSClient.InvoiceTransmissionResponseModel.ProcessId"/> property
             </summary>
         </member>
         <member name="F:PAROCHOSClient.InvoiceTransmissionResponseModel.mSigning">
@@ -1161,17 +1154,32 @@
             Default constructor
             </summary>
         </member>
-        <member name="T:PAROCHOSClient.LoginResponseModel">
+        <member name="T:PAROCHOSClient.UploadFileRequestResponseModel">
+            <summary>
+            Represents an upload file request
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.UploadFileRequestResponseModel.UploadUrl">
+            <summary>
+            Azure storage url
+            </summary>
+        </member>
+        <member name="M:PAROCHOSClient.UploadFileRequestResponseModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:PAROCHOSClient.LogInResponseModel">
             <summary>
             Represents a login response
             </summary>
         </member>
-        <member name="P:PAROCHOSClient.LoginResponseModel.URL1">
+        <member name="P:PAROCHOSClient.LogInResponseModel.URL1">
             <summary>
             The base url (Uniform Resource Locator) of API.
             </summary>
         </member>
-        <member name="M:PAROCHOSClient.LoginResponseModel.#ctor">
+        <member name="M:PAROCHOSClient.LogInResponseModel.#ctor">
             <summary>
             Default constructor
             </summary>
@@ -19112,6 +19120,15 @@
             Extension methods
             </summary>
         </member>
+        <member name="M:PAROCHOSClient.ExtensionMethods.SetPayment(PAROCHOSClient.IncomeInvoiceRequestModel,PAROCHOSClient.PaymentMethod)">
+            <summary>
+            Sets a payment to the specified <paramref name="model"/> based on the amount of its <see cref="P:PAROCHOSClient.IncomeInvoiceRequestModel.Details"/>
+            with the specified <paramref name="paymentMethod"/>
+            </summary>
+            <param name="model">The model</param>
+            <param name="paymentMethod">The payment method</param>
+            <returns></returns>
+        </member>
         <member name="M:PAROCHOSClient.ExtensionMethods.AggregateExceptionMessages(System.Exception)">
             <summary>
             Aggregates the <see cref="P:System.Exception.Message"/> in the <paramref name="exception"/> exception stack trace
@@ -19696,6 +19713,14 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="M:PAROCHOSClient.WebRequestResult.ToUnsuccessfulWebRequestResult``1(System.String)">
+            <summary>
+            Creates and returns a <see cref="T:PAROCHOSClient.WebRequestResult`1"/> from the current object
+            </summary>
+            <typeparam name="T">The type of the failable</typeparam>
+            <param name="customErrorMessage">The custom error message</param>
+            <returns></returns>
+        </member>
         <member name="M:PAROCHOSClient.WebRequestResult.op_Implicit(System.String)~PAROCHOSClient.WebRequestResult">
             <summary>
             Creates a <see cref="T:PAROCHOSClient.WebRequestResult"/> using the specified string as its error message
@@ -19736,14 +19761,6 @@
             Exception based constructor
             </summary>
             <param name="ex">The exception</param>
-        </member>
-        <member name="M:PAROCHOSClient.WebRequestResult`1.ToUnsuccessfulWebRequestResult``1(System.String)">
-            <summary>
-            Creates and returns a <see cref="T:PAROCHOSClient.WebRequestResult`1"/> from the current object
-            </summary>
-            <typeparam name="T">The type of the failable</typeparam>
-            <param name="customErrorMessage">The custom error message</param>
-            <returns></returns>
         </member>
         <member name="M:PAROCHOSClient.WebRequestResult`1.ToSuccessfulWebRequestResult``1(System.Func{`0,``0})">
             <summary>
@@ -19795,6 +19812,145 @@
             Gets the string representation of the specified <paramref name="failable"/>
             </summary>
             <param name="failable">The failable</param>
+            <returns></returns>
+        </member>
+        <member name="T:PAROCHOSClient.NumericHelpers">
+            <summary>
+            Helpers related to numbers
+            </summary>
+        </member>
+        <member name="M:PAROCHOSClient.NumericHelpers.CalculateRateFromAmountAndNetAmount(System.Decimal,System.Decimal,System.UInt32,System.MidpointRounding)">
+            <summary>
+            Calculates the rate based on the <paramref name="amount"/> and the <paramref name="netAmount"/>.
+            Ex.: 24% -> 24.
+            </summary>
+            <param name="amount">The amount</param>
+            <param name="netAmount">The net amount</param>
+            <param name="decimals">The number of decimals that the result should get rounded to</param>
+            <param name="mode">The midpoint rounding mode</param>
+            <returns></returns>
+        </member>
+        <member name="M:PAROCHOSClient.NumericHelpers.CalculateRateFromAmountAndNetAmount(System.Decimal,System.Decimal)">
+            <summary>
+            Calculates the rate based on the <paramref name="amount"/> and the <paramref name="netAmount"/>
+            </summary>
+            <param name="amount">The amount</param>
+            <param name="netAmount">The net amount</param>
+            <returns></returns>
+        </member>
+        <member name="M:PAROCHOSClient.NumericHelpers.CalculateAmountFromNetAmount(System.Decimal,System.Decimal,System.UInt32,System.MidpointRounding)">
+            <summary>
+            Calculates the amount based on the <paramref name="netAmount"/> and the tax <paramref name="rate"/>
+            </summary>
+            <param name="netAmount">The net amount</param>
+            <param name="rate">
+            The tax rate.
+            The tax rate isn't passed as the percentage representation!
+            Ex.: 24% -> 24
+            </param>
+            <param name="decimals">The number of decimals that the result should get rounded to</param>
+            <param name="mode">The midpoint rounding mode</param>
+            <returns></returns>
+        </member>
+        <member name="M:PAROCHOSClient.NumericHelpers.CalculateAmountFromNetAmount(System.Decimal,System.Decimal)">
+            <summary>
+            Calculates the amount based on the <paramref name="netAmount"/> and the tax <paramref name="rate"/>
+            </summary>
+            <param name="netAmount">The net amount</param>
+            <param name="rate">
+            The tax rate.
+            The tax rate isn't passed as the percentage representation!
+            Ex.: 24% -> 24
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:PAROCHOSClient.NumericHelpers.CalculateNetAmountFromAmount(System.Decimal,System.Decimal,System.UInt32,System.MidpointRounding)">
+            <summary>
+            Calculates the net amount based on the <paramref name="amount"/> and the tax <paramref name="rate"/>
+            </summary>
+            <param name="amount">The amount</param>
+            <param name="rate">
+            The tax rate.
+            The tax rate isn't passed as the percentage representation!
+            Ex.: 24% -> 24
+            </param>
+            <param name="decimals">The number of decimals that the result should get rounded to</param>
+            <param name="mode">The midpoint rounding mode</param>
+            <returns></returns>
+        </member>
+        <member name="M:PAROCHOSClient.NumericHelpers.CalculateNetAmountFromAmount(System.Decimal,System.Decimal)">
+            <summary>
+            Calculates the net amount based on the <paramref name="amount"/> and the tax <paramref name="rate"/>
+            </summary>
+            <param name="amount">The amount</param>
+            <param name="rate">
+            The tax rate.
+            The tax rate isn't passed as the percentage representation!
+            Ex.: 24% -> 24
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:PAROCHOSClient.NumericHelpers.CalculateNetAmountFromTaxAmount(System.Decimal,System.Decimal,System.UInt32,System.MidpointRounding)">
+            <summary>
+            Calculates the net amount based on the <paramref name="taxAmount"/> and the tax <paramref name="rate"/>
+            </summary>
+            <param name="taxAmount">The tax amount</param>
+            <param name="rate">
+            The tax rate.
+            The tax rate isn't passed as the percentage representation!
+            Ex.: 24% -> 24
+            </param>
+            <param name="decimals">The number of decimals that the result should get rounded to</param>
+            <param name="mode">The midpoint rounding mode</param>
+            <returns></returns>
+        </member>
+        <member name="M:PAROCHOSClient.NumericHelpers.CalculateNetAmountFromTaxAmount(System.Decimal,System.Decimal)">
+            <summary>
+            Calculates the net amount based on the <paramref name="taxAmount"/> and the tax <paramref name="rate"/>
+            </summary>
+            <param name="taxAmount">The tax amount</param>
+            <param name="rate">
+            The tax rate.
+            The tax rate isn't passed as the percentage representation!
+            Ex.: 24% -> 24
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:PAROCHOSClient.NumericHelpers.CalculatePercentCommissionAmount(System.Decimal,System.Decimal)">
+            <summary>
+            Calculates the commission amount based on the <paramref name="amount"/> and
+            the <paramref name="percentCommission"/>
+            </summary>
+            <param name="amount">The amount</param>
+            <param name="percentCommission">
+            The percent commission.
+            NOTE: That's a value from 0 to 100!
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:PAROCHOSClient.NumericHelpers.CalculateFlatRateCommissionAmount(System.Decimal,System.Decimal)">
+            <summary>
+            Calculates the flat rate commission amount based on the <paramref name="amount"/>
+            and the <paramref name="flatRateCommission"/>
+            </summary>
+            <param name="amount">The amount</param>
+            <param name="flatRateCommission">The flat rate commission</param>
+            <returns></returns>
+        </member>
+        <member name="M:PAROCHOSClient.NumericHelpers.Round(System.Decimal,System.UInt32,System.MidpointRounding)">
+            <summary>
+            Rounds the specified <paramref name="amount"/> using the specified options
+            </summary>
+            <param name="amount">The amount</param>
+            <param name="decimalsPrecision">The decimals precision</param>
+            <param name="mode">The midpoint rounding mode</param>
+            <returns></returns>
+        </member>
+        <member name="M:PAROCHOSClient.NumericHelpers.Round(System.Decimal)">
+            <summary>
+            Rounds the specified <paramref name="amount"/> using the specified options
+            </summary>
+            <param name="amount">The amount</param>
             <returns></returns>
         </member>
         <member name="T:PAROCHOSClient.RouteHelpers">
@@ -19903,16 +20059,6 @@
             <param name="value">The value.</param>
             <returns></returns>
         </member>
-        <member name="T:PAROCHOSClient.BaseEnumToIntJsonConverter`1">
-            <summary>
-            The base for all the <see cref="T:Newtonsoft.Json.JsonConverter`1"/>s that are used for converting between an <see cref="T:System.Enum"/> and a <see cref="T:System.Int32"/>.
-            </summary>
-        </member>
-        <member name="M:PAROCHOSClient.BaseEnumToIntJsonConverter`1.#ctor">
-            <summary>
-            Default constructor
-            </summary>
-        </member>
         <member name="T:PAROCHOSClient.BaseEnumEnumerableJsonConverter`1">
             <summary>
             The base for all the <see cref="T:Newtonsoft.Json.JsonConverter`1"/>s that are used for converting between an enumerable of <see cref="T:System.Enum"/>s and a <see cref="T:System.String"/>.
@@ -19936,6 +20082,16 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="T:PAROCHOSClient.BaseEnumToIntJsonConverter`1">
+            <summary>
+            The base for all the <see cref="T:Newtonsoft.Json.JsonConverter`1"/>s that are used for converting between an <see cref="T:System.Enum"/> and a <see cref="T:System.Int32"/>.
+            </summary>
+        </member>
+        <member name="M:PAROCHOSClient.BaseEnumToIntJsonConverter`1.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
         <member name="T:PAROCHOSClient.BaseEnumToStringJsonConverter`1">
             <summary>
             The base for all the <see cref="T:Newtonsoft.Json.JsonConverter`1"/>s that are used for converting between an <see cref="T:System.Enum"/> and a <see cref="T:System.String"/>.
@@ -19946,30 +20102,64 @@
             Default constructor
             </summary>
         </member>
-        <member name="T:PAROCHOSClient.BaseEnumToValueJsonConverter`2">
+        <member name="T:PAROCHOSClient.BaseEnumToValueJsonConverter`3">
             <summary>
-            
+            The base for all the enum to value json converters
             </summary>
-            <typeparam name="T"></typeparam>
-            <typeparam name="TValue"></typeparam>
         </member>
-        <member name="M:PAROCHOSClient.BaseEnumToValueJsonConverter`2.#ctor">
+        <member name="M:PAROCHOSClient.BaseEnumToValueJsonConverter`3.#ctor">
             <summary>
             Default constructor
             </summary>
         </member>
-        <member name="M:PAROCHOSClient.BaseEnumToValueJsonConverter`2.ReadJson(Newtonsoft.Json.JsonReader,System.Type,`0,System.Boolean,Newtonsoft.Json.JsonSerializer)">
+        <member name="M:PAROCHOSClient.BaseEnumToValueJsonConverter`3.ReadJson(Newtonsoft.Json.JsonReader,System.Type,`0,System.Boolean,Newtonsoft.Json.JsonSerializer)">
             <inheritdoc/>
         </member>
-        <member name="M:PAROCHOSClient.BaseEnumToValueJsonConverter`2.WriteJson(Newtonsoft.Json.JsonWriter,`0,Newtonsoft.Json.JsonSerializer)">
+        <member name="M:PAROCHOSClient.BaseEnumToValueJsonConverter`3.WriteJson(Newtonsoft.Json.JsonWriter,`0,Newtonsoft.Json.JsonSerializer)">
             <inheritdoc/> 
         </member>
-        <member name="M:PAROCHOSClient.BaseEnumToValueJsonConverter`2.GetMapper">
+        <member name="M:PAROCHOSClient.BaseEnumToValueJsonConverter`3.GetMapper">
             <summary>
             Gets a <see cref="T:System.Collections.Generic.IReadOnlyDictionary`2"/> that maps the values of the <typeparamref name="T"/>
             to <see cref="T:System.String"/>s
             </summary>
             <returns></returns>
+        </member>
+        <member name="T:PAROCHOSClient.BaseFormattableValueToStringJsonConverter`1">
+            <summary>
+            The <see cref="T:Newtonsoft.Json.JsonConverter`1"/> that is used for converting between a value that supports string based formatting
+            </summary>
+            <typeparam name="T">The type of the value.</typeparam>
+        </member>
+        <member name="M:PAROCHOSClient.BaseFormattableValueToStringJsonConverter`1.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:PAROCHOSClient.BaseFormattableValueToStringJsonConverter`1.ReadJson(Newtonsoft.Json.JsonReader,System.Type,`0,System.Boolean,Newtonsoft.Json.JsonSerializer)">
+            <inheritdoc/>
+        </member>
+        <member name="M:PAROCHOSClient.BaseFormattableValueToStringJsonConverter`1.WriteJson(Newtonsoft.Json.JsonWriter,`0,Newtonsoft.Json.JsonSerializer)">
+            <inheritdoc/>
+        </member>
+        <member name="M:PAROCHOSClient.BaseFormattableValueToStringJsonConverter`1.GetFormat">
+            <summary>
+            Gets the format that is used for serializing and deserializing the value
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:PAROCHOSClient.BaseFormattableValueToStringJsonConverter`1.FormatProvider.Format">
+            <summary>
+            The format
+            </summary>
+        </member>
+        <member name="M:PAROCHOSClient.BaseFormattableValueToStringJsonConverter`1.FormatProvider.#ctor(System.String)">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:PAROCHOSClient.BaseFormattableValueToStringJsonConverter`1.FormatProvider.GetFormat(System.Type)">
+            <inheritdoc/>
         </member>
         <member name="T:PAROCHOSClient.BudgetTypeToIntJsonConverter">
             <summary>
@@ -20008,6 +20198,24 @@
             </summary>
         </member>
         <member name="M:PAROCHOSClient.CurrencyCodeToStringJsonConverter.GetMapper">
+            <inheritdoc/>
+        </member>
+        <member name="T:PAROCHOSClient.DateOnlyToStringJsonConverter">
+            <summary>
+            A <see cref="T:Newtonsoft.Json.JsonConverter`1"/> that converts a <see cref="T:System.DateOnly"/> to <see cref="T:System.String"/>
+            </summary>
+        </member>
+        <member name="F:PAROCHOSClient.DateOnlyToStringJsonConverter.DateFormat">
+            <summary>
+            The format that is used for serializing and deserializing dates
+            </summary>
+        </member>
+        <member name="M:PAROCHOSClient.DateOnlyToStringJsonConverter.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:PAROCHOSClient.DateOnlyToStringJsonConverter.GetFormat">
             <inheritdoc/>
         </member>
         <member name="T:PAROCHOSClient.EntryStatusTypeToIntJsonConverter">
@@ -20318,6 +20526,19 @@
         <member name="M:PAROCHOSClient.TaxTypeToIntJsonConverter.GetMapper">
             <inheritdoc/>
         </member>
+        <member name="T:PAROCHOSClient.TransmissionTypeToIntJsonConverter">
+            <summary>
+            A <see cref="T:Newtonsoft.Json.JsonConverter`1"/> that converts a <see cref="T:PAROCHOSClient.TransmissionType"/> to <see cref="T:System.Int32"/>
+            </summary>
+        </member>
+        <member name="M:PAROCHOSClient.TransmissionTypeToIntJsonConverter.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:PAROCHOSClient.TransmissionTypeToIntJsonConverter.GetMapper">
+            <inheritdoc/>
+        </member>
         <member name="T:PAROCHOSClient.UBLMeasurementUnitToStringJsonConverter">
             <summary>
             A <see cref="T:Newtonsoft.Json.JsonConverter`1"/> that converts a <see cref="T:PAROCHOSClient.UBLMeasurementUnit"/> to <see cref="T:System.String"/>
@@ -20403,12 +20624,22 @@
         </member>
         <member name="T:PAROCHOSClient.PAROCHOSClientConstants">
             <summary>
-            Constants related to the parochos client
+            Constants related to the PAROCHOS client
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.PAROCHOSClientConstants.VATCategoryToRateMapper">
+            <summary>
+            Maps the <see cref="T:PAROCHOSClient.VATCategory"/>s to their related rate values
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.PAROCHOSClientConstants.TransmissionTypeToIntMapper">
+            <summary>
+            Maps the <see cref="T:PAROCHOSClient.TransmissionType"/>s to their related <see cref="T:System.Int32"/>s
             </summary>
         </member>
         <member name="P:PAROCHOSClient.PAROCHOSClientConstants.BudgetTypeToIntMapper">
             <summary>
-            Maps the <see cref="T:PAROCHOSClient.BudgetType"/>s to their related <see cref="T:System.String"/>s
+            Maps the <see cref="T:PAROCHOSClient.BudgetType"/>s to their related <see cref="T:System.Int32"/>s
             </summary>
         </member>
         <member name="P:PAROCHOSClient.PAROCHOSClientConstants.CountryCodeToStringMapper">
@@ -20473,7 +20704,7 @@
         </member>
         <member name="P:PAROCHOSClient.PAROCHOSClientConstants.InvoiceTypeToStringMapper">
             <summary>
-            Maps the <see cref="T:PAROCHOSClient.InvoiceType"/>s to their related <see cref="T:System.Int32"/>s
+            Maps the <see cref="T:PAROCHOSClient.InvoiceType"/>s to their related <see cref="T:System.String"/>s
             </summary>
         </member>
         <member name="P:PAROCHOSClient.PAROCHOSClientConstants.InvoiceTypeUBLToStringMapper">
@@ -20558,7 +20789,12 @@
         </member>
         <member name="T:PAROCHOSClient.PAROCHOSClient">
             <summary>
-            
+            An agent that's capable of making requests to the PAROCHOS API
+            </summary>
+        </member>
+        <member name="F:PAROCHOSClient.PAROCHOSClient.mLogInInformation">
+            <summary>
+            The log in information provided by the <see cref="M:PAROCHOSClient.PAROCHOSClient.LogInAsync"/> method
             </summary>
         </member>
         <member name="P:PAROCHOSClient.PAROCHOSClient.Credentials">
@@ -20566,25 +20802,99 @@
             The credentials
             </summary>
         </member>
+        <member name="P:PAROCHOSClient.PAROCHOSClient.Client">
+            <summary>
+            The client
+            </summary>
+        </member>
         <member name="M:PAROCHOSClient.PAROCHOSClient.#ctor(PAROCHOSClient.PAROCHOSCredentials)">
             <summary>
             Default constructor
             </summary>
         </member>
-        <member name="M:PAROCHOSClient.PAROCHOSClient.LogInAsync(PAROCHOSClient.LoginRequestModel)">
+        <member name="M:PAROCHOSClient.PAROCHOSClient.LogInAsync">
             <summary>
             Executes a log in operation and returns credentials that can be used for accessing the rest end points
             </summary>
-            <param name="model">The model</param>
             <returns></returns>
         </member>
-        <member name="M:PAROCHOSClient.PAROCHOSClient.RefreshTokenAsync(PAROCHOSClient.RefreshRequestModel)">
+        <member name="M:PAROCHOSClient.PAROCHOSClient.RefreshTokenAsync">
             <summary>
             Executes a refresh operation using the <see cref="P:PAROCHOSClient.RefreshRequestModel.RefreshToken"/> to retrieve a new
             <see cref="P:PAROCHOSClient.RefreshResponseModel.JWT"/> and a new <see cref="P:PAROCHOSClient.RefreshResponseModel.JWTRefreshToken"/>
             </summary>
-            <param name="model">The model</param>
             <returns></returns>
+        </member>
+        <member name="M:PAROCHOSClient.PAROCHOSClient.SendIncomeInvoiceAsync(PAROCHOSClient.IncomeInvoiceRequestModel,PAROCHOSClient.TransmissionType,System.Int32)">
+            <summary>
+            Sends the specified <paramref name="model"/>
+            </summary>
+            <param name="model">The model</param>
+            <param name="transmissionType">Resolves the required type of transmission.</param>
+            <param name="numberOfRetries">
+            The number of periodic retries for the polling operations. If this is set to 0
+            then no polling operation is executed.
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:PAROCHOSClient.PAROCHOSClient.PollingProcessAsync(PAROCHOSClient.PollingProcessRequestModel,System.Int32)">
+            <summary>
+            Executes a periodically a process that is used for checking the status of a request
+            created by the <see cref="M:PAROCHOSClient.PAROCHOSClient.SendIncomeInvoiceAsync(PAROCHOSClient.IncomeInvoiceRequestModel,PAROCHOSClient.TransmissionType,System.Int32)"/>
+            method
+            </summary>
+            <param name="model">The model</param>
+            <param name="numberOfRetries">The number of the periodic retries</param>
+            <returns></returns>
+        </member>
+        <member name="M:PAROCHOSClient.PAROCHOSClient.UploadPDFFileAsync(PAROCHOSClient.UploadFileRequestRequestModel,System.Byte[])">
+            <summary>
+            
+            </summary>
+            <param name="model"></param>
+            <param name="pdfFile"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PAROCHOSClient.PAROCHOSClient.ExecuteAsync``1(System.Func{PAROCHOSClient.LogInResponseModel,System.Threading.Tasks.Task{PAROCHOSClient.WebRequestResult{``0}}})">
+            <summary>
+            Executes the specified <paramref name="action"/> after ensuring that a valid JWT has been retrieved.
+            </summary>
+            <typeparam name="T">The type of the result.</typeparam>
+            <param name="action">The action.</param>
+            <returns></returns>
+        </member>
+        <member name="M:PAROCHOSClient.PAROCHOSClient.ShouldUpdateLogInInformation">
+            <summary>
+            Returns a flag indicating whether the log in information should be updated or not
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PAROCHOSClient.PAROCHOSClient.UpdateLogInInformationAsync">
+            <summary>
+            Updates the <see cref="F:PAROCHOSClient.PAROCHOSClient.mLogInInformation"/>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:PAROCHOSClient.PAROCHOSWebRequestsClient">
+            <summary>
+            A <see cref="T:PAROCHOSClient.WebRequestsClient"/> configured for making calls to the PAROCHOS API
+            </summary>
+        </member>
+        <member name="M:PAROCHOSClient.PAROCHOSWebRequestsClient.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:PAROCHOSClient.PAROCHOSWebRequestsClient.PutFileToAzureAsync(System.String,System.Byte[])">
+            <summary>
+            
+            </summary>
+            <param name="url"></param>
+            <param name="content"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PAROCHOSClient.PAROCHOSWebRequestsClient.Serialize(System.Object)">
+            <inheritdoc/>
         </member>
         <member name="T:PAROCHOSClient.WebRequestsClient`1">
             <summary>

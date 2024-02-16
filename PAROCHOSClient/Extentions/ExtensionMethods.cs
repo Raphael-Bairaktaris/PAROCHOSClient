@@ -17,6 +17,27 @@ namespace PAROCHOSClient
     public static class ExtensionMethods
     {
         /// <summary>
+        /// Sets a payment to the specified <paramref name="model"/> based on the amount of its <see cref="IncomeInvoiceRequestModel.Details"/>
+        /// with the specified <paramref name="paymentMethod"/>
+        /// </summary>
+        /// <param name="model">The model</param>
+        /// <param name="paymentMethod">The payment method</param>
+        /// <returns></returns>
+        public static IncomeInvoiceRequestModel SetPayment(this IncomeInvoiceRequestModel model, PaymentMethod paymentMethod)
+        {
+            model.PaymentMethods = new List<InvoicePaymentMethodRequestModel>()
+            {
+                new InvoicePaymentMethodRequestModel()
+                {
+                    Amount = model.InvoiceSummary?.Amount ?? 0,
+                    Type = paymentMethod
+                }
+            };
+
+            return model;
+        }
+
+        /// <summary>
         /// Aggregates the <see cref="Exception.Message"/> in the <paramref name="exception"/> exception stack trace
         /// </summary>
         /// <param name="exception">The exception</param>

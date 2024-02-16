@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 namespace PAROCHOSClient
 {
     /// <summary>
-    /// Requests used for upload verification
+    /// Request model that is used for verifying an Azure file upload
     /// </summary>
-    public class AzureVerifyUploadRequestModel
+    public class FinalizeRequestModel
     {
         #region Public Properties
 
@@ -33,7 +33,7 @@ namespace PAROCHOSClient
         /// <summary>
         /// Default constructor
         /// </summary>
-        public AzureVerifyUploadRequestModel() : base()
+        public FinalizeRequestModel() : base()
         {
 
         }

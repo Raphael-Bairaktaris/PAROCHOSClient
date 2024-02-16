@@ -6,7 +6,8 @@ namespace PAROCHOSClient
     /// <summary>
     /// Requests used for invoice transmission
     /// </summary>
-    public class InvoiceTransmissionRequestModel
+    /// <typeparam name="T">The type of the source</typeparam>
+    public class InvoiceTransmissionRequestModel<T>
     {
         #region Public Properties
 
@@ -23,7 +24,7 @@ namespace PAROCHOSClient
         /// </summary>
         [JsonRequired]
         [JsonProperty("source")]
-        public string? Source { get; set; }
+        public T? Source { get; set; }
 
         /// <summary>
         /// The identifier of the template used to map the incoming invoice data to the model required by AADE Provider.
@@ -33,10 +34,11 @@ namespace PAROCHOSClient
         public string? Identifier { get; set; }
 
         /// <summary>
-        /// Resolves the required type of transmission. Default value 0
+        /// Resolves the required type of transmission.
         /// </summary>
         [JsonProperty("transmissionType")]
-        public TransmissionType? TransmissionType { get; set; }
+        [JsonConverter(typeof(TransmissionTypeToIntJsonConverter))]
+        public TransmissionType TransmissionType { get; set; }
 
         /// <summary>
         /// Base64 encoded binary data. A draft .txt file of the invoice. 

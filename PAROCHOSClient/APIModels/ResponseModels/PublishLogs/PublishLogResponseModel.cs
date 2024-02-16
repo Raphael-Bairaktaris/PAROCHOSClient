@@ -6,7 +6,7 @@ namespace PAROCHOSClient
     /// <summary>
     /// Represents a publish log detail response
     /// </summary>
-    public class PublishLogDetailResponseModel
+    public class PublishLogResponseModel
     {
         #region Private Members
 
@@ -50,7 +50,7 @@ namespace PAROCHOSClient
         /// <summary>
         /// Default constructor
         /// </summary>
-        public PublishLogDetailResponseModel() : base()
+        public PublishLogResponseModel() : base()
         {
 
         }

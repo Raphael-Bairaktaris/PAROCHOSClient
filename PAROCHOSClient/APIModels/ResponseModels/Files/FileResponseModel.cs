@@ -6,7 +6,7 @@ namespace PAROCHOSClient
     /// <summary>
     /// Represents a downloaded file details
     /// </summary>
-    public class DownloadFileDetailsResponseModel
+    public class FileResponseModel
     {
         #region Private Members
 
@@ -42,7 +42,7 @@ namespace PAROCHOSClient
         /// <summary>
         /// Default constructor
         /// </summary>
-        public DownloadFileDetailsResponseModel() : base()
+        public FileResponseModel() : base()
         {
 
         }

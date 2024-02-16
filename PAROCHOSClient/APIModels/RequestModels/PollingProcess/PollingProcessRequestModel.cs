@@ -1,16 +1,9 @@
-﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace PAROCHOSClient
+﻿namespace PAROCHOSClient
 {
     /// <summary>
     /// Requests used for polling process
     /// </summary>
-    public class PollingProcessRequestModel : BaseParochosRequestModel
+    public class PollingProcessRequestModel : BasePAROCHOSRequestModel
     {
         #region Constructors
 

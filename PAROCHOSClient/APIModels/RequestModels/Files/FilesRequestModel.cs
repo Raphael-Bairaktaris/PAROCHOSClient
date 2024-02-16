@@ -10,7 +10,7 @@ namespace PAROCHOSClient
     /// <summary>
     /// Requests used for downloading file
     /// </summary>
-    public class DownloadFileRequestModel : BaseParochosRequestModel
+    public class FilesRequestModel : BasePAROCHOSRequestModel
     {
         #region Public Properties
 
@@ -28,7 +28,7 @@ namespace PAROCHOSClient
         /// <summary>
         /// Default constructor
         /// </summary>
-        public DownloadFileRequestModel() : base()
+        public FilesRequestModel() : base()
         {
 
         }

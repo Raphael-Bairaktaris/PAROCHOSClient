@@ -14,13 +14,13 @@ namespace PAROCHOSClient
         /// </summary>
         [JsonRequired]
         [JsonProperty("vatNumber")]
-        public string? VatNumber { get; set; }
+        public string? VATNumber { get; set; }
 
         /// <summary>
         /// Issuer’s Company Branch N/A as registered in Tax Authorities' platform
         /// </summary>
         [JsonProperty("branch")]
-        public double? Branch { get; set; }
+        public int? Branch { get; set; }
 
         #endregion
 

@@ -5,15 +5,18 @@ namespace PAROCHOSClient
     /// <summary>
     /// Requests used for creating or updating the invoice details
     /// </summary>
-    public class InvoiceDetailRequestModel
+    public class IncomeInvoiceDetailRequestModel
     {
-        #region Public Properties
+        #region Private Members
 
         /// <summary>
-        /// Invoice Line N/A
+        /// The member of the <see cref="Quantity"/> property
         /// </summary>
-        [JsonProperty("lineNumber")]
-        public double? LineNumber { get; set; }
+        private double mQuantity = 1;
+
+        #endregion
+
+        #region Public Properties
 
         /// <summary>
         /// Line type according to Tax Authorities' documentation
@@ -27,7 +30,18 @@ namespace PAROCHOSClient
         /// </summary>
         [JsonRequired]
         [JsonProperty("quantity")]
-        public double? Quantity { get; set; }
+        public double Quantity
+        {
+            get => mQuantity;
+
+            set
+            {
+                if (value <= 0)
+                    mQuantity = 1;
+                else
+                    mQuantity = value;
+            }
+        }
 
         /// <summary>
         /// Used only for Fuel Invoices and represents fuel quantity in 15oC
@@ -57,23 +71,16 @@ namespace PAROCHOSClient
         public FuelCodeCategoryType? FuelCode { get; set; }
 
         /// <summary>
-        /// Line net amount
-        /// </summary>
-        [JsonRequired]
-        [JsonProperty("netValue")]
-        public decimal? NetValue { get; set; }
-
-        /// <summary>
         /// Line total amount
         /// </summary>
         [JsonProperty("totalValue")]
-        public decimal? TotalValue { get; set; }
+        public decimal? Amount { get; set; }
 
         /// <summary>
         /// VAT (Value Added Tax) Category according to Tax Authorities' documentation 
         /// </summary>
         [JsonRequired]
-        [JsonProperty("`vatCategory")]
+        [JsonProperty("vatCategory")]
         [JsonConverter(typeof(VATCategoryToIntJsonConverter))]
         public VATCategory? VATCategory { get; set; }
 
@@ -83,7 +90,7 @@ namespace PAROCHOSClient
         [JsonRequired]
         [JsonProperty("vatCategoryUbl")]
         [JsonConverter(typeof(VATCategoryUBLToStringJsonConverter))]
-        public VATCategoryUBL? VatCategoryUbl { get; set; }
+        public VATCategoryUBL? VatCategoryUBL { get; set; }
 
         /// <summary>
         /// VAT (Value Added Tax) exemption category according to Tax Authorities' documentation 
@@ -97,21 +104,7 @@ namespace PAROCHOSClient
         /// </summary>
         [JsonProperty("vatExemptionUbl")]
         [JsonConverter(typeof(VATExemptionCategoryUBLToStringJsonConverter))]
-        public VATExemptionCategoryUBL? VATExemptionUbl { get; set; }
-
-        /// <summary>
-        /// VAT amount
-        /// </summary>
-        [JsonRequired]
-        [JsonProperty("vatAmount")]
-        public decimal? VATAmount { get; set; }
-
-        /// <summary>
-        /// VAT Percent
-        /// </summary>
-        [JsonRequired]
-        [JsonProperty("vatPercent")]
-        public decimal? VATPercent { get; set; }
+        public VATExemptionCategoryUBL? VATExemptionUBL { get; set; }
 
         /// <summary>
         /// Measurement Unit according to Tax Authorities' documentation 
@@ -127,7 +120,7 @@ namespace PAROCHOSClient
         [JsonRequired]
         [JsonProperty("measurementUnitUbl")]
         [JsonConverter(typeof(UBLMeasurementUnitToStringJsonConverter))]
-        public UBLMeasurementUnit? MeasurementUnitUbl { get; set; }
+        public UBLMeasurementUnit? MeasurementUnitUBL { get; set; }
 
         /// <summary>
         /// Comments of line 
@@ -176,12 +169,54 @@ namespace PAROCHOSClient
 
         #endregion
 
+        #region Internal Properties
+
+        /// <summary>
+        /// Invoice Line N/A
+        /// </summary>
+        [JsonProperty("lineNumber")]
+        internal int? LineNumber { get; set; }
+
+        /// <summary>
+        /// VAT amount
+        /// </summary>
+        [JsonRequired]
+        [JsonProperty("vatAmount")]
+        internal decimal? TaxAmount { get => Amount is null ? null : Amount - NetAmount; set { } }
+
+        /// <summary>
+        /// Line net amount
+        /// </summary>
+        [JsonRequired]
+        [JsonProperty("netValue")]
+        internal decimal? NetAmount { get => Amount is null ? null : NumericHelpers.CalculateNetAmountFromAmount(Amount.Value, Rate ?? 0); set { } }
+
+        /// <summary>
+        /// VAT Percent
+        /// </summary>
+        [JsonRequired]
+        [JsonProperty("vatPercent")]
+        internal decimal? Rate
+        {
+            get
+            {
+                if (VATCategory is null)
+                    return null;
+
+                return PAROCHOSClientConstants.VATCategoryToRateMapper[VATCategory.Value];
+            }
+
+            set { }
+        }
+
+        #endregion
+
         #region Constructors
 
         /// <summary>
         /// Default constructor
         /// </summary>
-        public InvoiceDetailRequestModel() : base()
+        public IncomeInvoiceDetailRequestModel() : base()
         {
 
         }

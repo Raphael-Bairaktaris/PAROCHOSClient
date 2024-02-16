@@ -28,7 +28,7 @@ namespace PAROCHOSClient
         /// </summary>
         [JsonProperty("taxCategoryUbl")]
         [JsonConverter(typeof(TaxCategoryUBLToStringJsonConverter))]
-        public TaxCategoryUBL? TaxCategoryUbl { get; set; }
+        public TaxCategoryUBL? TaxCategoryUBL { get; set; }
 
         /// <summary>
         /// Total amount subject to a specific charge/allowance category
@@ -46,7 +46,7 @@ namespace PAROCHOSClient
         /// Charge/allowance percent applied 
         /// </summary>
         [JsonProperty("taxPercent")]
-        public decimal? TaxPercent { get; set; }
+        public decimal? Rate { get; set; }
 
         #endregion
 

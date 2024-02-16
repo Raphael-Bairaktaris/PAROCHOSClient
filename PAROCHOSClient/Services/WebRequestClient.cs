@@ -468,7 +468,16 @@ namespace PAROCHOSClient
         /// </summary>
         /// <param name="obj">The object</param>
         /// <returns></returns>
-        protected virtual string Serialize(object obj) => JsonConvert.SerializeObject(obj);
+        protected virtual string Serialize(object obj)
+        {
+            var result = JsonConvert.SerializeObject(obj);
+
+#if DEBUG
+            Debug.WriteLine(result);
+#endif
+
+            return result;
+        }
 
         /// <summary>
         /// Deserializes the specified <paramref name="rawServerResponse"/> to the requested type
@@ -623,7 +632,7 @@ namespace PAROCHOSClient
         /// <summary>
         /// The member of the <see cref="Instance"/>
         /// </summary>
-        private static Lazy<WebRequestsClient> mInstance = new(() => new());
+        private static readonly Lazy<WebRequestsClient> mInstance = new(() => new());
 
         #endregion
 

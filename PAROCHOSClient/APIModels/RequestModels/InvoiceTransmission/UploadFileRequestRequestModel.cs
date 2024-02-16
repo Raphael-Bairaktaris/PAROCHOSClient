@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 namespace PAROCHOSClient
 {
     /// <summary>
-    /// Requests used for azure storage
+    /// Request model that is used for creating an upload file request
     /// </summary>
-    public class AzureStorageRequestModel
+    public class UploadFileRequestRequestModel
     {
         #region Public Properties
 
@@ -27,16 +27,16 @@ namespace PAROCHOSClient
         public string? ExternalSystemId { get; set; }
 
         /// <summary>
-        /// The name of the pdf file.
+        /// The name of the PDF file.
         /// </summary>
         [JsonProperty("fileName")]
         public string? FileName { get; set; }
 
         /// <summary>
-        /// The size in bytes of the pdf file.
+        /// The size in bytes of the PDF file.
         /// </summary>
         [JsonProperty("fileSize")]
-        public double? FileSize { get; set; }
+        public long? FileSize { get; set; }
 
         #endregion
 
@@ -45,7 +45,7 @@ namespace PAROCHOSClient
         /// <summary>
         /// Default constructor
         /// </summary>
-        public AzureStorageRequestModel() : base()
+        public UploadFileRequestRequestModel() : base()
         {
 
         }

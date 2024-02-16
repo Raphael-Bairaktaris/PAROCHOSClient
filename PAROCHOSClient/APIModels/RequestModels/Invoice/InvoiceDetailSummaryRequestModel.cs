@@ -13,20 +13,20 @@ namespace PAROCHOSClient
         /// Total net amount of the invoice
         /// </summary>
         [JsonProperty("totalNetValue")]
-        public decimal? TotalNetValue { get; set; }
+        public decimal? NetAmount { get; set; }
 
         /// <summary>
         /// Total VAT amount of the invoice
         /// </summary>
         [JsonProperty("totalVatAmount")]
-        public decimal? TotalVATAmount { get; set; }
+        public decimal? TaxAmount { get; set; }
 
         /// <summary>
         /// Invoice's payable amount
         /// </summary>
         [JsonRequired]
         [JsonProperty("totalValue")]
-        public decimal? TotalValue { get; set; }
+        public decimal? Amount { get; set; }
 
         #endregion
 
