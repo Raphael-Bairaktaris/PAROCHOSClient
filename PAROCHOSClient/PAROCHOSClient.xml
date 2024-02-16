@@ -19829,17 +19829,6 @@
             <param name="amount">The amount</param>
             <returns></returns>
         </member>
-        <member name="T:PAROCHOSClient.IAPIStringFormattable">
-            <summary>
-            Provides abstractions for an object that can be formatted to a string suitable to be placed in a URL.
-            </summary>
-        </member>
-        <member name="M:PAROCHOSClient.IAPIStringFormattable.ToAPIString">
-            <summary>
-            Returns a string suitable to be placed in a URL.
-            </summary>
-            <returns></returns>
-        </member>
         <member name="T:PAROCHOSClient.BaseEnumEnumerableJsonConverter`1">
             <summary>
             The base for all the <see cref="T:Newtonsoft.Json.JsonConverter`1"/>s that are used for converting between an enumerable of <see cref="T:System.Enum"/>s and a <see cref="T:System.String"/>.
@@ -20207,17 +20196,17 @@
         <member name="M:PAROCHOSClient.PEPPOLDutyOrTaxOfFeeCategoryCodeToStringJsonConverter.GetMapper">
             <inheritdoc/>
         </member>
-        <member name="T:PAROCHOSClient.JsonConverters.PEPPOLInvoiceTypeCodeToStringJsonConverter">
+        <member name="T:PAROCHOSClient.PEPPOLInvoiceTypeCodeToStringJsonConverter">
             <summary>
             A <see cref="T:Newtonsoft.Json.JsonConverter`1"/> that converts an <see cref="T:PAROCHOSClient.PEPPOLInvoiceTypeCode"/> to <see cref="T:System.String"/>
             </summary>
         </member>
-        <member name="M:PAROCHOSClient.JsonConverters.PEPPOLInvoiceTypeCodeToStringJsonConverter.#ctor">
+        <member name="M:PAROCHOSClient.PEPPOLInvoiceTypeCodeToStringJsonConverter.#ctor">
             <summary>
             Default constructor
             </summary>
         </member>
-        <member name="M:PAROCHOSClient.JsonConverters.PEPPOLInvoiceTypeCodeToStringJsonConverter.GetMapper">
+        <member name="M:PAROCHOSClient.PEPPOLInvoiceTypeCodeToStringJsonConverter.GetMapper">
             <inheritdoc/>
         </member>
         <member name="T:PAROCHOSClient.PEPPOLRecommendationCodeToStringJsonConverter">
@@ -20444,7 +20433,7 @@
             Maps the <see cref="T:PAROCHOSClient.InvoiceType"/>s to their related <see cref="T:System.String"/>s
             </summary>
         </member>
-        <member name="P:PAROCHOSClient.PAROCHOSClientConstants.InvoiceTypeUBLToStringMapper">
+        <member name="P:PAROCHOSClient.PAROCHOSClientConstants.PEPPOLInvoiceTypeCodeToStringMapper">
             <summary>
             Maps the <see cref="T:PAROCHOSClient.PEPPOLInvoiceTypeCode"/>s to their related <see cref="T:System.String"/>s
             </summary>
@@ -20459,7 +20448,7 @@
             Maps the <see cref="T:PAROCHOSClient.MeasurementUnit"/>s to their related <see cref="T:System.Int32"/>s
             </summary>
         </member>
-        <member name="P:PAROCHOSClient.PAROCHOSClientConstants.UBLMeasurementUnitToStringMapper">
+        <member name="P:PAROCHOSClient.PAROCHOSClientConstants.PEPPOLRecommendationCodeToStringMapper">
             <summary>
             Maps the <see cref="T:PAROCHOSClient.PEPPOLRecommendationCode"/>s to their related <see cref="T:System.String"/>s
             </summary>
@@ -20489,12 +20478,12 @@
             Maps the <see cref="T:PAROCHOSClient.StatusType"/>s to their related <see cref="T:System.String"/>s
             </summary>
         </member>
-        <member name="P:PAROCHOSClient.PAROCHOSClientConstants.TaxCategoryUBLToStringMapper">
+        <member name="P:PAROCHOSClient.PAROCHOSClientConstants.PEPPOLAllowanceReasonCodeToStringMapper">
             <summary>
             Maps the <see cref="T:PAROCHOSClient.PEPPOLAllowanceReasonCode"/>s to their related <see cref="T:System.String"/>s
             </summary>
         </member>
-        <member name="P:PAROCHOSClient.PAROCHOSClientConstants.TaxCategoryToIntMapper">
+        <member name="P:PAROCHOSClient.PAROCHOSClientConstants.TaxTypeToIntMapper">
             <summary>
             Maps the <see cref="T:PAROCHOSClient.TaxType"/>s to their related <see cref="T:System.Int32"/>s
             </summary>
@@ -20509,12 +20498,12 @@
             Maps the <see cref="T:PAROCHOSClient.VATExemptionCategory"/>s to their related <see cref="T:System.Int32"/>s
             </summary>
         </member>
-        <member name="P:PAROCHOSClient.PAROCHOSClientConstants.VATExemptionCategoryUBLToStringMapper">
+        <member name="P:PAROCHOSClient.PAROCHOSClientConstants.PEPPOLVATExemptionCodeToStringMapper">
             <summary>
             Maps the <see cref="T:PAROCHOSClient.PEPPOLVATExemptionCode"/>s to their related <see cref="T:System.String"/>s
             </summary>
         </member>
-        <member name="P:PAROCHOSClient.PAROCHOSClientConstants.VATExemptionTypeUBLToStringMapper">
+        <member name="P:PAROCHOSClient.PAROCHOSClientConstants.PEPPOLDutyOrTaxOfFeeCategoryCodeToStringMapper">
             <summary>
             Maps the <see cref="T:PAROCHOSClient.PEPPOLDutyOrTaxOfFeeCategoryCode"/>s to their related <see cref="T:System.String"/>s
             </summary>

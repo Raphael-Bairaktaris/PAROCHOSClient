@@ -23,7 +23,7 @@ namespace PAROCHOSClient
         #region Protected Methods
 
         /// <inheritdoc/>
-        protected override IReadOnlyDictionary<PEPPOLAllowanceReasonCode, string> GetMapper() => PAROCHOSClientConstants.TaxCategoryUBLToStringMapper;
+        protected override IReadOnlyDictionary<PEPPOLAllowanceReasonCode, string> GetMapper() => PAROCHOSClientConstants.PEPPOLAllowanceReasonCodeToStringMapper;
 
         #endregion
     }

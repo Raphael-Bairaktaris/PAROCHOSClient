@@ -1,5 +1,4 @@
 ﻿using Newtonsoft.Json;
-using PAROCHOSClient.JsonConverters;
 using System;
 
 namespace PAROCHOSClient

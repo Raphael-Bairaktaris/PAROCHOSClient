@@ -263,7 +263,7 @@ namespace PAROCHOSClient
         /// <summary>
         /// Maps the <see cref="PEPPOLInvoiceTypeCode"/>s to their related <see cref="string"/>s
         /// </summary>
-        public static IReadOnlyDictionary<PEPPOLInvoiceTypeCode, string> InvoiceTypeUBLToStringMapper { get; } = new Dictionary<PEPPOLInvoiceTypeCode, string>()
+        public static IReadOnlyDictionary<PEPPOLInvoiceTypeCode, string> PEPPOLInvoiceTypeCodeToStringMapper { get; } = new Dictionary<PEPPOLInvoiceTypeCode, string>()
         {
             { PEPPOLInvoiceTypeCode.RequestForPayment, "71" },
             { PEPPOLInvoiceTypeCode.DebitNoteRelatedToGoodsOrServices, "80" },
@@ -315,7 +315,7 @@ namespace PAROCHOSClient
         /// <summary>
         /// Maps the <see cref="PEPPOLRecommendationCode"/>s to their related <see cref="string"/>s
         /// </summary>
-        public static IReadOnlyDictionary<PEPPOLRecommendationCode, string> UBLMeasurementUnitToStringMapper { get; } = new Dictionary<PEPPOLRecommendationCode, string>()
+        public static IReadOnlyDictionary<PEPPOLRecommendationCode, string> PEPPOLRecommendationCodeToStringMapper { get; } = new Dictionary<PEPPOLRecommendationCode, string>()
         {
             { PEPPOLRecommendationCode.Group, "10" },
             { PEPPOLRecommendationCode.Outfit, "11" },
@@ -2542,7 +2542,7 @@ namespace PAROCHOSClient
         /// <summary>
         /// Maps the <see cref="PEPPOLAllowanceReasonCode"/>s to their related <see cref="string"/>s
         /// </summary>
-        public static IReadOnlyDictionary<PEPPOLAllowanceReasonCode, string> TaxCategoryUBLToStringMapper { get; } = new Dictionary<PEPPOLAllowanceReasonCode, string>()
+        public static IReadOnlyDictionary<PEPPOLAllowanceReasonCode, string> PEPPOLAllowanceReasonCodeToStringMapper { get; } = new Dictionary<PEPPOLAllowanceReasonCode, string>()
         {
             { PEPPOLAllowanceReasonCode.BonusForWorksAheadOfSchedule, "41" },
             { PEPPOLAllowanceReasonCode.OtherBonus, "42" },
@@ -2568,7 +2568,7 @@ namespace PAROCHOSClient
         /// <summary>
         /// Maps the <see cref="TaxType"/>s to their related <see cref="int"/>s
         /// </summary>
-        public static IReadOnlyDictionary<TaxType, int> TaxCategoryToIntMapper { get; } = new Dictionary<TaxType, int>()
+        public static IReadOnlyDictionary<TaxType, int> TaxTypeToIntMapper { get; } = new Dictionary<TaxType, int>()
         {
             { TaxType.WithholdingTax, 1},
             { TaxType.Fees, 2},
@@ -2644,7 +2644,7 @@ namespace PAROCHOSClient
         /// <summary>
         /// Maps the <see cref="PEPPOLVATExemptionCode"/>s to their related <see cref="string"/>s
         /// </summary>
-        public static IReadOnlyDictionary<PEPPOLVATExemptionCode, string> VATExemptionCategoryUBLToStringMapper { get; } = new Dictionary<PEPPOLVATExemptionCode, string>()
+        public static IReadOnlyDictionary<PEPPOLVATExemptionCode, string> PEPPOLVATExemptionCodeToStringMapper { get; } = new Dictionary<PEPPOLVATExemptionCode, string>()
         {
             { PEPPOLVATExemptionCode.VATEX_EU_79_C, "VATEX-EU-79-C" },
             { PEPPOLVATExemptionCode.VATEX_EU_132, "VATEX-EU-132" },
@@ -2708,7 +2708,7 @@ namespace PAROCHOSClient
         /// <summary>
         /// Maps the <see cref="PEPPOLDutyOrTaxOfFeeCategoryCode"/>s to their related <see cref="string"/>s
         /// </summary>
-        public static IReadOnlyDictionary<PEPPOLDutyOrTaxOfFeeCategoryCode, string> VATExemptionTypeUBLToStringMapper { get; } = new Dictionary<PEPPOLDutyOrTaxOfFeeCategoryCode, string>()
+        public static IReadOnlyDictionary<PEPPOLDutyOrTaxOfFeeCategoryCode, string> PEPPOLDutyOrTaxOfFeeCategoryCodeToStringMapper { get; } = new Dictionary<PEPPOLDutyOrTaxOfFeeCategoryCode, string>()
         {
             { PEPPOLDutyOrTaxOfFeeCategoryCode.VatReverseCharge, "AE" },
             { PEPPOLDutyOrTaxOfFeeCategoryCode.ExemptFromTax, "E" },

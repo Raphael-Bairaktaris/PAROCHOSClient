@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System.Collections.Generic;
 
-namespace PAROCHOSClient.JsonConverters
+namespace PAROCHOSClient
 {
     /// <summary>
     /// A <see cref="JsonConverter{T}"/> that converts an <see cref="PEPPOLInvoiceTypeCode"/> to <see cref="string"/>
@@ -23,7 +23,7 @@ namespace PAROCHOSClient.JsonConverters
         #region Protected Methods
 
         /// <inheritdoc/>
-        protected override IReadOnlyDictionary<PEPPOLInvoiceTypeCode, string> GetMapper() => PAROCHOSClientConstants.InvoiceTypeUBLToStringMapper;
+        protected override IReadOnlyDictionary<PEPPOLInvoiceTypeCode, string> GetMapper() => PAROCHOSClientConstants.PEPPOLInvoiceTypeCodeToStringMapper;
 
         #endregion
     }

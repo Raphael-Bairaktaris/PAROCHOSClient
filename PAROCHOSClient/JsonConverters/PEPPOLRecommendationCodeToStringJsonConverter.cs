@@ -23,7 +23,7 @@ namespace PAROCHOSClient
         #region Protected Methods
 
         /// <inheritdoc/>
-        protected override IReadOnlyDictionary<PEPPOLRecommendationCode, string> GetMapper() => PAROCHOSClientConstants.UBLMeasurementUnitToStringMapper;
+        protected override IReadOnlyDictionary<PEPPOLRecommendationCode, string> GetMapper() => PAROCHOSClientConstants.PEPPOLRecommendationCodeToStringMapper;
 
         #endregion
     }

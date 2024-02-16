@@ -23,7 +23,7 @@ namespace PAROCHOSClient
         #region Protected Methods
 
         /// <inheritdoc/>
-        protected override IReadOnlyDictionary<PEPPOLDutyOrTaxOfFeeCategoryCode, string> GetMapper() => PAROCHOSClientConstants.VATExemptionTypeUBLToStringMapper;
+        protected override IReadOnlyDictionary<PEPPOLDutyOrTaxOfFeeCategoryCode, string> GetMapper() => PAROCHOSClientConstants.PEPPOLDutyOrTaxOfFeeCategoryCodeToStringMapper;
 
         #endregion
     }
