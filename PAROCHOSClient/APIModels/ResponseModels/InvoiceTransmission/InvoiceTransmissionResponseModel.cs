@@ -6,7 +6,7 @@ namespace PAROCHOSClient
     /// <summary>
     /// Represents an invoice transmission response
     /// </summary>
-    public class InvoiceTransmissionResponseModel : BaseParochosResponseModel
+    public class InvoiceTransmissionResponseModel : BasePAROCHOSResponseModel
     {
         #region Private Members
 
@@ -14,6 +14,11 @@ namespace PAROCHOSClient
         /// The member of the <see cref="ExternalSystemId"/> property
         /// </summary>
         private string? mExternalSystemId;
+
+        /// <summary>
+        /// The member of the <see cref="ProcessId"/> property
+        /// </summary>
+        private string? mProcessId;
 
         /// <summary>
         /// The member of the <see cref="Signing"/> property
@@ -38,7 +43,12 @@ namespace PAROCHOSClient
         /// The identifier of the invoice
         /// </summary>
         [JsonProperty("processId")]
-        public double ProcessId { get; set; }
+        public string ProcessId
+        {
+            get => mProcessId ?? string.Empty;
+
+            set => mProcessId = value;
+        }
 
         /// <summary>
         /// The invoice transmission signing 
@@ -61,7 +71,7 @@ namespace PAROCHOSClient
         /// </summary>
         [JsonProperty("errorSeverity")]
         [JsonConverter(typeof(ErrorSeverityToIntJsonConverter))]
-        public ErrorSeverity ErrorSeverity { get; set; }
+        public ErrorSeverity? ErrorSeverity { get; set; }
 
         #endregion
 

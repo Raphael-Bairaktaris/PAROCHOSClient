@@ -1,20 +1,18 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿using System;
 
 namespace PAROCHOSClient
 {
     /// <summary>
-    /// Represents a login response
+    /// Represents an upload file request
     /// </summary>
-    public class LogInResponseModel : RefreshResponseModel
+    public class UploadFileRequestResponseModel : BasePAROCHOSResponseModel
     {
         #region Public Properties
 
         /// <summary>
-        /// The base url (Uniform Resource Locator) of API.
+        /// Azure storage url
         /// </summary>
-        [JsonProperty("url1")]
-        public Uri? URL1 { get; set; }
+        public Uri? UploadUrl { get; set; }
 
         #endregion
 
@@ -23,7 +21,7 @@ namespace PAROCHOSClient
         /// <summary>
         /// Default constructor
         /// </summary>
-        public LogInResponseModel() : base()
+        public UploadFileRequestResponseModel() : base()
         {
 
         }

@@ -38,7 +38,7 @@ namespace PAROCHOSClient
         /// The expiration DateTime of the jwt (JSON Web Token)
         /// </summary>
         [JsonProperty("jwtExpiration")]
-        public DateTime JWTExpiration { get; set; }
+        public DateTimeOffset JWTExpiration { get; set; }
 
         /// <summary>
         /// The new refresh token
@@ -54,7 +54,7 @@ namespace PAROCHOSClient
         /// The expiration DateTime of the refresh token.
         /// </summary>
         [JsonProperty("jwtRefreshTokenExpiration")]
-        public DateTime JWTRefreshTokenExpiration { get; set; }
+        public DateTimeOffset JWTRefreshTokenExpiration { get; set; }
 
         #endregion
 

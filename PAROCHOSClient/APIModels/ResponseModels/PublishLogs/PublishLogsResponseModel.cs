@@ -8,28 +8,28 @@ using System.Threading.Tasks;
 namespace PAROCHOSClient
 {
     /// <summary>
-    /// Represents a publish log response
+    /// Represents a publish logs
     /// </summary>
-    public class DownloadPublishLogResponseModel : BaseParochosResponseModel
+    public class PublishLogsResponseModel : BasePAROCHOSResponseModel
     {
         #region Private Members
 
         /// <summary>
         /// The member of the <see cref="PublishLogs"/> property
         /// </summary>
-        private IEnumerable<PublishLogDetailResponseModel>? mPublishLogs;
+        private IEnumerable<PublishLogResponseModel>? mPublishLogs;
 
         #endregion
 
         #region Public Properties
 
         /// <summary>
-        /// The publish log details
+        /// The publish logs
         /// </summary>
         [JsonProperty("publishLogs")]
-        public IEnumerable<PublishLogDetailResponseModel> PublishLogs 
+        public IEnumerable<PublishLogResponseModel> PublishLogs 
         { 
-            get => mPublishLogs ?? Enumerable.Empty<PublishLogDetailResponseModel>();
+            get => mPublishLogs ?? Enumerable.Empty<PublishLogResponseModel>();
             set => mPublishLogs = value;
         }
 
@@ -40,7 +40,7 @@ namespace PAROCHOSClient
         /// <summary>
         /// Default constructor
         /// </summary>
-        public DownloadPublishLogResponseModel() : base()
+        public PublishLogsResponseModel() : base()
         {
 
         }

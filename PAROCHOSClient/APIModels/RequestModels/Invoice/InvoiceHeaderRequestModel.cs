@@ -23,7 +23,7 @@ namespace PAROCHOSClient
         /// </summary>
         [JsonRequired]
         [JsonProperty("aa")]
-        public double? AA { get; set; }
+        public int? AA { get; set; }
 
         /// <summary>
         /// Invoice date
@@ -39,6 +39,7 @@ namespace PAROCHOSClient
         /// either the Payment due date(BT-9) or Payment terms(BT-20) shall be present.
         /// </summary>
         [JsonProperty("dueDate")]
+        [JsonConverter(typeof(DateOnlyToStringJsonConverter))]
         public DateOnly? DueDate { get; set; }
 
         /// <summary>
@@ -77,7 +78,7 @@ namespace PAROCHOSClient
         /// </summary>
         [JsonProperty("invoiceTypeUbl")]
         [JsonConverter(typeof(InvoiceTypeUBLToStringJsonConverter))]
-        public InvoiceTypeUBL? InvoiceTypeUbl { get; set; }
+        public InvoiceTypeUBL? InvoiceTypeUBL { get; set; }
 
         /// <summary>
         /// Currency of invoice
@@ -104,7 +105,7 @@ namespace PAROCHOSClient
         /// <summary>
         /// Indicates whether the invoice is related to fuel … Default is false 
         /// </summary>
-        [JsonProperty("fuleInvoice")]
+        [JsonProperty("fuelInvoice")]
         public bool? FuelInvoice { get; set; }
 
         #endregion

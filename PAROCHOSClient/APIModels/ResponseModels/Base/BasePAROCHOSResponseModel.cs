@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 namespace PAROCHOSClient
 {
     /// <summary>
-    /// The for all the parochos response model
+    /// The for all the PAROCHOS response models
     /// </summary>
-    public class BaseParochosResponseModel
+    public class BasePAROCHOSResponseModel
     {
         #region Private Members
 
@@ -60,7 +60,7 @@ namespace PAROCHOSClient
         /// </summary>
         [JsonProperty("errorCategory")]
         [JsonConverter(typeof(ErrorCategoryToStringJsonConverter))]
-        public ErrorCategory ErrorCategory { get; set; }
+        public ErrorCategory? ErrorCategory { get; set; }
 
         #endregion
 
@@ -69,10 +69,20 @@ namespace PAROCHOSClient
         /// <summary>
         /// Default constructor
         /// </summary>
-        public BaseParochosResponseModel() : base()
+        public BasePAROCHOSResponseModel() : base()
         {
 
         }
+
+        #endregion
+
+        #region Public Methods
+
+        /// <summary>
+        /// A flag indicating whether the response is successful
+        /// </summary>
+        /// <returns></returns>
+        public bool IsSuccessful() => ErrorMessage.IsNullOrEmpty();
 
         #endregion
     }

@@ -15,6 +15,7 @@ namespace PAROCHOSClient
         /// <remarks>https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2</remarks>
         [JsonRequired]
         [JsonProperty("country")]
+        [JsonConverter(typeof(CountryCodeToStringJsonConverter))]
         public CountryCode Country { get; set; }
 
         /// <summary>
@@ -33,7 +34,7 @@ namespace PAROCHOSClient
         /// Issuer's street address number
         /// </summary>
         [JsonProperty("streetNumber")]
-        public double? StreetNumber { get; set; }
+        public int? StreetNumber { get; set; }
 
         /// <summary>
         /// Issuer's address postal code

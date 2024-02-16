@@ -1,13 +1,23 @@
 ﻿using Newtonsoft.Json;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace PAROCHOSClient
 {
     /// <summary>
-    /// Represents an invoice response
+    /// Request model used for sending an income invoice
     /// </summary>
-    public class InvoiceRequestModel
+    public class IncomeInvoiceRequestModel
     {
+        #region Private Members
+
+        /// <summary>
+        /// The member of the <see cref="Details"/> property
+        /// </summary>
+        private IEnumerable<IncomeInvoiceDetailRequestModel>? mInvoiceDetails;
+
+        #endregion
+
         #region Public Properties
 
         /// <summary>
@@ -27,14 +37,12 @@ namespace PAROCHOSClient
         /// <summary>
         /// Tax Representative’s details if exists 
         /// </summary>
-        [JsonRequired]
         [JsonProperty("representative")]
         public InvoiceRepresentativeRequestModel? Representative { get; set; }
 
         /// <summary>
         /// Shipping address details
         /// </summary>
-        [JsonRequired]
         [JsonProperty("deliveryAddress")]
         public InvoceDeliveryAddressRequestModel? DeliveryAddress { get; set; }
 
@@ -43,19 +51,37 @@ namespace PAROCHOSClient
         /// </summary>
         [JsonRequired]
         [JsonProperty("invoiceHeader")]
-        public InvoiceHeaderRequestModel? InvoiceHeader { get; set; }
+        public InvoiceHeaderRequestModel? Header { get; set; }
 
         /// <summary>
         /// Lines of the invoice
         /// </summary>
         [JsonRequired]
         [JsonProperty("invoiceDetails")]
-        public IEnumerable<InvoiceDetailRequestModel>? InvoiceDetails { get; set; }
+        public IEnumerable<IncomeInvoiceDetailRequestModel>? Details
+        {
+            get
+            {
+                if (mInvoiceDetails is null)
+                    return null;
 
+                var i = 0;
+                foreach(var item in mInvoiceDetails)
+                {
+                    i++;
+                    item.LineNumber = i;
+                }
+
+                return mInvoiceDetails;
+            }
+
+            set => mInvoiceDetails = value;
+        }
 
         /// <summary>
         /// List of payment Methods applied with different type and portion of net value
         /// </summary>
+        [JsonRequired]
         [JsonProperty("paymentMethods")]
         public IEnumerable<InvoicePaymentMethodRequestModel>? PaymentMethods { get; set; }
 
@@ -63,7 +89,7 @@ namespace PAROCHOSClient
         /// Fees and additional charges or allowances details, when charges are included
         /// </summary>
         [JsonProperty("taxesTotals")]
-        public IEnumerable<InvoiceDetailTaxTotalRequestModel>? TaxesTotals { get; set; }
+        public IEnumerable<InvoiceDetailTaxTotalRequestModel>? Taxes { get; set; }
 
         /// <summary>
         /// Specific Invoice Types needs correlation between the invoice issued
@@ -72,13 +98,6 @@ namespace PAROCHOSClient
         /// <example>e.g. sales invoice-credit invoice</example>
         [JsonProperty("correlatedInvoices")]
         public IEnumerable<InvoiceDetailCorrelatedInvoiceRequestModel>? CorrelatedInvoices { get; set; }
-
-        /// <summary>
-        /// Summary of total amounts of the invoice 
-        /// </summary>
-        [JsonRequired]
-        [JsonProperty("invoiceSummary")]
-        public InvoiceDetailSummaryRequestModel? InvoiceSummary { get; set; }
 
         /// <summary>
         /// Type of Electronic Invoice Transmission
@@ -107,12 +126,39 @@ namespace PAROCHOSClient
 
         #endregion
 
+        #region Internal Properties
+
+        /// <summary>
+        /// Summary of total amounts of the invoice 
+        /// </summary>
+        [JsonRequired]
+        [JsonProperty("invoiceSummary")]
+        internal InvoiceDetailSummaryRequestModel? InvoiceSummary
+        {
+            get
+            {
+                if (Details is null)
+                    return null;
+
+                return new InvoiceDetailSummaryRequestModel()
+                {
+                    Amount = Details.Sum(x => x.Amount),
+                    NetAmount = Details.Sum(x => x.NetAmount),
+                    TaxAmount = Details.Sum(x => x.TaxAmount),
+                };
+            }
+
+            set { }
+        }
+
+        #endregion
+
         #region Constructors
 
         /// <summary>
         /// Default constructor
         /// </summary>
-        public InvoiceRequestModel() : base()
+        public IncomeInvoiceRequestModel() : base()
         {
 
         }

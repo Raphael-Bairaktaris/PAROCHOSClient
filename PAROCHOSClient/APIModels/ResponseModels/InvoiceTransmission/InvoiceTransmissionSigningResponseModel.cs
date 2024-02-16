@@ -43,7 +43,7 @@ namespace PAROCHOSClient
         /// Unique registration number of the invoice provided by AADE
         /// </summary>
         [JsonProperty("mark")]
-        public long Mark { get; set; }
+        public long? Mark { get; set; }
 
         /// <summary>
         /// Authentication code of the invoice provided by AADE.

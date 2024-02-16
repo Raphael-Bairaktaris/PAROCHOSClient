@@ -1,20 +1,20 @@
 ﻿using Newtonsoft.Json;
-using System;
 
 namespace PAROCHOSClient
 {
     /// <summary>
-    /// Represents a login response
+    /// Request model that is used as a wrapper for an invoice
     /// </summary>
-    public class LogInResponseModel : RefreshResponseModel
+    /// <typeparam name="T">The type of the invoice</typeparam>
+    internal class InvoiceWrapperRequestModel<T>
     {
         #region Public Properties
 
         /// <summary>
-        /// The base url (Uniform Resource Locator) of API.
+        /// The invoice
         /// </summary>
-        [JsonProperty("url1")]
-        public Uri? URL1 { get; set; }
+        [JsonProperty("invoice")]
+        public T? Invoice { get; set; }
 
         #endregion
 
@@ -23,7 +23,7 @@ namespace PAROCHOSClient
         /// <summary>
         /// Default constructor
         /// </summary>
-        public LogInResponseModel() : base()
+        public InvoiceWrapperRequestModel() : base()
         {
 
         }

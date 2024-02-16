@@ -9,14 +9,14 @@ namespace PAROCHOSClient
     /// <summary>
     /// Requests used for downloading published logs
     /// </summary>
-    public class DownloadPublishLogRequestModel : BaseParochosRequestModel
+    public class PublishLogsRequestModel : BasePAROCHOSRequestModel
     {
         #region Constructors
 
         /// <summary>
         /// Default constructor
         /// </summary>
-        public DownloadPublishLogRequestModel() : base()
+        public PublishLogsRequestModel() : base()
         {
 
         }

@@ -5,7 +5,7 @@ namespace PAROCHOSClient
     /// <summary>
     /// Requests used for login
     /// </summary>
-    public class LoginRequestModel
+    public class LogInRequestModel
     {
         #region Public Properties
 
@@ -34,7 +34,7 @@ namespace PAROCHOSClient
         /// <summary>
         /// Default constructor
         /// </summary>
-        public LoginRequestModel() : base()
+        public LogInRequestModel() : base()
         {
 
         }

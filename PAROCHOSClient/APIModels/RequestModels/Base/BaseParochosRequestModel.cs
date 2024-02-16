@@ -1,16 +1,11 @@
 ﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PAROCHOSClient
 {
     /// <summary>
-    /// The base for all the parochos request models
+    /// The base for all the PAROCHOS request models
     /// </summary>
-    public class BaseParochosRequestModel
+    public class BasePAROCHOSRequestModel
     {
         #region Public Properties
 
@@ -33,7 +28,7 @@ namespace PAROCHOSClient
         /// <summary>
         /// Default constructor
         /// </summary>
-        public BaseParochosRequestModel() : base()
+        public BasePAROCHOSRequestModel() : base()
         {
 
         }
