@@ -3,8 +3,9 @@
     /// <summary>
     /// 
     /// </summary>
-    public class PAROCHOSAPIRoutes
+    public class Routes
     {
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
         public const string BaseRoute = "https://account.parochos.gr/api";
 
         public const string LoginRoute = $"{BaseRoute}/account/loginToSubscription";
@@ -19,8 +20,9 @@
 
         public static string GetFinalizeRoute(string? baseUrl) => $"{baseUrl}api/Finalize";
 
-        public static string GetDownloadFilesRoute(string? baseUrl) => $"{baseUrl}api/getFiles";
+        public static string GetFilesRoute(string? baseUrl) => $"{baseUrl}api/getFiles";
 
-        public static string GetDownloadPublishLogsRoute(string? baseUrl) => $"{baseUrl}api/GetPublishLogs";
+        public static string GetPublishLogsRoute(string? baseUrl) => $"{baseUrl}api/GetPublishLogs";
+#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
     }
 }

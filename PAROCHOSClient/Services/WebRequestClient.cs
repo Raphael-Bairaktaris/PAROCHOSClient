@@ -632,7 +632,7 @@ namespace PAROCHOSClient
         /// <summary>
         /// The member of the <see cref="Instance"/>
         /// </summary>
-        private static Lazy<WebRequestsClient> mInstance = new(() => new());
+        private static readonly Lazy<WebRequestsClient> mInstance = new(() => new());
 
         #endregion
 

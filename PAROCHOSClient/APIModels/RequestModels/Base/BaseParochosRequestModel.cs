@@ -13,13 +13,13 @@ namespace PAROCHOSClient
         /// Unique processId as returned by api/send. 
         /// </summary>
         [JsonProperty("processId")]
-        public string ProcessId { get; set; }
+        public string? ProcessId { get; set; }
 
         /// <summary>
         /// The external identifier provided as input to api/send method 
         /// </summary>
         [JsonProperty("externalSystemId")]
-        public string ExternalSystemId { get; set; }
+        public string? ExternalSystemId { get; set; }
 
         #endregion
 

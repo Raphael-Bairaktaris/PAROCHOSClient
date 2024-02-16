@@ -60,7 +60,7 @@ namespace PAROCHOSClient
         /// <returns></returns>
         public async Task<WebRequestResult<LogInResponseModel>> LogInAsync()
         {
-            var response = await Client.PostAsync<LogInResponseModel>(PAROCHOSAPIRoutes.LoginRoute, new LogInRequestModel() { Email = Credentials.Email, Password = Credentials.Password, SubscriptionKey = Credentials.SubscriptionKey }, null);
+            var response = await Client.PostAsync<LogInResponseModel>(Routes.LoginRoute, new LogInRequestModel() { Email = Credentials.Email, Password = Credentials.Password, SubscriptionKey = Credentials.SubscriptionKey }, null);
 
             if (!response.IsSuccessful)
                 return response;
@@ -87,7 +87,7 @@ namespace PAROCHOSClient
                 return logInResponse.ToSuccessfulWebRequestResult(x => (RefreshResponseModel)x);
             }
 
-            var response = await Client.PostAsync<RefreshResponseModel>(PAROCHOSAPIRoutes.RefreshTokenRoute, new RefreshRequestModel()
+            var response = await Client.PostAsync<RefreshResponseModel>(Routes.RefreshTokenRoute, new RefreshRequestModel()
             {
                 RefreshToken = mLogInInformation.JWTRefreshToken,
                 Token = mLogInInformation.JWT
@@ -124,7 +124,7 @@ namespace PAROCHOSClient
 
                     // Send the invoice to the API
                     var transmissionResponse = await Client.PostAsync<InvoiceTransmissionResponseModel>(
-                        PAROCHOSAPIRoutes.GetInvoiceTransmissionRoute(x.URL1?.ToString()),
+                        Routes.GetInvoiceTransmissionRoute(x.URL1?.ToString()),
                         new InvoiceTransmissionRequestModel<InvoiceWrapperRequestModel<IncomeInvoiceRequestModel>>()
                         {
                                 ExternalSystemId = externalSystemId,
@@ -181,7 +181,7 @@ namespace PAROCHOSClient
                 // Attempt to get the information related to our transmitted invoice
                 result = await ExecuteAsync(
                     x => Client.PostAsync<InvoiceTransmissionResponseModel>(
-                        PAROCHOSAPIRoutes.GetPollingProcessRoute(x.URL1?.ToString()),
+                        Routes.GetPollingProcessRoute(x.URL1?.ToString()),
                         model,
                         x.JWT));
 
@@ -218,7 +218,7 @@ namespace PAROCHOSClient
 
                     // Create an upload request
                     var uploadFileRequestResult = await Client.PostAsync<UploadFileRequestResponseModel>(
-                        PAROCHOSAPIRoutes.GetUploadFileRequestRoute(x.URL1?.ToString()),
+                        Routes.GetUploadFileRequestRoute(x.URL1?.ToString()),
                         model,
                         x.JWT);
 
@@ -241,7 +241,7 @@ namespace PAROCHOSClient
                         return uploadFileToAzureResponse.ToUnsuccessfulWebRequestResult<UploadFileRequestResponseModel>();
 
                     // Verify the upload
-                    var uploadVerificationResponse = await Client.PostAsync<FinalizeResponseModel>(PAROCHOSAPIRoutes.GetFinalizeRoute(x.URL1?.ToString()), new FinalizeRequestModel()
+                    var uploadVerificationResponse = await Client.PostAsync<FinalizeResponseModel>(Routes.GetFinalizeRoute(x.URL1?.ToString()), new FinalizeRequestModel()
                     {
                         ExternalSystemId = model.ExternalSystemId,
                         ProcessId = model.ProcessId,
@@ -271,7 +271,7 @@ namespace PAROCHOSClient
         public async Task<WebRequestResult<FinalizeResponseModel>> FinalizeAsync(FinalizeRequestModel model)
         {
             return await ExecuteAsync<FinalizeResponseModel>(
-                async x => await Client.PostAsync<FinalizeResponseModel>(PAROCHOSAPIRoutes.GetFinalizeRoute(x.URL1?.ToString()), model, x.JWT));
+                async x => await Client.PostAsync<FinalizeResponseModel>(Routes.GetFinalizeRoute(x.URL1?.ToString()), model, x.JWT));
         }
 
         /// <summary>
@@ -287,7 +287,7 @@ namespace PAROCHOSClient
         public async Task<WebRequestResult<FilesResponseModel>> GetFilesAsync(FilesRequestModel model)
         {
             return await ExecuteAsync<FilesResponseModel>(
-                async x => await Client.PostAsync<FilesResponseModel>(PAROCHOSAPIRoutes.GetDownloadFilesRoute(x.URL1?.ToString()), model, x.JWT));
+                async x => await Client.PostAsync<FilesResponseModel>(Routes.GetFilesRoute(x.URL1?.ToString()), model, x.JWT));
         }
 
         /// <summary>
@@ -303,7 +303,7 @@ namespace PAROCHOSClient
         public async Task<WebRequestResult<PublishLogsResponseModel>> GetPublishLogsAsync(PublishLogsRequestModel model)
         {
             return await ExecuteAsync<PublishLogsResponseModel>(
-                async x => await Client.PostAsync<PublishLogsResponseModel>(PAROCHOSAPIRoutes.GetDownloadPublishLogsRoute(x.URL1?.ToString()), model, x.JWT));
+                async x => await Client.PostAsync<PublishLogsResponseModel>(Routes.GetPublishLogsRoute(x.URL1?.ToString()), model, x.JWT));
         }
 
         #endregion

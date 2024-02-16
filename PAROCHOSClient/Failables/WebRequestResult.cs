@@ -16,7 +16,7 @@ namespace PAROCHOSClient
         /// <summary>
         /// The default headers
         /// </summary>
-        public static HttpResponseHeaders DefaultHeaders = new HttpResponseMessage().Headers;
+        public static readonly HttpResponseHeaders DefaultHeaders = new HttpResponseMessage().Headers;
 
         /// <summary>
         /// The error message for the exception

@@ -76,7 +76,7 @@ namespace PAROCHOSClient
         /// Azure storage url with read rights to download the invoice pdf file.
         /// </summary>
         [JsonProperty("pdfFileUrl")]
-        public Uri PDFFileUrl { get; set; }
+        public Uri? PDFFileUrl { get; set; }
 
         #endregion
 
