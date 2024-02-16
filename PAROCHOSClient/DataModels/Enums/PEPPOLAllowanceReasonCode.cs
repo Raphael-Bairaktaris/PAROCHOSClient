@@ -1,9 +1,12 @@
 ﻿namespace PAROCHOSClient
 {
     /// <summary>
-    /// Provides enumeration over the UBL tax categories
+    /// Provides enumeration over the PEPPOL allowance reason codes
     /// </summary>
-    public enum TaxCategoryUBL
+    /// <remarks>
+    /// https://docs.peppol.eu/poacc/billing/3.0/codelist/UNCL5189/
+    /// </remarks>
+    public enum PEPPOLAllowanceReasonCode
     {
         /// <summary>
         /// Bonus for works ahead of schedule (Code: 41)

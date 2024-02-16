@@ -6,14 +6,14 @@ namespace PAROCHOSClient
     /// <summary>
     /// A <see cref="JsonConverter{T}"/> that converts a <see cref="PEPPOLAllowanceReasonCode"/> to <see cref="string"/>
     /// </summary>
-    public class TaxCategoryToStringJsonConverter : BaseEnumToStringJsonConverter<PEPPOLAllowanceReasonCode>
+    public class PEPPOLAllowanceReasonCodeToStringJsonConverter : BaseEnumToStringJsonConverter<PEPPOLAllowanceReasonCode>
     {
         #region Constructors
 
         /// <summary>
         /// Default constructor
         /// </summary>
-        public TaxCategoryToStringJsonConverter() : base()
+        public PEPPOLAllowanceReasonCodeToStringJsonConverter() : base()
         {
 
         }

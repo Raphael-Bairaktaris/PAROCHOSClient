@@ -9,8 +9,14 @@ namespace PAROCHOSClient
     {
         #region Constants
 
+        /// <summary>
+        /// The precision of the decimal numbers that is used when performing numeric operations
+        /// </summary>
         public const uint DefaultDecimalPrecision = 2;
 
+        /// <summary>
+        /// The midpoint rounding behavior of the decimal numbers that is used when performing numeric operations
+        /// </summary>
         public const MidpointRounding DefaultMode = MidpointRounding.AwayFromZero;
 
         #endregion
