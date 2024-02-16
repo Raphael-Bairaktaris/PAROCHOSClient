@@ -23,17 +23,17 @@ namespace PAROCHOSClient
         /// Azure storage url
         /// </summary>
         [JsonProperty("downloadUrl")]
-        public Uri DownloadUrl { get; set; }
+        public Uri? DownloadUrl { get; set; }
 
         /// <summary>
         /// Name of the file uploaded
         /// </summary>
         [JsonProperty("fileName")]
-        public string FileName 
-        { 
+        public string FileName
+        {
             get => mFileName ?? string.Empty;
             set => mFileName = value;
-        }    
+        }
 
         #endregion
 
@@ -46,6 +46,13 @@ namespace PAROCHOSClient
         {
 
         }
+
+        #endregion
+
+        #region Public Methods 
+
+        /// <inheritdoc/>
+        public override string ToString() => FileName;
 
         #endregion
     }

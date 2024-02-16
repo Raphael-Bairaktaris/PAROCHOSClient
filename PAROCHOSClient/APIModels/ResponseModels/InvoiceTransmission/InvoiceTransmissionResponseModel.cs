@@ -85,5 +85,12 @@ namespace PAROCHOSClient
         }
 
         #endregion
+
+        #region Public Methods
+
+        /// <inheritdoc/>
+        public override string ToString() => $"TimeStamp {TimeStamp}, ErrorSeverity {ErrorSeverity}";
+
+        #endregion
     }
 }

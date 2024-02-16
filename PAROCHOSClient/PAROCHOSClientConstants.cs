@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
-using System.Runtime.CompilerServices;
 
 namespace PAROCHOSClient
 {
@@ -28,7 +27,7 @@ namespace PAROCHOSClient
         /// <summary>
         /// Maps the <see cref="TransmissionType"/>s to their related <see cref="int"/>s
         /// </summary>
-        public static IReadOnlyDictionary<TransmissionType, int> TransmissionTypeToIntMapper { get; } = new Dictionary<TransmissionType, int>() 
+        public static IReadOnlyDictionary<TransmissionType, int> TransmissionTypeToIntMapper { get; } = new Dictionary<TransmissionType, int>()
         {
             { TransmissionType.TransmitInvoice, 0 },
             { TransmissionType.TransmitInvoiceAndGeneratePDF, 1 },

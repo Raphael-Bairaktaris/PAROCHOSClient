@@ -2,7 +2,6 @@
 
 using System;
 using System.Diagnostics;
-using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 
@@ -46,7 +45,7 @@ namespace PAROCHOSClient
 
                 return await (await Client.PutAsync(url, httpContent)).CreateWebRequestResultAsync();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return ex;
             }
@@ -62,7 +61,7 @@ namespace PAROCHOSClient
         {
             var result = JsonConvert.SerializeObject(obj, new JsonSerializerSettings()
             {
-                 NullValueHandling = NullValueHandling.Ignore,
+                NullValueHandling = NullValueHandling.Ignore,
             });
 
 #if DEBUG

@@ -66,7 +66,7 @@ namespace PAROCHOSClient
                     return null;
 
                 var i = 0;
-                foreach(var item in mInvoiceDetails)
+                foreach (var item in mInvoiceDetails)
                 {
                     i++;
                     item.LineNumber = i;

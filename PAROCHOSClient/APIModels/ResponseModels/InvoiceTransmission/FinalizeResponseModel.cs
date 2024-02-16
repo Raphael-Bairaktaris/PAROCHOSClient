@@ -1,11 +1,4 @@
-﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace PAROCHOSClient
+﻿namespace PAROCHOSClient
 {
     /// <summary>
     /// Represents an Azure upload verification response

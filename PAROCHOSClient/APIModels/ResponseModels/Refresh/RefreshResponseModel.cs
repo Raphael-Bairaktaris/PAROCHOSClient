@@ -69,5 +69,12 @@ namespace PAROCHOSClient
         }
 
         #endregion
+
+        #region Public Methods 
+
+        /// <inheritdoc/>
+        public override string ToString() => $"JWTExpiration {JWTExpiration}";
+
+        #endregion
     }
 }

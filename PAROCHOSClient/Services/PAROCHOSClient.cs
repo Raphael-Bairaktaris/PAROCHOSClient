@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
-using System.Globalization;
-using System.IO;
-using System.Net;
-using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace PAROCHOSClient
@@ -127,12 +121,12 @@ namespace PAROCHOSClient
                         Routes.GetInvoiceTransmissionRoute(x.URL1?.ToString()),
                         new InvoiceTransmissionRequestModel<InvoiceWrapperRequestModel<IncomeInvoiceRequestModel>>()
                         {
-                                ExternalSystemId = externalSystemId,
-                                Source = new InvoiceWrapperRequestModel<IncomeInvoiceRequestModel>()
-                                {
-                                    Invoice = model
-                                },
-                                TransmissionType = transmissionType,
+                            ExternalSystemId = externalSystemId,
+                            Source = new InvoiceWrapperRequestModel<IncomeInvoiceRequestModel>()
+                            {
+                                Invoice = model
+                            },
+                            TransmissionType = transmissionType,
                         },
                         x.JWT);
 
@@ -176,7 +170,7 @@ namespace PAROCHOSClient
             var retriesCounter = 0;
 
             // If a request hasn't been made, or we have reached the API and the API has informed us that the operation is in process...
-            while(result is null || (result.IsSuccessful && result.Result.Status == StatusType.InProgress))
+            while (result is null || (result.IsSuccessful && result.Result.Status == StatusType.InProgress))
             {
                 // Attempt to get the information related to our transmitted invoice
                 result = await ExecuteAsync(

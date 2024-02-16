@@ -1,7 +1,5 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-using Newtonsoft.Json;
-
 using PAROCHOSClient;
 
 var credentials = File.ReadAllText(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "PAROCHOSClientCredentials.txt")).Split(Environment.NewLine);

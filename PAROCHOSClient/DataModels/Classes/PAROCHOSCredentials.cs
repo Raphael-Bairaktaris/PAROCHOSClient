@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace PAROCHOSClient
+﻿namespace PAROCHOSClient
 {
     /// <summary>
     /// The credentials used for the PAROCHOS API

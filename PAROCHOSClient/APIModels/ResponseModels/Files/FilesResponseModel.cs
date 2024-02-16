@@ -1,10 +1,5 @@
-﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Reflection.Metadata;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PAROCHOSClient
 {
@@ -27,8 +22,8 @@ namespace PAROCHOSClient
         /// <summary>
         /// The files
         /// </summary>
-        public IEnumerable<FileResponseModel> Files 
-        { 
+        public IEnumerable<FileResponseModel> Files
+        {
             get => mFiles ?? Enumerable.Empty<FileResponseModel>();
             set => mFiles = value;
         }

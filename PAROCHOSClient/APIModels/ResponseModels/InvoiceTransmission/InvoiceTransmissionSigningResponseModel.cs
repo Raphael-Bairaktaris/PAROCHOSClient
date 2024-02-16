@@ -91,5 +91,12 @@ namespace PAROCHOSClient
         }
 
         #endregion
+
+        #region Public Methods
+
+        /// <inheritdoc/>
+        public override string ToString() => $"Uid {UId}";
+
+        #endregion
     }
 }

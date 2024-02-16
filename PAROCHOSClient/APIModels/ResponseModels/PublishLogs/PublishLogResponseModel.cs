@@ -24,8 +24,8 @@ namespace PAROCHOSClient
         /// </summary>
         /// <remarks>https://parochos.gr/files/API_Documentation_Provider.pdf#page=34&zoom=100,69,589</remarks>
         [JsonProperty("message")]
-        public string Message 
-        { 
+        public string Message
+        {
             get => mMessage ?? string.Empty;
             set => mMessage = value;
         }
@@ -54,6 +54,13 @@ namespace PAROCHOSClient
         {
 
         }
+
+        #endregion
+
+        #region Public Methods
+
+        /// <inheritdoc/>
+        public override string ToString() => $"Message {Message}, Status {Status}, Timestamp {TimeStamp}";
 
         #endregion
     }

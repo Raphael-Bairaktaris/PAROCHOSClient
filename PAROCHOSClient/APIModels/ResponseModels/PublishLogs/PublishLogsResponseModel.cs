@@ -1,9 +1,6 @@
 ﻿using Newtonsoft.Json;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PAROCHOSClient
 {
@@ -27,8 +24,8 @@ namespace PAROCHOSClient
         /// The publish logs
         /// </summary>
         [JsonProperty("publishLogs")]
-        public IEnumerable<PublishLogResponseModel> PublishLogs 
-        { 
+        public IEnumerable<PublishLogResponseModel> PublishLogs
+        {
             get => mPublishLogs ?? Enumerable.Empty<PublishLogResponseModel>();
             set => mPublishLogs = value;
         }
