@@ -1,9 +1,12 @@
 ﻿namespace PAROCHOSClient
 {
     /// <summary>
-    /// Provides enumeration over the UBL invoice types
+    /// Provides enumeration over the PEPPOL invoice type codes
     /// </summary>
-    public enum InvoiceTypeUBL
+    /// <remarks>
+    /// https://docs.peppol.eu/poacc/billing/3.0/codelist/UNCL1001-inv/
+    /// </remarks>
+    public enum PEPPOLInvoiceTypeCode
     {
         /// <summary>
         /// Request for payment (Code: 71)

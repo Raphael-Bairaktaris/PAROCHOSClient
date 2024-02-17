@@ -1,10 +1,12 @@
 ﻿namespace PAROCHOSClient
 {
-
     /// <summary>
-    /// Provides enumeration over the UBL VAT exemption types
+    /// Provides enumeration over the PEPPOL VAT exemption codes
     /// </summary>
-    public enum VATExemptionTypeUBL
+    /// <remarks>
+    /// https://docs.peppol.eu/poacc/billing/3.0/codelist/vatex/
+    /// </remarks>
+    public enum PEPPOLDutyOrTaxOfFeeCategoryCode
     {
         /// <summary>
         /// Vat Reverse Charge (Code: AE)

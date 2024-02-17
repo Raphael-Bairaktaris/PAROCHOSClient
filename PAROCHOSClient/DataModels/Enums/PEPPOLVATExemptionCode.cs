@@ -1,10 +1,12 @@
 ﻿namespace PAROCHOSClient
 {
-
     /// <summary>
-    /// Provides enumeration over the UBL VAT exemption categories
+    /// Provides enumeration over the PEPPOL VAT exemption codes
     /// </summary>
-    public enum VATExemptionCategoryUBL
+    /// <remarks>
+    /// https://docs.peppol.eu/poacc/billing/3.0/codelist/vatex/
+    /// </remarks>
+    public enum PEPPOLVATExemptionCode
     {
         /// <summary>
         /// Exempt based on article 79, point c of Council Directive 2006/112/EC (Code: VATEX-EU-79-C)

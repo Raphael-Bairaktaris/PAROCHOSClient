@@ -1,9 +1,12 @@
 ﻿namespace PAROCHOSClient
 {
     /// <summary>
-    /// Provides enumeration over the UBL measurement units
+    /// Provides enumeration over the PEPPOL recommendation codes
     /// </summary>
-    public enum UBLMeasurementUnit
+    /// <remarks>
+    /// https://docs.peppol.eu/poacc/billing/3.0/codelist/UNECERec20/
+    /// </remarks>
+    public enum PEPPOLRecommendationCode
     {
         /// <summary>
         /// Group (Code: 10)

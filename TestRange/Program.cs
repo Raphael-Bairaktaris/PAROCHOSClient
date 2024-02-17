@@ -35,7 +35,7 @@ var requestModel = new IncomeInvoiceRequestModel()
         AA = 102,
         IssueDate = DateOnly.FromDateTime(DateTime.Now),
         InvoiceType = InvoiceType.SalesInvoice,
-        InvoiceTypeUBL = InvoiceTypeUBL.CommercialInvoice,
+        PEPPOLInvoiceTypeCode = PEPPOLInvoiceTypeCode.CommercialInvoice,
         Currency = CurrencyCode.EUR
     },
 
@@ -47,12 +47,12 @@ var requestModel = new IncomeInvoiceRequestModel()
             Quantity = 10,
             Amount = 5,
             VATCategory = VATCategory.VATRate13,
-            VatCategoryUBL = VATCategoryUBL.StandardRate,
+            PEPPOLDutyOrTaxOfFeeCategoryCode = PEPPOLDutyOrTaxOfFeeCategoryCode.StandardRate,
             ClassificationType = IncomeClassificationType.E3_561_001,
             ClassificationCategory = IncomeClassificationCategory.Category1_2,
             LineComments = "Test comments",
             MeasurementUnit = MeasurementUnit.Pieces,
-            MeasurementUnitUBL = UBLMeasurementUnit.ServiceUnit,
+            PEPPOLRecommendationCode = PEPPOLRecommendationCode.ServiceUnit,
         }
     },
 }

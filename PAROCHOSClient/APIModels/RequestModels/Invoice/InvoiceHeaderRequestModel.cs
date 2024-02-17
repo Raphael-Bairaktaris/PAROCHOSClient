@@ -1,5 +1,4 @@
 ﻿using Newtonsoft.Json;
-using PAROCHOSClient.JsonConverters;
 using System;
 
 namespace PAROCHOSClient
@@ -77,8 +76,8 @@ namespace PAROCHOSClient
         /// Invoice Type according to UBL 2.1 documentation
         /// </summary>
         [JsonProperty("invoiceTypeUbl")]
-        [JsonConverter(typeof(InvoiceTypeUBLToStringJsonConverter))]
-        public InvoiceTypeUBL? InvoiceTypeUBL { get; set; }
+        [JsonConverter(typeof(PEPPOLInvoiceTypeCodeToStringJsonConverter))]
+        public PEPPOLInvoiceTypeCode? PEPPOLInvoiceTypeCode { get; set; }
 
         /// <summary>
         /// Currency of invoice

@@ -19,11 +19,15 @@ namespace PAROCHOSClient
 
         #region Public Properties
 
+#pragma warning disable CS1570 // XML comment has badly formed XML
         /// <summary>
         /// Publish log entry detailed message. Possible error messages described in
         /// </summary>
-        /// <remarks>https://parochos.gr/files/API_Documentation_Provider.pdf#page=34&zoom=100,69,589</remarks>
+        /// <remarks>
+        /// https://parochos.gr/files/API_Documentation_Provider.pdf#page=34&zoom=100,69,589
+        /// </remarks>
         [JsonProperty("message")]
+#pragma warning restore CS1570 // XML comment has badly formed XML
         public string Message
         {
             get => mMessage ?? string.Empty;

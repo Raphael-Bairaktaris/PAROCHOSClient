@@ -89,8 +89,8 @@ namespace PAROCHOSClient
         /// </summary>
         [JsonRequired]
         [JsonProperty("vatCategoryUbl")]
-        [JsonConverter(typeof(VATCategoryUBLToStringJsonConverter))]
-        public VATCategoryUBL? VatCategoryUBL { get; set; }
+        [JsonConverter(typeof(PEPPOLDutyOrTaxOfFeeCategoryCodeToStringJsonConverter))]
+        public PEPPOLDutyOrTaxOfFeeCategoryCode? PEPPOLDutyOrTaxOfFeeCategoryCode { get; set; }
 
         /// <summary>
         /// VAT (Value Added Tax) exemption category according to Tax Authorities' documentation 
@@ -103,8 +103,8 @@ namespace PAROCHOSClient
         /// VAT (Value Added Tax) Exemption category according to UBL 2.1 documentation
         /// </summary>
         [JsonProperty("vatExemptionUbl")]
-        [JsonConverter(typeof(VATExemptionCategoryUBLToStringJsonConverter))]
-        public VATExemptionCategoryUBL? VATExemptionUBL { get; set; }
+        [JsonConverter(typeof(PEPPOLVATExemptionCodeToStringJsonConverter))]
+        public PEPPOLVATExemptionCode? PEPPOLVATExemptionCode { get; set; }
 
         /// <summary>
         /// Measurement Unit according to Tax Authorities' documentation 
@@ -119,8 +119,8 @@ namespace PAROCHOSClient
         /// </summary>
         [JsonRequired]
         [JsonProperty("measurementUnitUbl")]
-        [JsonConverter(typeof(UBLMeasurementUnitToStringJsonConverter))]
-        public UBLMeasurementUnit? MeasurementUnitUBL { get; set; }
+        [JsonConverter(typeof(PEPPOLRecommendationCodeToStringJsonConverter))]
+        public PEPPOLRecommendationCode? PEPPOLRecommendationCode { get; set; }
 
         /// <summary>
         /// Comments of line 

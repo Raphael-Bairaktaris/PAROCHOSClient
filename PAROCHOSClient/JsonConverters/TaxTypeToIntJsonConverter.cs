@@ -23,7 +23,7 @@ namespace PAROCHOSClient
         #region Protected Methods
 
         /// <inheritdoc/>
-        protected override IReadOnlyDictionary<TaxType, int> GetMapper() => PAROCHOSClientConstants.TaxCategoryToIntMapper;
+        protected override IReadOnlyDictionary<TaxType, int> GetMapper() => PAROCHOSClientConstants.TaxTypeToIntMapper;
 
         #endregion
     }
