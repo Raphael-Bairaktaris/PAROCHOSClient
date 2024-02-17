@@ -28,7 +28,7 @@ namespace PAROCHOSClient
         /// </summary>
         [JsonProperty("taxCategoryUbl")]
         [JsonConverter(typeof(PEPPOLAllowanceReasonCodeToStringJsonConverter))]
-        public PEPPOLAllowanceReasonCode? TaxCategoryUBL { get; set; }
+        public PEPPOLAllowanceReasonCode? PEPPOLAllowanceReasonCode { get; set; }
 
         /// <summary>
         /// Total amount subject to a specific charge/allowance category
