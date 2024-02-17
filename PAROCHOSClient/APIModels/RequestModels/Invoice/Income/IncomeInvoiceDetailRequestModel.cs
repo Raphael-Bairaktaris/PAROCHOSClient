@@ -90,7 +90,7 @@ namespace PAROCHOSClient
         [JsonRequired]
         [JsonProperty("vatCategoryUbl")]
         [JsonConverter(typeof(PEPPOLDutyOrTaxOfFeeCategoryCodeToStringJsonConverter))]
-        public PEPPOLDutyOrTaxOfFeeCategoryCode? VatCategoryUBL { get; set; }
+        public PEPPOLDutyOrTaxOfFeeCategoryCode? PEPPOLDutyOrTaxOfFeeCategoryCode { get; set; }
 
         /// <summary>
         /// VAT (Value Added Tax) exemption category according to Tax Authorities' documentation 
@@ -104,7 +104,7 @@ namespace PAROCHOSClient
         /// </summary>
         [JsonProperty("vatExemptionUbl")]
         [JsonConverter(typeof(PEPPOLVATExemptionCodeToStringJsonConverter))]
-        public PEPPOLVATExemptionCode? VATExemptionUBL { get; set; }
+        public PEPPOLVATExemptionCode? PEPPOLVATExemptionCode { get; set; }
 
         /// <summary>
         /// Measurement Unit according to Tax Authorities' documentation 
@@ -120,7 +120,7 @@ namespace PAROCHOSClient
         [JsonRequired]
         [JsonProperty("measurementUnitUbl")]
         [JsonConverter(typeof(PEPPOLRecommendationCodeToStringJsonConverter))]
-        public PEPPOLRecommendationCode? MeasurementUnitUBL { get; set; }
+        public PEPPOLRecommendationCode? PEPPOLRecommendationCode { get; set; }
 
         /// <summary>
         /// Comments of line 

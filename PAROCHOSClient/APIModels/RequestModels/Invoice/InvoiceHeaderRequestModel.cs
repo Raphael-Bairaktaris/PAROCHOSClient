@@ -77,7 +77,7 @@ namespace PAROCHOSClient
         /// </summary>
         [JsonProperty("invoiceTypeUbl")]
         [JsonConverter(typeof(PEPPOLInvoiceTypeCodeToStringJsonConverter))]
-        public PEPPOLInvoiceTypeCode? InvoiceTypeUBL { get; set; }
+        public PEPPOLInvoiceTypeCode? PEPPOLInvoiceTypeCode { get; set; }
 
         /// <summary>
         /// Currency of invoice
