@@ -3,9 +3,9 @@
 namespace PAROCHOSClient
 {
     /// <summary>
-    /// The for all the PAROCHOS response models
+    /// The base for all the PAROCHOS response models
     /// </summary>
-    public class BasePAROCHOSResponseModel
+    public class BasePAROCHOSResponseModel 
     {
         #region Private Members
 

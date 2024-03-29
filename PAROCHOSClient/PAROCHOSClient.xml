@@ -229,7 +229,7 @@
             VAT (Value Added Tax) Category according to Tax Authorities' documentation 
             </summary>
         </member>
-        <member name="P:PAROCHOSClient.IncomeInvoiceDetailRequestModel.VatCategoryUBL">
+        <member name="P:PAROCHOSClient.IncomeInvoiceDetailRequestModel.PEPPOLDutyOrTaxOfFeeCategoryCode">
             <summary>
             VAT (Value Added Tax) Category according to UBL 2.1 documentation
             </summary>
@@ -239,7 +239,7 @@
             VAT (Value Added Tax) exemption category according to Tax Authorities' documentation 
             </summary>
         </member>
-        <member name="P:PAROCHOSClient.IncomeInvoiceDetailRequestModel.VATExemptionUBL">
+        <member name="P:PAROCHOSClient.IncomeInvoiceDetailRequestModel.PEPPOLVATExemptionCode">
             <summary>
             VAT (Value Added Tax) Exemption category according to UBL 2.1 documentation
             </summary>
@@ -249,7 +249,7 @@
             Measurement Unit according to Tax Authorities' documentation 
             </summary>
         </member>
-        <member name="P:PAROCHOSClient.IncomeInvoiceDetailRequestModel.MeasurementUnitUBL">
+        <member name="P:PAROCHOSClient.IncomeInvoiceDetailRequestModel.PEPPOLRecommendationCode">
             <summary>
             Measurement Unit according to UBL 2.1 documentation
             </summary>
@@ -543,7 +543,7 @@
             Charge/allowance category according to Tax Authorities' documentation 
             </summary>
         </member>
-        <member name="P:PAROCHOSClient.InvoiceDetailTaxInfoRequestModel.TaxCategoryUBL">
+        <member name="P:PAROCHOSClient.InvoiceDetailTaxInfoRequestModel.PEPPOLAllowanceReasonCode">
             <summary>
             Charge/allowance category according to UBL 2.1 documentation
             </summary>
@@ -553,7 +553,7 @@
             Total amount subject to a specific charge/allowance category
             </summary>
         </member>
-        <member name="P:PAROCHOSClient.InvoiceDetailTaxInfoRequestModel.TaxPercent">
+        <member name="P:PAROCHOSClient.InvoiceDetailTaxInfoRequestModel.Rate">
             <summary>
             Charge/allowance percent applied
             </summary>
@@ -578,7 +578,7 @@
             Charge/allowance category according to Tax Authorities' documentation 
             </summary>
         </member>
-        <member name="P:PAROCHOSClient.InvoiceDetailTaxTotalRequestModel.TaxCategoryUBL">
+        <member name="P:PAROCHOSClient.InvoiceDetailTaxTotalRequestModel.PEPPOLAllowanceReasonCode">
             <summary>
             Charge/allowance category according to UBL 2.1 documentation
             </summary>
@@ -654,7 +654,7 @@
             Invoice Type according to Tax Authorities' documentation
             </summary>
         </member>
-        <member name="P:PAROCHOSClient.InvoiceHeaderRequestModel.InvoiceTypeUBL">
+        <member name="P:PAROCHOSClient.InvoiceHeaderRequestModel.PEPPOLInvoiceTypeCode">
             <summary>
             Invoice Type according to UBL 2.1 documentation
             </summary>
@@ -837,6 +837,107 @@
             </summary>
         </member>
         <member name="M:PAROCHOSClient.PollingProcessRequestModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:PAROCHOSClient.PaymentRequestModel">
+            <summary>
+            Represents a pos payment request
+            </summary>
+        </member>
+        <member name="F:PAROCHOSClient.PaymentRequestModel.mProcessId">
+            <summary>
+            The member of the <see cref="P:PAROCHOSClient.PaymentRequestModel.ProcessId"/> property
+            </summary>
+        </member>
+        <member name="F:PAROCHOSClient.PaymentRequestModel.mExternalSystemId">
+            <summary>
+            The member of the <see cref="P:PAROCHOSClient.PaymentRequestModel.ExternalSystemId"/> property
+            </summary>
+        </member>
+        <member name="F:PAROCHOSClient.PaymentRequestModel.mIssuerVATNumber">
+            <summary>
+            The member of the <see cref="P:PAROCHOSClient.PaymentRequestModel.IssuerVATNumber"/> property
+            </summary>
+        </member>
+        <member name="F:PAROCHOSClient.PaymentRequestModel.mCompanyBranch">
+            <summary>
+            The mebmer
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.PaymentRequestModel.ProcessId">
+            <summary>
+            The process id
+            </summary>
+            <example>3fa85f64-5717-4562-b3fc-2c963f66afa6</example>
+        </member>
+        <member name="P:PAROCHOSClient.PaymentRequestModel.ExternalSystemId">
+            <summary>
+            The external system id
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.PaymentRequestModel.IssuerVATNumber">
+            <summary>
+            The issuer's vat number
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.PaymentRequestModel.InvoiceIssueDate">
+            <summary>
+            The invoice issue date
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.PaymentRequestModel.CompanyBranch">
+            <summary>
+            The company branch
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.PaymentRequestModel.InvoiceType">
+            <summary>
+            The invoice type
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.PaymentRequestModel.InvoiceSeries">
+            <summary>
+            The invoice series
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.PaymentRequestModel.InvoiceAA">
+            <summary>
+            The invoice increasing number
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.PaymentRequestModel.Mark">
+            <summary>
+            The mark value
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.PaymentRequestModel.NetValue">
+            <summary>
+            The net value
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.PaymentRequestModel.VATAmount">
+            <summary>
+            The VAT amount
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.PaymentRequestModel.TotalValue">
+            <summary>
+            The total value
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.PaymentRequestModel.PaymentAmount">
+            <summary>
+            The payment amount
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.PaymentRequestModel.TerminalId">
+            <summary>
+            The terminal id
+            </summary>
+        </member>
+        <member name="M:PAROCHOSClient.PaymentRequestModel.#ctor">
             <summary>
             Default constructor
             </summary>
@@ -20510,7 +20611,7 @@
         </member>
         <member name="T:PAROCHOSClient.Routes">
             <summary>
-            
+            The API Routes for PAROCHOS Client
             </summary>
         </member>
         <member name="T:PAROCHOSClient.PAROCHOSClient">

@@ -34,7 +34,7 @@ namespace PAROCHOSClient
         public DateOnly? IssueDate { get; set; }
 
         /// <summary>
-        /// Payment Due Date ISO 8601. In case the Amount due for payment is positive, 
+        /// Payment Due Date ISO 8601. In case the InvoiceAmount due for payment is positive, 
         /// either the Payment due date(BT-9) or Payment terms(BT-20) shall be present.
         /// </summary>
         [JsonProperty("dueDate")]
@@ -43,7 +43,7 @@ namespace PAROCHOSClient
 
         /// <summary>
         /// A textual description of the payment terms that apply to the amount due for 
-        /// payment(Including description of possible penalties). In case the Amount
+        /// payment(Including description of possible penalties). In case the InvoiceAmount
         /// due for payment is positive, either the Payment due date(BT-9) or the Payment
         /// terms(BT-20) shall be present.
         /// </summary>

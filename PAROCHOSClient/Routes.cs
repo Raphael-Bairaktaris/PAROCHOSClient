@@ -1,7 +1,7 @@
 ﻿namespace PAROCHOSClient
 {
     /// <summary>
-    /// 
+    /// The API Routes for PAROCHOS Client
     /// </summary>
     public class Routes
     {
@@ -23,6 +23,12 @@
         public static string GetFilesRoute(string? baseUrl) => $"{baseUrl}api/getFiles";
 
         public static string GetPublishLogsRoute(string? baseUrl) => $"{baseUrl}api/GetPublishLogs";
+
+        public static string GetRequestPaymentAPIRoute(string? baseUrl) => $"{baseUrl}/RequestPayment";
+
+        public static string GetSubmitPaymentAPIRoute(string? baseUrl) => $"{baseUrl}/SubmitPayment";
+
+        public static string GetCancelPaymentAPIRoute(string? baseUrl) => $"{baseUrl}/CancelPayment";
 #pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
     }
 }

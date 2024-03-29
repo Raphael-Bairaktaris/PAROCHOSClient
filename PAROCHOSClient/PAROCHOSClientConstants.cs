@@ -2506,6 +2506,20 @@ namespace PAROCHOSClient
         }.ToImmutableDictionary();
 
         /// <summary>
+        /// Maps the <see cref="PaymentMethod"/>s to their related <see cref="string"/>s
+        /// </summary>
+        public static IReadOnlyDictionary<PaymentMethod, string> PaymentMethodToStringMapper { get; } = new Dictionary<PaymentMethod, string>()
+        {
+            { PaymentMethod.BusinessHomePaymentAccount, "businessHomePaymentAccount" },
+            { PaymentMethod.BusinessForeignPaymentAccount, "businessForeignPaymentAccount" },
+            { PaymentMethod.Cash, "cash" },            
+            { PaymentMethod.Check, "check" },
+            { PaymentMethod.OnCredit, "onCredit" },
+            { PaymentMethod.WebBanking, "webBanking" },
+            { PaymentMethod.POSOrEPOS, "posOrEpos" },
+        }.ToImmutableDictionary();
+
+        /// <summary>
         /// Maps the <see cref="PaymentMethod"/>s to their related <see cref="int"/>s
         /// </summary>
         public static IReadOnlyDictionary<PaymentMethod, int> PaymentTypeToIntMapper { get; } = new Dictionary<PaymentMethod, int>()
