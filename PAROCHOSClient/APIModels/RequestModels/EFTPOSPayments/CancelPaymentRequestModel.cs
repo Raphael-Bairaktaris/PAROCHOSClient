@@ -3,7 +3,7 @@
 namespace PAROCHOSClient
 {
     /// <summary>
-    /// Requests used for canceling a payment
+    /// Request model used for canceling a payment
     /// </summary>
     public class CancelPaymentRequestModel : BasePAROCHOSRequestModel
     {

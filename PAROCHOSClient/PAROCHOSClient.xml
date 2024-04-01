@@ -24,9 +24,163 @@
             Default constructor
             </summary>
         </member>
+        <member name="T:PAROCHOSClient.CancelPaymentRequestModel">
+            <summary>
+            Request model used for canceling a payment
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.CancelPaymentRequestModel.Signature">
+            <summary>
+            The signature
+            </summary>
+        </member>
+        <member name="M:PAROCHOSClient.CancelPaymentRequestModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:PAROCHOSClient.PaymentInfoRequestModel">
+            <summary>
+            Request model used for sending information related to a payment
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.PaymentInfoRequestModel.Type">
+            <summary>
+            The type
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.PaymentInfoRequestModel.Amount">
+            <summary>
+            the amount
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.PaymentInfoRequestModel.PaymentMethodInfo">
+            <summary>
+            The payment method information
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.PaymentInfoRequestModel.TipAmount">
+            <summary>
+            The tip amount
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.PaymentInfoRequestModel.TransactionId">
+            <summary>
+            The transaction id
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.PaymentInfoRequestModel.Signature">
+            <summary>
+            The signature
+            </summary>
+        </member>
+        <member name="M:PAROCHOSClient.PaymentInfoRequestModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:PAROCHOSClient.RequestPaymentRequestModel">
+            <summary>
+            Request model used for starting the registration of a payment
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.RequestPaymentRequestModel.InvoiceIssuerVATNumber">
+            <summary>
+            The issuer's vat number
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.RequestPaymentRequestModel.InvoiceIssueDate">
+            <summary>
+            The invoice issue date
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.RequestPaymentRequestModel.InvoiceCompanyBranch">
+            <summary>
+            The company branch
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.RequestPaymentRequestModel.InvoiceType">
+            <summary>
+            The invoice type
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.RequestPaymentRequestModel.InvoiceSeries">
+            <summary>
+            The invoice series
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.RequestPaymentRequestModel.InvoiceAA">
+            <summary>
+            The invoice increasing number
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.RequestPaymentRequestModel.InvoiceMark">
+            <summary>
+            The mark value
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.RequestPaymentRequestModel.InvoiceNetAmount">
+            <summary>
+            The net amount of the invoice
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.RequestPaymentRequestModel.InvoiceTaxAmount">
+            <summary>
+            The tax amount of th einvoice
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.RequestPaymentRequestModel.PaymentAmount">
+            <summary>
+            The payment amount
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.RequestPaymentRequestModel.TerminalId">
+            <summary>
+            The terminal id
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.RequestPaymentRequestModel.InvoiceAmount">
+            <summary>
+            The total value
+            </summary>
+        </member>
+        <member name="M:PAROCHOSClient.RequestPaymentRequestModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:PAROCHOSClient.RequestPaymentRequestModel.Create(PAROCHOSClient.InvoiceTransmissionSigningResponseModel,PAROCHOSClient.IncomeInvoiceRequestModel,PAROCHOSClient.InvoiceHeaderRequestModel)">
+            <summary>
+            Creates and returns a <see cref="T:PAROCHOSClient.RequestPaymentRequestModel"/> from the specified models
+            </summary>
+            <param name="invoiceTransmissionSigning">The invoice transmission signing</param>
+            <param name="incomeInvoice">The income invoice</param>
+            <param name="header">The header</param>
+            <returns></returns>
+        </member>
+        <member name="T:PAROCHOSClient.SubmitPaymentRequestModel">
+            <summary>
+            Request model used for a submitting a payment
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.SubmitPaymentRequestModel.Mark">
+            <summary>
+            The mark
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.SubmitPaymentRequestModel.PaymentInfo">
+            <summary>
+            The payment info
+            </summary>
+        </member>
+        <member name="M:PAROCHOSClient.SubmitPaymentRequestModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
         <member name="T:PAROCHOSClient.FilesRequestModel">
             <summary>
-            Requests used for downloading file
+            Request model used for downloading file
             </summary>
         </member>
         <member name="P:PAROCHOSClient.FilesRequestModel.FileIdentifiers">
@@ -61,7 +215,7 @@
         </member>
         <member name="T:PAROCHOSClient.InvoiceTransmissionAttachmentRequestModel">
             <summary>
-            Requests used for creating an invoice transmission
+            Request model used for creating an invoice transmission
             </summary>
         </member>
         <member name="P:PAROCHOSClient.InvoiceTransmissionAttachmentRequestModel.Content">
@@ -76,7 +230,7 @@
         </member>
         <member name="T:PAROCHOSClient.InvoiceTransmissionRequestModel`1">
             <summary>
-            Requests used for invoice transmission
+            Request model used for transmitting an invoice
             </summary>
             <typeparam name="T">The type of the source</typeparam>
         </member>
@@ -115,7 +269,7 @@
         </member>
         <member name="T:PAROCHOSClient.UploadFileRequestRequestModel">
             <summary>
-            Request model that is used for creating an upload file request
+            Request model used for creating an upload file request
             </summary>
         </member>
         <member name="P:PAROCHOSClient.UploadFileRequestRequestModel.ProcessId">
@@ -181,7 +335,7 @@
         </member>
         <member name="T:PAROCHOSClient.IncomeInvoiceDetailRequestModel">
             <summary>
-            Requests used for creating or updating the invoice details
+            Request model used for sending an invoice detail
             </summary>
         </member>
         <member name="F:PAROCHOSClient.IncomeInvoiceDetailRequestModel.mQuantity">
@@ -398,7 +552,7 @@
         </member>
         <member name="T:PAROCHOSClient.InvoceDeliveryAddressRequestModel">
             <summary>
-            Request models used for creating an invoice delivery address
+            Request model used for creating an invoice delivery address
             </summary>
         </member>
         <member name="P:PAROCHOSClient.InvoceDeliveryAddressRequestModel.PartyName">
@@ -414,7 +568,7 @@
         </member>
         <member name="T:PAROCHOSClient.InvoiceCounterpartRequestModel">
             <summary>
-            Requests used for creating or updating an invoice counterpart
+            Request model used for creating an invoice counterpart
             </summary>
         </member>
         <member name="P:PAROCHOSClient.InvoiceCounterpartRequestModel.VATNumber">
@@ -444,7 +598,7 @@
         </member>
         <member name="T:PAROCHOSClient.InvoiceDetailCorrelatedInvoiceRequestModel">
             <summary>
-            Requests used for creating or updating a correlated invoice
+            Request model used for creating a correlated invoice
             </summary>
         </member>
         <member name="P:PAROCHOSClient.InvoiceDetailCorrelatedInvoiceRequestModel.ExitSystemId">
@@ -480,7 +634,7 @@
         </member>
         <member name="T:PAROCHOSClient.InvoiceDetailMessageRequestModel">
             <summary>
-            Requests used for creating or updating an invoice detail message
+            Request model used for creating an invoice detail message
             </summary>
         </member>
         <member name="P:PAROCHOSClient.InvoiceDetailMessageRequestModel.MessageType">
@@ -510,7 +664,7 @@
         </member>
         <member name="T:PAROCHOSClient.InvoiceDetailSummaryRequestModel">
             <summary>
-            Requests used for creating or updating a detail summary 
+            Request model used for creating a detail summary 
             </summary>
         </member>
         <member name="P:PAROCHOSClient.InvoiceDetailSummaryRequestModel.NetAmount">
@@ -535,7 +689,7 @@
         </member>
         <member name="T:PAROCHOSClient.InvoiceDetailTaxInfoRequestModel">
             <summary>
-            Requests used for creating or updating an invoice detail tax info
+            Request model used for creating an invoice detail tax info
             </summary>
         </member>
         <member name="P:PAROCHOSClient.InvoiceDetailTaxInfoRequestModel.TaxCategory">
@@ -565,7 +719,7 @@
         </member>
         <member name="T:PAROCHOSClient.InvoiceDetailTaxTotalRequestModel">
             <summary>
-            Requests used for creating or updating a tax total
+            Request model used for creating a tax total
             </summary>
         </member>
         <member name="P:PAROCHOSClient.InvoiceDetailTaxTotalRequestModel.TaxType">
@@ -605,7 +759,7 @@
         </member>
         <member name="T:PAROCHOSClient.InvoiceHeaderRequestModel">
             <summary>
-            Requests used for creating or updating an invoice header
+            Request model used for creating an invoice header
             </summary>
         </member>
         <member name="P:PAROCHOSClient.InvoiceHeaderRequestModel.Series">
@@ -626,14 +780,14 @@
         </member>
         <member name="P:PAROCHOSClient.InvoiceHeaderRequestModel.DueDate">
             <summary>
-            Payment Due Date ISO 8601. In case the Amount due for payment is positive, 
+            Payment Due Date ISO 8601. In case the InvoiceAmount due for payment is positive, 
             either the Payment due date(BT-9) or Payment terms(BT-20) shall be present.
             </summary>
         </member>
         <member name="P:PAROCHOSClient.InvoiceHeaderRequestModel.PaymentTerms">
             <summary>
             A textual description of the payment terms that apply to the amount due for 
-            payment(Including description of possible penalties). In case the Amount
+            payment(Including description of possible penalties). In case the InvoiceAmount
             due for payment is positive, either the Payment due date(BT-9) or the Payment
             terms(BT-20) shall be present.
             </summary>
@@ -687,7 +841,7 @@
         </member>
         <member name="T:PAROCHOSClient.InvoiceIssuerRequestModel">
             <summary>
-            Requests used for creating or updating an invoice issuer
+            Request model used for creating an invoice issuer
             </summary>
         </member>
         <member name="P:PAROCHOSClient.InvoiceIssuerRequestModel.VATNumber">
@@ -707,7 +861,7 @@
         </member>
         <member name="T:PAROCHOSClient.InvoicePaymentMethodRequestModel">
             <summary>
-            Requests used for creating or updating a payment method
+            Request model used for creating a payment method
             </summary>
         </member>
         <member name="P:PAROCHOSClient.InvoicePaymentMethodRequestModel.Type">
@@ -727,7 +881,7 @@
         </member>
         <member name="T:PAROCHOSClient.InvoicePublishDetailBudgetRequestModel">
             <summary>
-            Requests used for creating or updating a publish detail budget
+            Request model used for creating a publish detail budget
             </summary>
         </member>
         <member name="P:PAROCHOSClient.InvoicePublishDetailBudgetRequestModel.BudgetType">
@@ -747,7 +901,7 @@
         </member>
         <member name="T:PAROCHOSClient.InvoicePublishDetailRequestModel">
             <summary>
-            Requests used for creating or updating a publish detail
+            Request model used for creating a publish detail
             </summary>
         </member>
         <member name="P:PAROCHOSClient.InvoicePublishDetailRequestModel.ContractingAuthorityId">
@@ -772,7 +926,7 @@
         </member>
         <member name="T:PAROCHOSClient.InvoiceRepresentativeRequestModel">
             <summary>
-            Requests used for creating or updating an invoice representative
+            Request model used for creating an invoice representative
             </summary>
         </member>
         <member name="P:PAROCHOSClient.InvoiceRepresentativeRequestModel.VATNumber">
@@ -808,7 +962,7 @@
         </member>
         <member name="T:PAROCHOSClient.LogInRequestModel">
             <summary>
-            Requests used for login
+            Request model used for login
             </summary>
         </member>
         <member name="P:PAROCHOSClient.LogInRequestModel.SubscriptionKey">
@@ -833,7 +987,7 @@
         </member>
         <member name="T:PAROCHOSClient.PollingProcessRequestModel">
             <summary>
-            Requests used for polling process
+            Request model used for executing a polling process
             </summary>
         </member>
         <member name="M:PAROCHOSClient.PollingProcessRequestModel.#ctor">
@@ -841,110 +995,9 @@
             Default constructor
             </summary>
         </member>
-        <member name="T:PAROCHOSClient.PaymentRequestModel">
-            <summary>
-            Represents a pos payment request
-            </summary>
-        </member>
-        <member name="F:PAROCHOSClient.PaymentRequestModel.mProcessId">
-            <summary>
-            The member of the <see cref="P:PAROCHOSClient.PaymentRequestModel.ProcessId"/> property
-            </summary>
-        </member>
-        <member name="F:PAROCHOSClient.PaymentRequestModel.mExternalSystemId">
-            <summary>
-            The member of the <see cref="P:PAROCHOSClient.PaymentRequestModel.ExternalSystemId"/> property
-            </summary>
-        </member>
-        <member name="F:PAROCHOSClient.PaymentRequestModel.mIssuerVATNumber">
-            <summary>
-            The member of the <see cref="P:PAROCHOSClient.PaymentRequestModel.IssuerVATNumber"/> property
-            </summary>
-        </member>
-        <member name="F:PAROCHOSClient.PaymentRequestModel.mCompanyBranch">
-            <summary>
-            The mebmer
-            </summary>
-        </member>
-        <member name="P:PAROCHOSClient.PaymentRequestModel.ProcessId">
-            <summary>
-            The process id
-            </summary>
-            <example>3fa85f64-5717-4562-b3fc-2c963f66afa6</example>
-        </member>
-        <member name="P:PAROCHOSClient.PaymentRequestModel.ExternalSystemId">
-            <summary>
-            The external system id
-            </summary>
-        </member>
-        <member name="P:PAROCHOSClient.PaymentRequestModel.IssuerVATNumber">
-            <summary>
-            The issuer's vat number
-            </summary>
-        </member>
-        <member name="P:PAROCHOSClient.PaymentRequestModel.InvoiceIssueDate">
-            <summary>
-            The invoice issue date
-            </summary>
-        </member>
-        <member name="P:PAROCHOSClient.PaymentRequestModel.CompanyBranch">
-            <summary>
-            The company branch
-            </summary>
-        </member>
-        <member name="P:PAROCHOSClient.PaymentRequestModel.InvoiceType">
-            <summary>
-            The invoice type
-            </summary>
-        </member>
-        <member name="P:PAROCHOSClient.PaymentRequestModel.InvoiceSeries">
-            <summary>
-            The invoice series
-            </summary>
-        </member>
-        <member name="P:PAROCHOSClient.PaymentRequestModel.InvoiceAA">
-            <summary>
-            The invoice increasing number
-            </summary>
-        </member>
-        <member name="P:PAROCHOSClient.PaymentRequestModel.Mark">
-            <summary>
-            The mark value
-            </summary>
-        </member>
-        <member name="P:PAROCHOSClient.PaymentRequestModel.NetValue">
-            <summary>
-            The net value
-            </summary>
-        </member>
-        <member name="P:PAROCHOSClient.PaymentRequestModel.VATAmount">
-            <summary>
-            The VAT amount
-            </summary>
-        </member>
-        <member name="P:PAROCHOSClient.PaymentRequestModel.TotalValue">
-            <summary>
-            The total value
-            </summary>
-        </member>
-        <member name="P:PAROCHOSClient.PaymentRequestModel.PaymentAmount">
-            <summary>
-            The payment amount
-            </summary>
-        </member>
-        <member name="P:PAROCHOSClient.PaymentRequestModel.TerminalId">
-            <summary>
-            The terminal id
-            </summary>
-        </member>
-        <member name="M:PAROCHOSClient.PaymentRequestModel.#ctor">
-            <summary>
-            Default constructor
-            </summary>
-        </member>
         <member name="T:PAROCHOSClient.PublishLogsRequestModel">
             <summary>
-            Requests used for downloading published logs
+            Request model used for downloading published logs
             </summary>
         </member>
         <member name="M:PAROCHOSClient.PublishLogsRequestModel.#ctor">
@@ -954,7 +1007,7 @@
         </member>
         <member name="T:PAROCHOSClient.RefreshRequestModel">
             <summary>
-            Requests used for refresh
+            Request model used for refreshing a token
             </summary>
         </member>
         <member name="P:PAROCHOSClient.RefreshRequestModel.Token">
@@ -974,7 +1027,7 @@
         </member>
         <member name="T:PAROCHOSClient.BasePAROCHOSResponseModel">
             <summary>
-            The for all the PAROCHOS response models
+            The base for all the PAROCHOS response models
             </summary>
         </member>
         <member name="F:PAROCHOSClient.BasePAROCHOSResponseModel.mErrorCode">
@@ -1017,6 +1070,151 @@
             A flag indicating whether the response is successful
             </summary>
             <returns></returns>
+        </member>
+        <member name="T:PAROCHOSClient.BasePaymentResponseModel">
+            <summary>
+            The base for all the PAROCHOS payment models
+            </summary>
+        </member>
+        <member name="F:PAROCHOSClient.BasePaymentResponseModel.mErrorCode">
+            <summary>
+            The member of the <see cref="!:ErrorCode"/> property
+            </summary>
+        </member>
+        <member name="F:PAROCHOSClient.BasePaymentResponseModel.mErrorMessage">
+            <summary>
+            The member of the <see cref="!:ErrorMessage"/> property
+            </summary>
+        </member>
+        <member name="F:PAROCHOSClient.BasePaymentResponseModel.mProcessId">
+            <summary>
+            The member of the <see cref="P:PAROCHOSClient.BasePaymentResponseModel.ProcessId"/> property
+            </summary>
+        </member>
+        <member name="F:PAROCHOSClient.BasePaymentResponseModel.mExternalSystemId">
+            <summary>
+            The member of the <see cref="P:PAROCHOSClient.BasePaymentResponseModel.ExternalSystemId"/> property
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.BasePaymentResponseModel.ProcessId">
+            <summary>
+            The process id
+            </summary>
+            <example>3fa85f64-5717-4562-b3fc-2c963f66afa6</example>
+        </member>
+        <member name="P:PAROCHOSClient.BasePaymentResponseModel.ExternalSystemId">
+            <summary>
+            The external system id
+            </summary>
+        </member>
+        <member name="M:PAROCHOSClient.BasePaymentResponseModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:PAROCHOSClient.BasePaymentResponseModel.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="T:PAROCHOSClient.CancelPaymentResponseModel">
+            <summary>
+            Represents a payment cancel
+            </summary>
+        </member>
+        <member name="F:PAROCHOSClient.CancelPaymentResponseModel.mSignature">
+            <summary>
+            The member of the <see cref="P:PAROCHOSClient.CancelPaymentResponseModel.Signature"/> property
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.CancelPaymentResponseModel.Signature">
+            <summary>
+            The signature
+            </summary>
+        </member>
+        <member name="M:PAROCHOSClient.CancelPaymentResponseModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:PAROCHOSClient.CancelPaymentResponseModel.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="T:PAROCHOSClient.PaymentTokenResponseModel">
+            <summary>
+            Represents a payment token response
+            </summary>
+        </member>
+        <member name="F:PAROCHOSClient.PaymentTokenResponseModel.mSignature">
+            <summary>
+            The member of the <see cref="P:PAROCHOSClient.PaymentTokenResponseModel.Signature"/> property
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.PaymentTokenResponseModel.Timestamp">
+            <summary>
+            The timestamp
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.PaymentTokenResponseModel.Signature">
+            <summary>
+            The signature
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.PaymentTokenResponseModel.Amount">
+            <summary>
+            The amount
+            </summary>
+        </member>
+        <member name="M:PAROCHOSClient.PaymentTokenResponseModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:PAROCHOSClient.PaymentTokenResponseModel.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="T:PAROCHOSClient.RequestPaymentResponseModel">
+            <summary>
+            Represents a payment response
+            </summary>
+        </member>
+        <member name="F:PAROCHOSClient.RequestPaymentResponseModel.mUId">
+            <summary>
+            The member of the <see cref="P:PAROCHOSClient.RequestPaymentResponseModel.UId"/> property
+            </summary>
+        </member>
+        <member name="F:PAROCHOSClient.RequestPaymentResponseModel.mPaymentToken">
+            <summary>
+            The member of the <see cref="P:PAROCHOSClient.RequestPaymentResponseModel.PaymentToken"/> property
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.RequestPaymentResponseModel.UId">
+            <summary>
+            The uid
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.RequestPaymentResponseModel.PaymentToken">
+            <summary>
+            The payment token details
+            </summary>
+        </member>
+        <member name="M:PAROCHOSClient.RequestPaymentResponseModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:PAROCHOSClient.SubmitPaymentResponseModel">
+            <summary>
+            Represents a payment submission
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.SubmitPaymentResponseModel.PaymentMark">
+            <summary>
+            The payment mark
+            </summary>
+        </member>
+        <member name="M:PAROCHOSClient.SubmitPaymentResponseModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
         </member>
         <member name="T:PAROCHOSClient.FileResponseModel">
             <summary>
@@ -20271,6 +20469,19 @@
         <member name="M:PAROCHOSClient.PaymentMethodToIntJsonConverter.GetMapper">
             <inheritdoc/>
         </member>
+        <member name="T:PAROCHOSClient.PaymentMethodToStringJsonConverter">
+            <summary>
+            A <see cref="T:PAROCHOSClient.BaseEnumToStringJsonConverter`1"/> that is used for converting a <see cref="T:PAROCHOSClient.PaymentMethod"/> to <see cref="T:System.String"/>
+            </summary>
+        </member>
+        <member name="M:PAROCHOSClient.PaymentMethodToStringJsonConverter.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:PAROCHOSClient.PaymentMethodToStringJsonConverter.GetMapper">
+            <inheritdoc/>
+        </member>
         <member name="T:PAROCHOSClient.PEPPOLAllowanceReasonCodeToStringJsonConverter">
             <summary>
             A <see cref="T:Newtonsoft.Json.JsonConverter`1"/> that converts a <see cref="T:PAROCHOSClient.PEPPOLAllowanceReasonCode"/> to <see cref="T:System.String"/>
@@ -20564,6 +20775,11 @@
             Maps the <see cref="T:PAROCHOSClient.MovePurpose"/>s to their related <see cref="T:System.Int32"/>s
             </summary>
         </member>
+        <member name="P:PAROCHOSClient.PAROCHOSClientConstants.PaymentMethodToStringMapper">
+            <summary>
+            Maps the <see cref="T:PAROCHOSClient.PaymentMethod"/>s to their related <see cref="T:System.String"/>s
+            </summary>
+        </member>
         <member name="P:PAROCHOSClient.PAROCHOSClientConstants.PaymentTypeToIntMapper">
             <summary>
             Maps the <see cref="T:PAROCHOSClient.PaymentMethod"/>s to their related <see cref="T:System.Int32"/>s
@@ -20713,6 +20929,27 @@
             completed, the client can download all the logs of the publish process, at any time.The
             request returns a response status success indicator, together with a list of publish logs.
             </remarks>
+        </member>
+        <member name="M:PAROCHOSClient.PAROCHOSClient.RequestPaymentAsync(PAROCHOSClient.RequestPaymentRequestModel)">
+            <summary>
+            Begins the process of registering a payment to an already transmitted invoice
+            </summary>
+            <param name="model">The model</param>
+            <returns></returns>
+        </member>
+        <member name="M:PAROCHOSClient.PAROCHOSClient.SubmitPaymentAsync(PAROCHOSClient.SubmitPaymentRequestModel)">
+            <summary>
+            Submitting / verifying a payment request generated by the <see cref="M:PAROCHOSClient.PAROCHOSClient.RequestPaymentAsync(PAROCHOSClient.RequestPaymentRequestModel)"/> method
+            </summary>
+            <param name="model">The model</param>
+            <returns></returns>
+        </member>
+        <member name="M:PAROCHOSClient.PAROCHOSClient.CancelPaymentAsync(PAROCHOSClient.CancelPaymentRequestModel)">
+            <summary>
+            Canceling a payment request generated by the <see cref="M:PAROCHOSClient.PAROCHOSClient.RequestPaymentAsync(PAROCHOSClient.RequestPaymentRequestModel)"/> method
+            </summary>
+            <param name="model">The model</param>
+            <returns></returns>
         </member>
         <member name="M:PAROCHOSClient.PAROCHOSClient.ExecuteAsync``1(System.Func{PAROCHOSClient.LogInResponseModel,System.Threading.Tasks.Task{PAROCHOSClient.WebRequestResult{``0}}})">
             <summary>

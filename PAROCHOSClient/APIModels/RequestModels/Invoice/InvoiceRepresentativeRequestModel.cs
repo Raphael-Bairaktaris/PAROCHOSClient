@@ -3,7 +3,7 @@
 namespace PAROCHOSClient
 {
     /// <summary>
-    /// Requests used for creating or updating an invoice representative
+    /// Request model used for creating an invoice representative
     /// </summary>
     public class InvoiceRepresentativeRequestModel
     {

@@ -3,7 +3,7 @@
 namespace PAROCHOSClient
 {
     /// <summary>
-    /// Requests used for creating or updating an invoice counterpart
+    /// Request model used for creating an invoice counterpart
     /// </summary>
     public class InvoiceCounterpartRequestModel : BaseAddressRequestModel
     {

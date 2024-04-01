@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace PAROCHOSClient
 {
     /// <summary>
-    /// Requests used for a submitting a payment
+    /// Request model used for a submitting a payment
     /// </summary>
     public class SubmitPaymentRequestModel : BasePAROCHOSRequestModel
     {

@@ -1,7 +1,7 @@
 ﻿namespace PAROCHOSClient
 {
     /// <summary>
-    /// Requests used for downloading published logs
+    /// Request model used for downloading published logs
     /// </summary>
     public class PublishLogsRequestModel : BasePAROCHOSRequestModel
     {

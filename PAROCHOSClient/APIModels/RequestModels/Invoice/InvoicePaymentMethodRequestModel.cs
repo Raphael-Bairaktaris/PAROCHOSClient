@@ -3,7 +3,7 @@
 namespace PAROCHOSClient
 {
     /// <summary>
-    /// Requests used for creating or updating a payment method
+    /// Request model used for creating a payment method
     /// </summary>
     public class InvoicePaymentMethodRequestModel
     {

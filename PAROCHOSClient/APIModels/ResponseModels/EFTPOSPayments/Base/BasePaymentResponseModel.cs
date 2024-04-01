@@ -10,16 +10,6 @@ namespace PAROCHOSClient
         #region Private Members
 
         /// <summary>
-        /// The member of the <see cref="ErrorCode"/> property
-        /// </summary>
-        private string? mErrorCode;
-
-        /// <summary>
-        /// The member of the <see cref="ErrorMessage"/> property
-        /// </summary>
-        private string? mErrorMessage;
-
-        /// <summary>
         /// The member of the <see cref="ProcessId"/> property
         /// </summary>
         private string? mProcessId;

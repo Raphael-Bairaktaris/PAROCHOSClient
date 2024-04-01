@@ -341,7 +341,7 @@ namespace PAROCHOSClient
                 async x =>
                 {
                     return await Client.PostAsync<SubmitPaymentResponseModel>(
-                        Routes.GetRequestPaymentAPIRoute(x.URL1?.ToString()),
+                        Routes.GetSubmitPaymentAPIRoute(x.URL1?.ToString()),
                         model,
                         x.JWT);
                 });
@@ -358,7 +358,7 @@ namespace PAROCHOSClient
                 async x =>
                 {
                     return await Client.PostAsync<CancelPaymentResponseModel>(
-                        Routes.GetRequestPaymentAPIRoute(x.URL1?.ToString()),
+                        Routes.GetCancelPaymentAPIRoute(x.URL1?.ToString()),
                         model,
                         x.JWT);
                 });

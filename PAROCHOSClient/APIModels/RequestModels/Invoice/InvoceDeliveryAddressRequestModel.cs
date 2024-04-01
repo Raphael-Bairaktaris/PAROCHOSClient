@@ -3,7 +3,7 @@
 namespace PAROCHOSClient
 {
     /// <summary>
-    /// Request models used for creating an invoice delivery address
+    /// Request model used for creating an invoice delivery address
     /// </summary>
     public class InvoceDeliveryAddressRequestModel : BaseAddressRequestModel
     {

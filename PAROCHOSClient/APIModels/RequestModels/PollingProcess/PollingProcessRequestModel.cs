@@ -1,7 +1,7 @@
 ﻿namespace PAROCHOSClient
 {
     /// <summary>
-    /// Requests used for polling process
+    /// Request model used for executing a polling process
     /// </summary>
     public class PollingProcessRequestModel : BasePAROCHOSRequestModel
     {

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace PAROCHOSClient
 {
     /// <summary>
-    /// Requests used for downloading file
+    /// Request model used for downloading file
     /// </summary>
     public class FilesRequestModel : BasePAROCHOSRequestModel
     {

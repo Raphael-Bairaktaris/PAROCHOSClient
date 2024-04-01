@@ -3,7 +3,7 @@
 namespace PAROCHOSClient
 {
     /// <summary>
-    /// Requests used for creating or updating a detail summary 
+    /// Request model used for creating a detail summary 
     /// </summary>
     public class InvoiceDetailSummaryRequestModel
     {

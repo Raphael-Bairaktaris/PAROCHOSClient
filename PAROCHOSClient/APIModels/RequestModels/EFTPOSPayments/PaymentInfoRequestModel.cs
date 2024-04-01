@@ -3,7 +3,7 @@
 namespace PAROCHOSClient
 {
     /// <summary>
-    /// Requests used for payment information
+    /// Request model used for sending information related to a payment
     /// </summary>
     public class PaymentInfoRequestModel
     {
@@ -25,8 +25,7 @@ namespace PAROCHOSClient
         /// The payment method information
         /// </summary>
         [JsonProperty("paymentMethodInfo")]
-        [JsonConverter(typeof(PaymentMethodToStringJsonConverter))]
-        public PaymentMethod? PaymentMethodInfo { get; set; }
+        public string? PaymentMethodInfo { get; set; }
 
         /// <summary>
         /// The tip amount

@@ -3,7 +3,7 @@
 namespace PAROCHOSClient
 {
     /// <summary>
-    /// Request model that is used for creating an upload file request
+    /// Request model used for creating an upload file request
     /// </summary>
     public class UploadFileRequestRequestModel
     {

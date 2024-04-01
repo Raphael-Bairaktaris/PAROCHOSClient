@@ -4,7 +4,7 @@ using System;
 namespace PAROCHOSClient
 {
     /// <summary>
-    /// Requests used for a payment
+    /// Request model used for starting the registration of a payment
     /// </summary>
     public class RequestPaymentRequestModel : BasePAROCHOSRequestModel
     {
