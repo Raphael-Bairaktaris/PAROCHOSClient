@@ -3,7 +3,7 @@
 namespace PAROCHOSClient
 {
     /// <summary>
-    /// Requests used for creating an invoice transmission
+    /// Request model used for creating an invoice transmission
     /// </summary>
     public class InvoiceTransmissionAttachmentRequestModel
     {

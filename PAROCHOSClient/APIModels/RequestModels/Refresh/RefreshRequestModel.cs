@@ -3,7 +3,7 @@
 namespace PAROCHOSClient
 {
     /// <summary>
-    /// Requests used for refresh
+    /// Request model used for refreshing a token
     /// </summary>
     public class RefreshRequestModel
     {

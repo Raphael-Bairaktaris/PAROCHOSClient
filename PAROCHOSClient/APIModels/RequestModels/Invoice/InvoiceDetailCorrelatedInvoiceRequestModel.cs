@@ -3,7 +3,7 @@
 namespace PAROCHOSClient
 {
     /// <summary>
-    /// Requests used for creating or updating a correlated invoice
+    /// Request model used for creating a correlated invoice
     /// </summary>
     public class InvoiceDetailCorrelatedInvoiceRequestModel
     {

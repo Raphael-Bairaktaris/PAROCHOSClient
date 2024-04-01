@@ -3,7 +3,7 @@
 namespace PAROCHOSClient
 {
     /// <summary>
-    /// Requests used for login
+    /// Request model used for login
     /// </summary>
     public class LogInRequestModel
     {

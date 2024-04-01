@@ -4,7 +4,7 @@ using System;
 namespace PAROCHOSClient
 {
     /// <summary>
-    /// Requests used for creating or updating an invoice header
+    /// Request model used for creating an invoice header
     /// </summary>
     public class InvoiceHeaderRequestModel
     {

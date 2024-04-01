@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace PAROCHOSClient
 {
     /// <summary>
-    /// Requests used for creating or updating an invoice detail message
+    /// Request model used for creating an invoice detail message
     /// </summary>
     public class InvoiceDetailMessageRequestModel
     {

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace PAROCHOSClient
 {
     /// <summary>
-    /// Requests used for invoice transmission
+    /// Request model used for transmitting an invoice
     /// </summary>
     /// <typeparam name="T">The type of the source</typeparam>
     public class InvoiceTransmissionRequestModel<T>

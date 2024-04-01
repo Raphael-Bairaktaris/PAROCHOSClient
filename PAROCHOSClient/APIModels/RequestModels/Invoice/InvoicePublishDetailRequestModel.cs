@@ -3,7 +3,7 @@
 namespace PAROCHOSClient
 {
     /// <summary>
-    /// Requests used for creating or updating a publish detail
+    /// Request model used for creating a publish detail
     /// </summary>
     public class InvoicePublishDetailRequestModel
     {
