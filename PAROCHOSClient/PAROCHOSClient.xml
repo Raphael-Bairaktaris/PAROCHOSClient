@@ -1076,16 +1076,6 @@
             The base for all the PAROCHOS payment models
             </summary>
         </member>
-        <member name="F:PAROCHOSClient.BasePaymentResponseModel.mErrorCode">
-            <summary>
-            The member of the <see cref="!:ErrorCode"/> property
-            </summary>
-        </member>
-        <member name="F:PAROCHOSClient.BasePaymentResponseModel.mErrorMessage">
-            <summary>
-            The member of the <see cref="!:ErrorMessage"/> property
-            </summary>
-        </member>
         <member name="F:PAROCHOSClient.BasePaymentResponseModel.mProcessId">
             <summary>
             The member of the <see cref="P:PAROCHOSClient.BasePaymentResponseModel.ProcessId"/> property
