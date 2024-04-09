@@ -128,7 +128,7 @@ namespace PAROCHOSClient
                 InvoiceType = header.InvoiceType,
                 InvoiceIssueDate = header.IssueDate,
                 InvoiceSeries = header.Series,
-                
+
                 InvoiceIssuerVATNumber = incomeInvoice.Issuer?.VATNumber,
                 InvoiceCompanyBranch = incomeInvoice.Issuer?.Branch?.ToString(),
 

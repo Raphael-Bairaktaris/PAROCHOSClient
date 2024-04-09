@@ -6,6 +6,9 @@ var credentials = File.ReadAllText(Path.Combine(Environment.GetFolderPath(Enviro
 
 var client = new PAROCHOSClient.PAROCHOSClient(new PAROCHOSCredentials(credentials[0], credentials[1], credentials[2]));
 
+
+var a = Routes.Combine("https://aka.ms/new-console-template/", "/payments", "/test/", "1");
+
 var requestModel = new IncomeInvoiceRequestModel()
 {
     Issuer = new InvoiceIssuerRequestModel()
@@ -60,13 +63,13 @@ var requestModel = new IncomeInvoiceRequestModel()
 
 var invoiceResult = await client.SendIncomeInvoiceAsync(requestModel);
 
-var receipt = File.ReadAllBytes(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "1.pdf"));
+//var receipt = File.ReadAllBytes(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "1.pdf"));
 
-var uploadFileToAzureResult = await client.UploadPDFFileAsync(new UploadFileRequestRequestModel()
-{
-    ExternalSystemId = invoiceResult.Result.ExternalSystemId,
-    FileName = "receipt.pdf",
-    FileSize = receipt.Length,
-}, receipt);
+//var uploadFileToAzureResult = await client.UploadPDFFileAsync(new UploadFileRequestRequestModel()
+//{
+//    ExternalSystemId = invoiceResult.Result.ExternalSystemId,
+//    FileName = "receipt.pdf",
+//    FileSize = receipt.Length,
+//}, receipt);
 
 Console.WriteLine();

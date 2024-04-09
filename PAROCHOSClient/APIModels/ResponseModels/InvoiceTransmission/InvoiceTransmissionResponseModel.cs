@@ -1,5 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace PAROCHOSClient
 {
@@ -24,6 +26,11 @@ namespace PAROCHOSClient
         /// The member of the <see cref="Signing"/> property
         /// </summary>
         private InvoiceTransmissionSigningResponseModel? mSigning;
+
+        /// <summary>
+        /// The member of the <see cref="Attachments"/> property
+        /// </summary>
+        private IEnumerable<InvoiceTransmissionAttachmentResponseModel>? mAttachments;
 
         #endregion
 
@@ -51,6 +58,19 @@ namespace PAROCHOSClient
         }
 
         /// <summary>
+        /// The error severity
+        /// </summary>
+        [JsonProperty("errorSeverity")]
+        [JsonConverter(typeof(ErrorSeverityToIntJsonConverter))]
+        public ErrorSeverity ErrorSeverity { get; set; }
+
+        /// <summary>
+        /// The timestamp of invoice creation
+        /// </summary>
+        [JsonProperty("timeStamp")]
+        public DateTime TimeStamp { get; set; }
+
+        /// <summary>
         /// The invoice transmission signing 
         /// </summary>
         [JsonProperty("signing")]
@@ -61,17 +81,14 @@ namespace PAROCHOSClient
         }
 
         /// <summary>
-        /// The timestamp of invoice creation
+        /// The attachments
         /// </summary>
-        [JsonProperty("timeStamp")]
-        public DateTime TimeStamp { get; set; }
-
-        /// <summary>
-        /// The error severity
-        /// </summary>
-        [JsonProperty("errorSeverity")]
-        [JsonConverter(typeof(ErrorSeverityToIntJsonConverter))]
-        public ErrorSeverity? ErrorSeverity { get; set; }
+        [JsonProperty("attachments")]
+        public IEnumerable<InvoiceTransmissionAttachmentResponseModel> Attachments
+        {
+            get => mAttachments ?? Enumerable.Empty<InvoiceTransmissionAttachmentResponseModel>();
+            set => mAttachments = value;
+        }
 
         #endregion
 

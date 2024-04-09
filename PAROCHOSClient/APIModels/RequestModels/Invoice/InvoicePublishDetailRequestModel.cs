@@ -22,6 +22,18 @@ namespace PAROCHOSClient
         public string? ContractIdentifier { get; set; }
 
         /// <summary>
+        /// Name of internal organizational unit of public authority that will actually receive the invoice, if any.
+        /// </summary>
+        [JsonProperty("organizationalUnitName")]
+        public string? OrganizationalUnitName { get; set; }
+
+        /// <summary>
+        /// Code of internal organizational unit of public authority that will actually receive the invoice, if any
+        /// </summary>
+        [JsonProperty("organizationalUnitCode")]
+        public string? OrganizationalUnitCode { get; set; }
+
+        /// <summary>
         /// The budget
         /// </summary>
         [JsonProperty("budget")]

@@ -1,5 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace PAROCHOSClient
 {
@@ -24,6 +26,11 @@ namespace PAROCHOSClient
         /// The member of the <see cref="QRCode"/> property
         /// </summary>
         private string? mQRCode;
+
+        /// <summary>
+        /// The member of the <see cref="PaymentTokens"/> property
+        /// </summary>
+        private IEnumerable<PaymentTokenResponseModel>? mPaymentTokens;
 
         #endregion
 
@@ -77,6 +84,22 @@ namespace PAROCHOSClient
         /// </summary>
         [JsonProperty("pdfFileUrl")]
         public Uri? PDFFileUrl { get; set; }
+
+        /// <summary>
+        /// The status of the B2G invoice transmission.
+        /// </summary>
+        [JsonProperty("publishStatus")]
+        public PublishStatus PublishStatus { get; set; }
+
+        /// <summary>
+        /// The payment tokens
+        /// </summary>
+        [JsonProperty("paymentTokens")]
+        public IEnumerable<PaymentTokenResponseModel> PaymentTokens
+        {
+            get => mPaymentTokens ?? Enumerable.Empty<PaymentTokenResponseModel>();
+            set => mPaymentTokens = value;
+        }
 
         #endregion
 

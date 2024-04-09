@@ -29,8 +29,8 @@ namespace PAROCHOSClient
         /// The signature
         /// </summary>
         [JsonProperty("signature")]
-        public string Signature 
-        { 
+        public string Signature
+        {
             get => mSignature ?? string.Empty;
             set => mSignature = value;
         }

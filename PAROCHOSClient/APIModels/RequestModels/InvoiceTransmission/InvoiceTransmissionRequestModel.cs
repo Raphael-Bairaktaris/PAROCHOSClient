@@ -27,6 +27,13 @@ namespace PAROCHOSClient
         public T? Source { get; set; }
 
         /// <summary>
+        /// Base64 encoded binary data. A draft .txt file of the invoice. 
+        /// It is the base64 representation string of the byte array of the file.
+        /// </summary>
+        [JsonProperty("attachments")]
+        public IEnumerable<InvoiceTransmissionAttachmentRequestModel>? Attachments { get; set; }
+
+        /// <summary>
         /// The identifier of the template used to map the incoming invoice data to the model required by AADE Provider.
         /// This value is specified through UI configuration.
         /// </summary>
@@ -39,13 +46,6 @@ namespace PAROCHOSClient
         [JsonProperty("transmissionType")]
         [JsonConverter(typeof(TransmissionTypeToIntJsonConverter))]
         public TransmissionType TransmissionType { get; set; }
-
-        /// <summary>
-        /// Base64 encoded binary data. A draft .txt file of the invoice. 
-        /// It is the base64 representation string of the byte array of the file.
-        /// </summary>
-        [JsonProperty("attachments")]
-        public IEnumerable<InvoiceTransmissionAttachmentRequestModel>? Attachments { get; set; }
 
         #endregion
 

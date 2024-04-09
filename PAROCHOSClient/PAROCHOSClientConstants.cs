@@ -2512,7 +2512,7 @@ namespace PAROCHOSClient
         {
             { PaymentMethod.BusinessHomePaymentAccount, "businessHomePaymentAccount" },
             { PaymentMethod.BusinessForeignPaymentAccount, "businessForeignPaymentAccount" },
-            { PaymentMethod.Cash, "cash" },            
+            { PaymentMethod.Cash, "cash" },
             { PaymentMethod.Check, "check" },
             { PaymentMethod.OnCredit, "onCredit" },
             { PaymentMethod.WebBanking, "webBanking" },
@@ -2531,6 +2531,21 @@ namespace PAROCHOSClient
             { PaymentMethod.OnCredit, 5 },
             { PaymentMethod.WebBanking, 6 },
             { PaymentMethod.POSOrEPOS, 7 }
+        }.ToImmutableDictionary();
+
+        /// <summary>
+        /// Maps the <see cref="PublishStatus"/> to their related <see cref="int"/>s
+        /// </summary>
+        public static IReadOnlyDictionary<PublishStatus, int> PublishStatusToIntMapper { get; } = new Dictionary<PublishStatus, int>()
+        {
+            { PublishStatus.Pending, 0 },
+            { PublishStatus.Sending, 1 },
+            { PublishStatus.Transmitted, 2 },
+            { PublishStatus.Processing, 3 },
+            { PublishStatus.Paid, 4 },
+            { PublishStatus.Rejected, 5 },
+            { PublishStatus.UnderQuery, 6 },
+            { PublishStatus.Failed, 10 }
         }.ToImmutableDictionary();
 
         /// <summary>

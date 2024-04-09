@@ -218,9 +218,40 @@
             Request model used for creating an invoice transmission
             </summary>
         </member>
+        <member name="P:PAROCHOSClient.InvoiceTransmissionAttachmentRequestModel.Identifier">
+            <summary>
+            The identifier
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.InvoiceTransmissionAttachmentRequestModel.FileName">
+            <summary>
+            The file name
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.InvoiceTransmissionAttachmentRequestModel.FileSize">
+            <summary>
+            The file size
+            </summary>
+        </member>
         <member name="P:PAROCHOSClient.InvoiceTransmissionAttachmentRequestModel.Content">
             <summary>
             The content
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.InvoiceTransmissionAttachmentRequestModel.InstanceNumber">
+            <summary>
+            The instance number
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.InvoiceTransmissionAttachmentRequestModel.DocumentId">
+            <summary>
+            The document id
+            </summary>
+            <example>3fa85f64-5717-4562-b3fc-2c963f66afa6</example>
+        </member>
+        <member name="P:PAROCHOSClient.InvoiceTransmissionAttachmentRequestModel.DocumentExternalId">
+            <summary>
+            The document external id
             </summary>
         </member>
         <member name="M:PAROCHOSClient.InvoiceTransmissionAttachmentRequestModel.#ctor">
@@ -245,6 +276,12 @@
             Json serialized object that contains the data to be send. 
             </summary>
         </member>
+        <member name="P:PAROCHOSClient.InvoiceTransmissionRequestModel`1.Attachments">
+            <summary>
+            Base64 encoded binary data. A draft .txt file of the invoice. 
+            It is the base64 representation string of the byte array of the file.
+            </summary>
+        </member>
         <member name="P:PAROCHOSClient.InvoiceTransmissionRequestModel`1.Identifier">
             <summary>
             The identifier of the template used to map the incoming invoice data to the model required by AADE Provider.
@@ -254,12 +291,6 @@
         <member name="P:PAROCHOSClient.InvoiceTransmissionRequestModel`1.TransmissionType">
             <summary>
             Resolves the required type of transmission.
-            </summary>
-        </member>
-        <member name="P:PAROCHOSClient.InvoiceTransmissionRequestModel`1.Attachments">
-            <summary>
-            Base64 encoded binary data. A draft .txt file of the invoice. 
-            It is the base64 representation string of the byte array of the file.
             </summary>
         </member>
         <member name="M:PAROCHOSClient.InvoiceTransmissionRequestModel`1.#ctor">
@@ -914,6 +945,16 @@
             The Identifier of the contract with the public Institution(Required only for B2G)
             </summary>
         </member>
+        <member name="P:PAROCHOSClient.InvoicePublishDetailRequestModel.OrganizationalUnitName">
+            <summary>
+            Name of internal organizational unit of public authority that will actually receive the invoice, if any.
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.InvoicePublishDetailRequestModel.OrganizationalUnitCode">
+            <summary>
+            Code of internal organizational unit of public authority that will actually receive the invoice, if any
+            </summary>
+        </member>
         <member name="P:PAROCHOSClient.InvoicePublishDetailRequestModel.Budget">
             <summary>
             The budget
@@ -1070,6 +1111,57 @@
             A flag indicating whether the response is successful
             </summary>
             <returns></returns>
+        </member>
+        <member name="T:PAROCHOSClient.DownloadPublishLogsDetailResponseModel">
+            <summary>
+            Represents a publish log detail download
+            </summary>
+        </member>
+        <member name="F:PAROCHOSClient.DownloadPublishLogsDetailResponseModel.mMessage">
+            <summary>
+            The member of the <see cref="P:PAROCHOSClient.DownloadPublishLogsDetailResponseModel.Message"/> property
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.DownloadPublishLogsDetailResponseModel.Message">
+            <summary>
+            Publish log entry detailed message. 
+            </summary>
+            <example>Το Ηλεκτρονικό Τιμολόγιο έχει δρομολογηθεί προς αποστολή στην Αναθέτουσα αρχή</example>
+        </member>
+        <member name="P:PAROCHOSClient.DownloadPublishLogsDetailResponseModel.Status">
+            <summary>
+            Publish log entry status
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.DownloadPublishLogsDetailResponseModel.Timestamp">
+            <summary>
+            The log entry timestamp.
+            </summary>
+        </member>
+        <member name="M:PAROCHOSClient.DownloadPublishLogsDetailResponseModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:PAROCHOSClient.DownloadPublishLogsResponseModel">
+            <summary>
+            Represents a publish log download 
+            </summary>
+        </member>
+        <member name="F:PAROCHOSClient.DownloadPublishLogsResponseModel.mPublishLogs">
+            <summary>
+            The member of the <see cref="P:PAROCHOSClient.DownloadPublishLogsResponseModel.PublishLogs"/> property
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.DownloadPublishLogsResponseModel.PublishLogs">
+            <summary>
+            The published logs
+            </summary>
+        </member>
+        <member name="M:PAROCHOSClient.DownloadPublishLogsResponseModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
         </member>
         <member name="T:PAROCHOSClient.BasePaymentResponseModel">
             <summary>
@@ -1264,6 +1356,56 @@
             Default constructor
             </summary>
         </member>
+        <member name="T:PAROCHOSClient.InvoiceTransmissionAttachmentResponseModel">
+            <summary>
+            Represents an invoice transmission attachment
+            </summary>
+        </member>
+        <member name="F:PAROCHOSClient.InvoiceTransmissionAttachmentResponseModel.mIdentifier">
+            <summary>
+            The member of the <see cref="P:PAROCHOSClient.InvoiceTransmissionAttachmentResponseModel.Identifier"/> property
+            </summary>
+        </member>
+        <member name="F:PAROCHOSClient.InvoiceTransmissionAttachmentResponseModel.mErrorMessage">
+            <summary>
+            The member of the <see cref="P:PAROCHOSClient.InvoiceTransmissionAttachmentResponseModel.ErrorMessage"/> property
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.InvoiceTransmissionAttachmentResponseModel.Identifier">
+            <summary>
+            The identifier
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.InvoiceTransmissionAttachmentResponseModel.InstanceNumber">
+            <summary>
+            The instance number
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.InvoiceTransmissionAttachmentResponseModel.Status">
+            <summary>
+            The status
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.InvoiceTransmissionAttachmentResponseModel.ErrorMessage">
+            <summary>
+            The error message
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.InvoiceTransmissionAttachmentResponseModel.ShouldUploadURL">
+            <summary>
+            A flag indicating whether the url should be uploaded
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.InvoiceTransmissionAttachmentResponseModel.ShouldDownloadURL">
+            <summary>
+            A flag indicating whether the url should be downloaded 
+            </summary>
+        </member>
+        <member name="M:PAROCHOSClient.InvoiceTransmissionAttachmentResponseModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
         <member name="T:PAROCHOSClient.InvoiceTransmissionResponseModel">
             <summary>
             Represents an invoice transmission response
@@ -1284,6 +1426,11 @@
             The member of the <see cref="P:PAROCHOSClient.InvoiceTransmissionResponseModel.Signing"/> property
             </summary>
         </member>
+        <member name="F:PAROCHOSClient.InvoiceTransmissionResponseModel.mAttachments">
+            <summary>
+            The member of the <see cref="P:PAROCHOSClient.InvoiceTransmissionResponseModel.Attachments"/> property
+            </summary>
+        </member>
         <member name="P:PAROCHOSClient.InvoiceTransmissionResponseModel.ExternalSystemId">
             <summary>
             The external identifier provided to send method.
@@ -1294,9 +1441,9 @@
             The identifier of the invoice
             </summary>
         </member>
-        <member name="P:PAROCHOSClient.InvoiceTransmissionResponseModel.Signing">
+        <member name="P:PAROCHOSClient.InvoiceTransmissionResponseModel.ErrorSeverity">
             <summary>
-            The invoice transmission signing 
+            The error severity
             </summary>
         </member>
         <member name="P:PAROCHOSClient.InvoiceTransmissionResponseModel.TimeStamp">
@@ -1304,9 +1451,14 @@
             The timestamp of invoice creation
             </summary>
         </member>
-        <member name="P:PAROCHOSClient.InvoiceTransmissionResponseModel.ErrorSeverity">
+        <member name="P:PAROCHOSClient.InvoiceTransmissionResponseModel.Signing">
             <summary>
-            The error severity
+            The invoice transmission signing 
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.InvoiceTransmissionResponseModel.Attachments">
+            <summary>
+            The attachments
             </summary>
         </member>
         <member name="M:PAROCHOSClient.InvoiceTransmissionResponseModel.#ctor">
@@ -1335,6 +1487,11 @@
         <member name="F:PAROCHOSClient.InvoiceTransmissionSigningResponseModel.mQRCode">
             <summary>
             The member of the <see cref="P:PAROCHOSClient.InvoiceTransmissionSigningResponseModel.QRCode"/> property
+            </summary>
+        </member>
+        <member name="F:PAROCHOSClient.InvoiceTransmissionSigningResponseModel.mPaymentTokens">
+            <summary>
+            The member of the <see cref="P:PAROCHOSClient.InvoiceTransmissionSigningResponseModel.PaymentTokens"/> property
             </summary>
         </member>
         <member name="P:PAROCHOSClient.InvoiceTransmissionSigningResponseModel.UId">
@@ -1366,6 +1523,16 @@
         <member name="P:PAROCHOSClient.InvoiceTransmissionSigningResponseModel.PDFFileUrl">
             <summary>
             Azure storage url with read rights to download the invoice pdf file.
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.InvoiceTransmissionSigningResponseModel.PublishStatus">
+            <summary>
+            The status of the B2G invoice transmission.
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.InvoiceTransmissionSigningResponseModel.PaymentTokens">
+            <summary>
+            The payment tokens
             </summary>
         </member>
         <member name="M:PAROCHOSClient.InvoiceTransmissionSigningResponseModel.#ctor">
@@ -1402,6 +1569,71 @@
             </summary>
         </member>
         <member name="M:PAROCHOSClient.LogInResponseModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:PAROCHOSClient.PaymentDetailResponseModel">
+            <summary>
+            Represents a payment detail
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.PaymentDetailResponseModel.Timestamp">
+            <summary>
+            The payment timestamp
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.PaymentDetailResponseModel.Signature">
+            <summary>
+            The payment signature
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.PaymentDetailResponseModel.Amount">
+            <summary>
+            The payment amount
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.PaymentDetailResponseModel.Status">
+            <summary>
+            The payment status
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.PaymentDetailResponseModel.TransactionId">
+            <summary>
+            The payment's transaction id
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.PaymentDetailResponseModel.TipAmount">
+            <summary>
+            The tip amount
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.PaymentDetailResponseModel.PaymentMark">
+            <summary>
+            The payment mark
+            </summary>
+        </member>
+        <member name="M:PAROCHOSClient.PaymentDetailResponseModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:PAROCHOSClient.PaymentResponseModel">
+            <summary>
+            Represents a payment
+            </summary>
+        </member>
+        <member name="F:PAROCHOSClient.PaymentResponseModel.mPayments">
+            <summary>
+            The member of the <see cref="P:PAROCHOSClient.PaymentResponseModel.Payments"/> property
+            </summary>
+        </member>
+        <member name="P:PAROCHOSClient.PaymentResponseModel.Payments">
+            <summary>
+            The payment details
+            </summary>
+        </member>
+        <member name="M:PAROCHOSClient.PaymentResponseModel.#ctor">
             <summary>
             Default constructor
             </summary>
@@ -18976,6 +19208,51 @@
             Collectors' items and antiques - Indication that the VAT margin scheme for collector’s items and antiques has been applied. - Only use with VAT category code E
             </remarks>
         </member>
+        <member name="T:PAROCHOSClient.PublishStatus">
+            <summary>
+            Provides enumeration over the publish types
+            </summary>
+        </member>
+        <member name="F:PAROCHOSClient.PublishStatus.Pending">
+            <summary>
+            Pending 
+            </summary>
+        </member>
+        <member name="F:PAROCHOSClient.PublishStatus.Sending">
+            <summary>
+            Sending
+            </summary>
+        </member>
+        <member name="F:PAROCHOSClient.PublishStatus.Transmitted">
+            <summary>
+            Transmitted
+            </summary>
+        </member>
+        <member name="F:PAROCHOSClient.PublishStatus.Processing">
+            <summary>
+            Processing
+            </summary>
+        </member>
+        <member name="F:PAROCHOSClient.PublishStatus.Paid">
+            <summary>
+            Paid
+            </summary>
+        </member>
+        <member name="F:PAROCHOSClient.PublishStatus.Rejected">
+            <summary>
+            Rejected
+            </summary>
+        </member>
+        <member name="F:PAROCHOSClient.PublishStatus.UnderQuery">
+            <summary>
+            Under query
+            </summary>
+        </member>
+        <member name="F:PAROCHOSClient.PublishStatus.Failed">
+            <summary>
+            Failed
+            </summary>
+        </member>
         <member name="T:PAROCHOSClient.PublishType">
             <summary>
             Provides enumeration over the publish types
@@ -20537,6 +20814,19 @@
         <member name="M:PAROCHOSClient.PEPPOLVATExemptionCodeToStringJsonConverter.GetMapper">
             <inheritdoc/>
         </member>
+        <member name="T:PAROCHOSClient.PublishStatusToIntJsonConverter">
+            <summary>
+            A <see cref="T:PAROCHOSClient.BaseEnumToIntJsonConverter`1"/> that is used to convert a <see cref="T:PAROCHOSClient.PublishStatus"/> to <see cref="T:System.Int32"/>
+            </summary>
+        </member>
+        <member name="M:PAROCHOSClient.PublishStatusToIntJsonConverter.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:PAROCHOSClient.PublishStatusToIntJsonConverter.GetMapper">
+            <inheritdoc/>
+        </member>
         <member name="T:PAROCHOSClient.PublishTypeToIntJsonConverter">
             <summary>
             A <see cref="T:Newtonsoft.Json.JsonConverter`1"/> that converts a <see cref="T:PAROCHOSClient.PublishType"/> to <see cref="T:System.Int32"/>
@@ -20775,6 +21065,11 @@
             Maps the <see cref="T:PAROCHOSClient.PaymentMethod"/>s to their related <see cref="T:System.Int32"/>s
             </summary>
         </member>
+        <member name="P:PAROCHOSClient.PAROCHOSClientConstants.PublishStatusToIntMapper">
+            <summary>
+            Maps the <see cref="T:PAROCHOSClient.PublishStatus"/> to their related <see cref="T:System.Int32"/>s
+            </summary>
+        </member>
         <member name="P:PAROCHOSClient.PAROCHOSClientConstants.PublishTypeToIntMapper">
             <summary>
             Maps the <see cref="T:PAROCHOSClient.PublishType"/>s to their related <see cref="T:System.String"/>s
@@ -20819,6 +21114,98 @@
             <summary>
             The API Routes for PAROCHOS Client
             </summary>
+        </member>
+        <member name="F:PAROCHOSClient.Routes.BaseRoute">
+            <summary>
+            The base route
+            </summary>
+        </member>
+        <member name="F:PAROCHOSClient.Routes.LoginRoute">
+            <summary>
+            The login to subscription
+            </summary>
+        </member>
+        <member name="F:PAROCHOSClient.Routes.RefreshTokenRoute">
+            <summary>
+            The refresh token
+            </summary>
+        </member>
+        <member name="M:PAROCHOSClient.Routes.GetInvoiceTransmissionRoute(System.String)">
+            <summary>
+            The invoice transmission route
+            </summary>
+            <param name="baseUrl">The base URL</param>
+            <returns></returns>
+        </member>
+        <member name="M:PAROCHOSClient.Routes.GetPollingProcessRoute(System.String)">
+            <summary>
+            The polling process route
+            </summary>
+            <param name="baseUrl">The base URL</param>
+            <returns></returns>
+        </member>
+        <member name="M:PAROCHOSClient.Routes.GetUploadFileRequestRoute(System.String)">
+            <summary>
+            The upload file request route
+            </summary>
+            <param name="baseUrl">The base URL</param>
+            <returns></returns>
+        </member>
+        <member name="M:PAROCHOSClient.Routes.GetFinalizeRoute(System.String)">
+            <summary>
+            The finalize route
+            </summary>
+            <param name="baseUrl">The base URL</param>
+            <returns></returns>
+        </member>
+        <member name="M:PAROCHOSClient.Routes.GetFilesRoute(System.String)">
+            <summary>
+            The files route
+            </summary>
+            <param name="baseUrl">The base URL</param>
+            <returns></returns>
+        </member>
+        <member name="M:PAROCHOSClient.Routes.GetPublishLogsRoute(System.String)">
+            <summary>
+            The publish logs route
+            </summary>
+            <param name="baseUrl">The base URL</param>
+            <returns></returns>
+        </member>
+        <member name="M:PAROCHOSClient.Routes.GetPaymentsRoute(System.String,System.String)">
+            <summary>
+            The payments route
+            </summary>
+            <param name="baseUrl">The base URL</param>
+            <param name="externalSystemId">The external identifier provided as input to api/send method</param>
+            <returns></returns>
+        </member>
+        <member name="M:PAROCHOSClient.Routes.GetRequestPaymentRoute(System.String)">
+            <summary>
+            The request payment route
+            </summary>
+            <param name="baseUrl">The base URL</param>
+            <returns></returns>
+        </member>
+        <member name="M:PAROCHOSClient.Routes.GetSubmitPaymentRoute(System.String)">
+            <summary>
+            The submit payment route
+            </summary>
+            <param name="baseUrl">The base URL</param>
+            <returns></returns>
+        </member>
+        <member name="M:PAROCHOSClient.Routes.GetCancelPaymentRoute(System.String)">
+            <summary>
+            The cancel payment route
+            </summary>
+            <param name="baseUrl">The base URL</param>
+            <returns></returns>
+        </member>
+        <member name="M:PAROCHOSClient.Routes.Combine(System.String[])">
+            <summary>
+            Combines the specified <paramref name="parts"/> while ensuring a correct URL structure
+            </summary>
+            <returns></returns>
         </member>
         <member name="T:PAROCHOSClient.PAROCHOSClient">
             <summary>
@@ -20939,6 +21326,13 @@
             Canceling a payment request generated by the <see cref="M:PAROCHOSClient.PAROCHOSClient.RequestPaymentAsync(PAROCHOSClient.RequestPaymentRequestModel)"/> method
             </summary>
             <param name="model">The model</param>
+            <returns></returns>
+        </member>
+        <member name="M:PAROCHOSClient.PAROCHOSClient.GetPaymentsAsync(System.String)">
+            <summary>
+            Gets the payments
+            </summary>
+            <param name="externalSystemId">The external identifier provided as input to api/send method</param>
             <returns></returns>
         </member>
         <member name="M:PAROCHOSClient.PAROCHOSClient.ExecuteAsync``1(System.Func{PAROCHOSClient.LogInResponseModel,System.Threading.Tasks.Task{PAROCHOSClient.WebRequestResult{``0}}})">

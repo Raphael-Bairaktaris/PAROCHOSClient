@@ -5,7 +5,7 @@ namespace PAROCHOSClient
     /// <summary>
     /// The base for all the PAROCHOS response models
     /// </summary>
-    public class BasePAROCHOSResponseModel 
+    public class BasePAROCHOSResponseModel
     {
         #region Private Members
 

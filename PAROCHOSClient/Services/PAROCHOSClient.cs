@@ -324,7 +324,7 @@ namespace PAROCHOSClient
                     }
 
                     return await Client.PostAsync<RequestPaymentResponseModel>(
-                        Routes.GetRequestPaymentAPIRoute(x.URL1?.ToString()),
+                        Routes.GetRequestPaymentRoute(x.URL1?.ToString()),
                         model,
                         x.JWT);
                 });
@@ -341,7 +341,7 @@ namespace PAROCHOSClient
                 async x =>
                 {
                     return await Client.PostAsync<SubmitPaymentResponseModel>(
-                        Routes.GetSubmitPaymentAPIRoute(x.URL1?.ToString()),
+                        Routes.GetSubmitPaymentRoute(x.URL1?.ToString()),
                         model,
                         x.JWT);
                 });
@@ -358,11 +358,25 @@ namespace PAROCHOSClient
                 async x =>
                 {
                     return await Client.PostAsync<CancelPaymentResponseModel>(
-                        Routes.GetCancelPaymentAPIRoute(x.URL1?.ToString()),
+                        Routes.GetCancelPaymentRoute(x.URL1?.ToString()),
                         model,
                         x.JWT);
                 });
         }
+
+        /// <summary>
+        /// Gets the payments
+        /// </summary>
+        /// <param name="externalSystemId">The external identifier provided as input to api/send method</param>
+        /// <returns></returns>
+        public async Task<WebRequestResult<PaymentResponseModel>> GetPaymentsAsync(string externalSystemId)
+            => await ExecuteAsync<PaymentResponseModel>(
+                async x =>
+                {
+                    return await Client.GetAsync<PaymentResponseModel>(
+                        Routes.GetPaymentsRoute(x.URL1?.ToString(), externalSystemId),
+                        x.JWT);
+                });
 
         #endregion
 

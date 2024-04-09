@@ -5,7 +5,7 @@ namespace PAROCHOSClient
     /// <summary>
     /// Represents a payment response
     /// </summary>
-    public class RequestPaymentResponseModel : BasePaymentResponseModel 
+    public class RequestPaymentResponseModel : BasePaymentResponseModel
     {
         #region Private Members
 
@@ -27,8 +27,8 @@ namespace PAROCHOSClient
         /// The uid
         /// </summary>
         [JsonProperty("uid")]
-        public string UId 
-        { 
+        public string UId
+        {
             get => mUId ?? string.Empty;
             set => mUId = value;
         }
@@ -37,9 +37,9 @@ namespace PAROCHOSClient
         /// The payment token details
         /// </summary>
         [JsonProperty("paymentToken")]
-        public PaymentTokenResponseModel PaymentToken 
-        { 
-            get => mPaymentToken ??= new PaymentTokenResponseModel(); 
+        public PaymentTokenResponseModel PaymentToken
+        {
+            get => mPaymentToken ??= new PaymentTokenResponseModel();
             set => mPaymentToken = value;
         }
 
