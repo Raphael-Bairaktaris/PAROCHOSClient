@@ -7,7 +7,7 @@ var credentials = File.ReadAllText(Path.Combine(Environment.GetFolderPath(Enviro
 var client = new PAROCHOSClient.PAROCHOSClient(new PAROCHOSCredentials(credentials[0], credentials[1], credentials[2]));
 
 
-var a = Routes.Combine("https://aka.ms/new-console-template/", "/payments", "/test/", "1");
+var a = PAROCHOSClientRoutes.Combine("https://aka.ms/new-console-template/", "/payments", "/test/", "1");
 
 var requestModel = new IncomeInvoiceRequestModel()
 {

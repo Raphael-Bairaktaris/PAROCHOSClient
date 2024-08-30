@@ -7,7 +7,7 @@ namespace PAROCHOSClient
     /// </summary>
     public class InvoiceTransmissionAttachmentResponseModel
     {
-        #region Public Properties
+        #region Private Members
 
         /// <summary>
         /// The member of the <see cref="Identifier"/> property

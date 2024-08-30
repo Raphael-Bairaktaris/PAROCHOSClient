@@ -82,6 +82,13 @@ namespace PAROCHOSClient
         [JsonProperty("terminalId")]
         public string? TerminalId { get; set; }
 
+        /// <summary>
+        /// Code identifier of the EFT-POS service provider
+        /// </summary>
+        [JsonProperty("nspCode")]
+        [JsonConverter(typeof(EFTPOSServiceProviderToStringConverter))]
+        public EFTPOSServiceProvider? NSPCode { get; set; }
+
         #endregion
 
         #region Internal Properties

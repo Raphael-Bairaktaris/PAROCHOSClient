@@ -54,6 +54,19 @@ namespace PAROCHOSClient
         public static IReadOnlyDictionary<CurrencyCode, string> CurrencyCodeToStringMapper { get; } = Enum.GetValues<CurrencyCode>().ToImmutableDictionary(x => x, x => x.ToString());
 
         /// <summary>
+        /// Maps the <see cref="EFTPOSServiceProvider"/>s to their related <see cref="string"/>s
+        /// </summary>
+        public static IReadOnlyDictionary<EFTPOSServiceProvider, string> EFTPOSServiceProviderToStringMapper { get; } = new Dictionary<EFTPOSServiceProvider, string>()
+   {
+       { EFTPOSServiceProvider.Cardlink, "1" },
+       { EFTPOSServiceProvider.Euronet, "2" },
+       { EFTPOSServiceProvider.Mellon, "3" },
+       { EFTPOSServiceProvider.Nexi, "4" },
+       { EFTPOSServiceProvider.EDPS, "5" },
+       { EFTPOSServiceProvider.Viva, "6" },
+   }.ToImmutableDictionary();
+
+        /// <summary>
         /// Maps the <see cref="EntryStatusType"/>s to their related <see cref="string"/>s
         /// </summary>
         public static IReadOnlyDictionary<EntryStatusType, int> EntryStatusTypeTointMapper { get; } = new Dictionary<EntryStatusType, int>()

@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PAROCHOSClient
 {
@@ -25,8 +22,8 @@ namespace PAROCHOSClient
         /// <summary>
         /// The payment details
         /// </summary>
-        public IEnumerable<PaymentDetailResponseModel> Payments 
-        { 
+        public IEnumerable<PaymentDetailResponseModel> Payments
+        {
             get => mPayments ?? Enumerable.Empty<PaymentDetailResponseModel>();
             set => mPayments = value;
         }

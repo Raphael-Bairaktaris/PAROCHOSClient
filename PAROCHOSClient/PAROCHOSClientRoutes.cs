@@ -1,16 +1,11 @@
-﻿using Microsoft.AspNetCore.WebUtilities;
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
+﻿using System.Linq;
 
 namespace PAROCHOSClient
 {
     /// <summary>
-    /// The API Routes for PAROCHOS Client
+    /// The API PAROCHOSClientRoutes for PAROCHOS Client
     /// </summary>
-    public class Routes
+    public class PAROCHOSClientRoutes
     {
         /// <summary>
         /// The base route
